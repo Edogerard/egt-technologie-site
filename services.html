@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services & Devis — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Catalogue complet des services informatiques d'EGT TECHNOLOGIE : Développement d'applications, réseaux, maintenance et IA au Togo.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            background: #fff;
+            color: var(--text-dark);
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px 12px 45px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-color);
+            font-size: 1rem;
+        }
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .service-card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(13, 110, 253, 0.1);
+            color: var(--primary-color);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        .quote-panel {
+            position: sticky;
+            bottom: 20px;
+            background: var(--secondary-color);
+            color: #fff;
+            padding: 20px 30px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-icon">EGT</span>
+                <div class="brand-text">
+                    <span class="brand-name">EGT TECHNOLOGIE</span>
+                    <span class="brand-tagline">La technologie au service de votre réussite</span>
+                </div>
+            </a>
+            <div class="mobile-toggle" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html" class="active">Services &amp; Devis</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="portfolio.html">Réalisations</a></li>
+                <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER PAGE -->
+    <section class="section" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: #fff; padding: 60px 0;">
+        <div class="container" style="text-align: center;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Catalogue de Services &amp; Demande de Devis</h1>
+            <p style="color: #9ca3af; max-width: 700px; margin: 0 auto;">
+                Explorez nos 17 domaines de compétences technologiques. Cochez les prestations souhaitées pour obtenir un devis personnalisé ou une prise de contact directe.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION CATALOGUE INTERACTIF -->
+    <section class="section">
+        <div class="container">
+            <!-- Barre de Recherche & Filtres -->
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Rechercher un service (ex: logiciel, réseau, IA, maintenance)...">
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">Tous les services</button>
+                <button class="filter-btn" data-filter="dev">Développement Logiciel</button>
+                <button class="filter-btn" data-filter="pme">Gestion d'Entreprises</button>
+                <button class="filter-btn" data-filter="reseau">Réseaux &amp; Telecoms</button>
+                <button class="filter-btn" data-filter="ia">IA &amp; Automatisation</button>
+                <button class="filter-btn" data-filter="maintenance">Maintenance PC/Android</button>
+                <button class="filter-btn" data-filter="special">Écoles, Hôpitaux &amp; Mairies</button>
+            </div>
+
+            <!-- Grille dynamique des services -->
+            <div class="grid-3" id="servicesGrid">
+                <!-- Généré dynamiquement par JS -->
+            </div>
+
+            <!-- Panneau de Sélection & Envoi de Devis -->
+            <div class="quote-panel" id="quotePanel" style="display: none;">
+                <div>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 5px;"><span id="selectedCount">0</span> service(s) sélectionné(s)</h3>
+                    <p style="font-size: 0.85rem; color: #9ca3af;">Cliquez sur le bouton pour envoyer votre sélection directement sur WhatsApp.</p>
+                </div>
+                <button class="btn btn-whatsapp" id="sendQuoteBtn">
+                    <i class="fab fa-whatsapp"></i> Demander un Devis WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : TOUDJI Edo Gérard.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>
