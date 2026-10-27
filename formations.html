@@ -8,6 +8,47 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .share-widget-container {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .share-buttons-grid {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .btn-share {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-share:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        .btn-share-wa { background-color: #25D366; }
+        .btn-share-fb { background-color: #1877F2; }
+        .btn-share-tt { background-color: #000000; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-share-email { background-color: #EA4335; }
+        .btn-share-copy { background-color: #4B5563; }
+    </style>
 </head>
 <body>
 
@@ -174,6 +215,33 @@
                     </button>
                 </form>
             </div>
+
+            <!-- WIDGET DE PARTAGE SOCIAL INTERACTIF -->
+            <div class="share-widget-container">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;">
+                    <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez EGT TECHNOLOGIE
+                </h3>
+                <p style="color: #9ca3af; font-size: 0.95rem;">
+                    Partagez nos formations professionnelles avec vos proches sur les réseaux sociaux :
+                </p>
+                <div class="share-buttons-grid">
+                    <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20formations%20professionnelles%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                    <a href="mailto:?subject=Formations%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20formations%20professionnelles%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
+                        <i class="fas fa-link"></i> <span id="copyLinkBtnText">Copier le lien</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -199,6 +267,17 @@
             const encoded = encodeURIComponent(text);
             window.open(`https://wa.me/22890322533?text=${encoded}`, '_blank');
         });
+
+        function copySiteLink() {
+            const url = 'https://edogerard.github.io/egt-technologie-site/';
+            navigator.clipboard.writeText(url).then(() => {
+                const btnText = document.getElementById('copyLinkBtnText');
+                btnText.textContent = 'Lien copié !';
+                setTimeout(() => {
+                    btnText.textContent = 'Copier le lien';
+                }, 3000);
+            });
+        }
     </script>
 </body>
 </html>
