@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique &amp; Matériel — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Boutique officielle EGT TECHNOLOGIE à Lomé : Vente d'ordinateurs, téléphones smartphones, logiciels professionnels sur mesure, outils de maintenance et supports de cours.">
+    <title>Boutique &amp; Matériel avec Prix — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Achetez vos ordinateurs HP/Dell, téléphones Android, composants PC et logiciels professionnels avec détails et prix chez EGT TECHNOLOGIE à Lomé.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -19,54 +19,91 @@
             align-items: center;
             gap: 12px;
         }
-        .shop-card {
+        .product-card {
             background: #1f2937;
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 30px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
-        .shop-card:hover {
+        .product-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary-color);
             box-shadow: var(--shadow-lg);
         }
-        .shop-icon {
-            font-size: 2.3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
         }
-        .shop-title {
-            color: #fff;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .shop-desc {
-            color: #9ca3af;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .shop-price {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: #10b981;
-            margin-bottom: 20px;
-        }
-        .shop-badge {
+        .product-badge {
             background: rgba(37, 99, 235, 0.15);
             color: #60a5fa;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
             font-weight: 600;
-            display: inline-block;
-            margin-bottom: 15px;
             border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        .stock-badge {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+        .product-icon {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .product-title {
+            color: #fff;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .product-specs {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .product-specs li {
+            color: #9ca3af;
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .product-specs li i {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+        .product-price-container {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 15px;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .product-price {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+        .product-price-unit {
+            font-size: 0.85rem;
+            color: #9ca3af;
+            font-weight: 400;
         }
         .share-widget-container {
             background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
@@ -141,9 +178,9 @@
     <!-- HEADER SECTION -->
     <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
         <div class="container">
-            <h1 style="font-size: 2.3rem; margin-bottom: 15px; color: #fff;"><i class="fas fa-store"></i> Boutique Officielle &amp; Matériel</h1>
+            <h1 style="font-size: 2.3rem; margin-bottom: 15px; color: #fff;"><i class="fas fa-store"></i> Catalogue &amp; Produits Disponibles</h1>
             <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
-                Commandez vos ordinateurs, téléphones, logiciels professionnels et accessoires directement auprès d'<strong>EGT TECHNOLOGIE</strong> à Lomé.
+                Découvrez nos ordinateurs, téléphones, composants et logiciels professionnels avec leurs caractéristiques et tarifs. Commandez directement par WhatsApp chez <strong>EGT TECHNOLOGIE</strong>.
             </p>
         </div>
     </header>
@@ -152,146 +189,261 @@
     <section class="section">
         <div class="container">
             
-            <!-- RAYON 1 : MATÉRIEL INFORMATIQUE & TÉLÉPHONIE -->
-            <h2 class="shop-category-title"><i class="fas fa-laptop" style="color: var(--primary-color);"></i> Matériel &amp; Appareils</h2>
+            <!-- RAYON 1 : ORDINATEURS PORTABLES & FIXES -->
+            <h2 class="shop-category-title"><i class="fas fa-laptop" style="color: var(--primary-color);"></i> Ordinateurs Portables &amp; Fixes</h2>
             <div class="grid-3" style="gap: 30px; margin-bottom: 40px;">
                 
-                <!-- PRODUIT 1 -->
-                <div class="shop-card">
+                <!-- ARTICLE PC HP -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa;">Matériel Physique</span>
-                        <div class="shop-icon" style="color: #3b82f6;"><i class="fas fa-laptop"></i></div>
-                        <h3 class="shop-title">Ordinateurs Portables &amp; Fixes (PCs)</h3>
-                        <p class="shop-desc">Vente d'ordinateurs portables et unités centrales performants pour étudiants, professionnels et entreprises. Configurés et prêts à l'emploi.</p>
-                        <div class="shop-price">Disponible en agence</div>
+                        <div class="product-header">
+                            <span class="product-badge">PC Portable</span>
+                            <span class="stock-badge"><i class="fas fa-check"></i> En Stock</span>
+                        </div>
+                        <div class="product-icon" style="color: #60a5fa;"><i class="fas fa-laptop"></i></div>
+                        <h3 class="product-title">PC Portable HP ProBook Core i5</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-microchip"></i> <strong>Processeur :</strong> Intel Core i5 (8ème gen)</li>
+                            <li><i class="fas fa-memory"></i> <strong>Mémoire RAM :</strong> 8 GB DDR4</li>
+                            <li><i class="fas fa-hdd"></i> <strong>Stockage :</strong> SSD 256 GB ultra-rapide</li>
+                            <li><i class="fas fa-desktop"></i> <strong>Écran :</strong> 15.6 pouces Full HD</li>
+                            <li><i class="fas fa-cog"></i> <strong>OS :</strong> Windows 11 Pro + Pack Office</li>
+                        </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20ou%20connaître%20les%20prix%20des%20*Ordinateurs*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
-                        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">Prix unitaire</span>
+                            <span class="product-price">185.000 <span class="product-price-unit">CFA</span></span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20le%20*PC%20Portable%20HP%20ProBook%20Core%20i5*%20au%20prix%20de%20185.000%20CFA." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
-                <!-- PRODUIT 2 -->
-                <div class="shop-card">
+                <!-- ARTICLE PC DELL -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">Matériel Physique</span>
-                        <div class="shop-icon" style="color: #10b981;"><i class="fas fa-mobile-alt"></i></div>
-                        <h3 class="shop-title">Téléphones &amp; Smartphones Android</h3>
-                        <p class="shop-desc">Sélection de smartphones Android récents et fiables, accessoires mobiles, chargeurs rapides et câbles de transmission de données.</p>
-                        <div class="shop-price">Disponible en agence</div>
+                        <div class="product-header">
+                            <span class="product-badge">PC Portable</span>
+                            <span class="stock-badge"><i class="fas fa-check"></i> En Stock</span>
+                        </div>
+                        <div class="product-icon" style="color: #60a5fa;"><i class="fas fa-laptop"></i></div>
+                        <h3 class="product-title">PC Portable Dell Latitude Core i7</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-microchip"></i> <strong>Processeur :</strong> Intel Core i7 High Performance</li>
+                            <li><i class="fas fa-memory"></i> <strong>Mémoire RAM :</strong> 16 GB DDR4</li>
+                            <li><i class="fas fa-hdd"></i> <strong>Stockage :</strong> SSD 512 GB NVMe</li>
+                            <li><i class="fas fa-desktop"></i> <strong>Écran :</strong> 14 pouces Full HD Antireflet</li>
+                            <li><i class="fas fa-battery-full"></i> <strong>Autonomie :</strong> Batterie longue durée</li>
+                        </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20connaître%20les%20modèles%20et%20prix%20des%20*Smartphones*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
-                        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">Prix unitaire</span>
+                            <span class="product-price">245.000 <span class="product-price-unit">CFA</span></span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20le%20*PC%20Portable%20Dell%20Latitude%20Core%20i7*%20au%20prix%20de%20245.000%20CFA." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
-                <!-- PRODUIT 3 -->
-                <div class="shop-card">
+                <!-- UNITE CENTRALE DE BUREAU -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa;">Accessoires &amp; Pièces</span>
-                        <div class="shop-icon" style="color: #8b5cf6;"><i class="fas fa-hdd"></i></div>
-                        <h3 class="shop-title">Composants &amp; Périphériques PC</h3>
-                        <p class="shop-desc">Disques SSD, barrettes de mémoire RAM, routeurs Wi-Fi, switchs, câbles réseau Ethernet et chargeurs de PC portables.</p>
-                        <div class="shop-price">Stock disponible</div>
+                        <div class="product-header">
+                            <span class="product-badge">PC Fixe / Bureau</span>
+                            <span class="stock-badge"><i class="fas fa-check"></i> Sur Commande</span>
+                        </div>
+                        <div class="product-icon" style="color: #60a5fa;"><i class="fas fa-desktop"></i></div>
+                        <h3 class="product-title">Unité Centrale HP Compaq / Dell Desktop</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-microchip"></i> <strong>Processeur :</strong> Intel Core i3 / i5</li>
+                            <li><i class="fas fa-memory"></i> <strong>Mémoire RAM :</strong> 8 GB DDR3 / DDR4</li>
+                            <li><i class="fas fa-hdd"></i> <strong>Stockage :</strong> 500 GB HDD ou 256 GB SSD</li>
+                            <li><i class="fas fa-plug"></i> <strong>Usage :</strong> Secrétariat, Bureautique &amp; Caisses</li>
+                        </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20cherche%20un%20composant%20ou%20accessoire%20informatique." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
-                        <i class="fab fa-whatsapp"></i> Vérifier la dispo sur WhatsApp
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">À partir de</span>
+                            <span class="product-price">115.000 <span class="product-price-unit">CFA</span></span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20une%20*Unité%20Centrale%20de%20Bureau*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-            <!-- RAYON 2 : LOGICIELS PROFESSIONNELS & OUTILS PRO -->
-            <h2 class="shop-category-title"><i class="fas fa-code" style="color: var(--primary-color);"></i> Logiciels &amp; Outils Professionnels</h2>
+            <!-- RAYON 2 : SMARTPHONES & ACCESSOIRES MOBILES -->
+            <h2 class="shop-category-title"><i class="fas fa-mobile-alt" style="color: var(--primary-color);"></i> Téléphones &amp; Smartphones</h2>
             <div class="grid-3" style="gap: 30px; margin-bottom: 40px;">
                 
-                <!-- PRODUIT 4 -->
-                <div class="shop-card">
+                <!-- SMARTPHONE SAMSUNG -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Logiciel Windows</span>
-                        <div class="shop-icon" style="color: #f59e0b;"><i class="fas fa-desktop"></i></div>
-                        <h3 class="shop-title">EGT Shop Manager</h3>
-                        <p class="shop-desc">Application de gestion pour boutiques et commerces de détail : suivi multi-articles, ventes, coûts d'approvisionnement et marges bénéficiaires.</p>
-                        <div class="shop-price">Sur Devis / Commande</div>
+                        <div class="product-header">
+                            <span class="product-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">Android</span>
+                            <span class="stock-badge"><i class="fas fa-check"></i> En Stock</span>
+                        </div>
+                        <div class="product-icon" style="color: #10b981;"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="product-title">Smartphone Samsung Galaxy Serie A</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-microchip"></i> <strong>Mémoire RAM :</strong> 4 GB / 6 GB</li>
+                            <li><i class="fas fa-hdd"></i> <strong>Stockage Interne :</strong> 64 GB / 128 GB</li>
+                            <li><i class="fas fa-camera"></i> <strong>Caméra :</strong> Triple Capteur Haute Définition</li>
+                            <li><i class="fas fa-battery-full"></i> <strong>Batterie :</strong> 5000 mAh Charge Rapide</li>
+                        </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20le%20logiciel%20*EGT%20Shop%20Manager*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
-                        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">Prix moyen</span>
+                            <span class="product-price">95.000 <span class="product-price-unit">CFA</span></span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20un%20*Smartphone%20Samsung%20Galaxy*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
-                <!-- PRODUIT 5 -->
-                <div class="shop-card">
+                <!-- SMARTPHONE TECNO / INFINIX -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Logiciel Windows</span>
-                        <div class="shop-icon" style="color: #f59e0b;"><i class="fas fa-utensils"></i></div>
-                        <h3 class="shop-title">Restaurant &amp; Bar Manager EGT</h3>
-                        <p class="shop-desc">Système de gestion de restaurant et bar sous Python / PySide6 &amp; SQLite. Authentification sécurisée SHA-256 et suivi des commandes.</p>
-                        <div class="shop-price">Sur Devis / Commande</div>
+                        <div class="product-header">
+                            <span class="product-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399;">Android</span>
+                            <span class="stock-badge"><i class="fas fa-check"></i> En Stock</span>
+                        </div>
+                        <div class="product-icon" style="color: #10b981;"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="product-title">Smartphone Tecno Spark / Infinix</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-microchip"></i> <strong>Mémoire RAM :</strong> 4 GB + Extension Virtuelle</li>
+                            <li><i class="fas fa-hdd"></i> <strong>Stockage Interne :</strong> 128 GB</li>
+                            <li><i class="fas fa-desktop"></i> <strong>Écran :</strong> 6.6 pouces HD+ 90Hz</li>
+                            <li><i class="fas fa-wifi"></i> <strong>Réseau :</strong> 4G LTE Dual SIM</li>
+                        </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20le%20logiciel%20*Restaurant%20&%20Bar%20Manager%20EGT*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
-                        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">Prix unitaire</span>
+                            <span class="product-price">75.000 <span class="product-price-unit">CFA</span></span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20un%20*Smartphone%20Tecno%20/%20Infinix*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
-                <!-- PRODUIT 6 -->
-                <div class="shop-card">
+                <!-- COMPOSANTS SSD / RAM -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">Outil Technicien</span>
-                        <div class="shop-icon" style="color: #ec4899;"><i class="fas fa-tools"></i></div>
-                        <h3 class="shop-title">Android Software Doctor EGT</h3>
-                        <p class="shop-desc">Suite de bureau pour la réparation mobile : commandes ADB shell, codes NCK, NVRAM patching et extraction OCR d'IMEI par image.</p>
-                        <div class="shop-price">Sur Commande</div>
+                        <div class="product-header">
+                            <span class="product-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa;">Stockage &amp; RAM</span>
+                            <span class="stock-badge"><i class="fas fa-check"></i> En Stock</span>
+                        </div>
+                        <div class="product-icon" style="color: #8b5cf6;"><i class="fas fa-hdd"></i></div>
+                        <h3 class="product-title">Disques SSD 256GB / 512GB &amp; RAM</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-tachometer-alt"></i> <strong>SSD SATA / NVMe :</strong> Vitesse x5 par rapport au HDD</li>
+                            <li><i class="fas fa-memory"></i> <strong>RAM PC Portable/Fixe :</strong> 4 GB, 8 GB, 16 GB DDR4</li>
+                            <li><i class="fas fa-tools"></i> <strong>Service :</strong> Installation et clonage offerts</li>
+                        </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20la%20suite%20*Android%20Software%20Doctor%20EGT*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
-                        <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">À partir de</span>
+                            <span class="product-price">18.000 <span class="product-price-unit">CFA</span></span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20acheter%20un%20*Disque%20SSD%20ou%20Barrette%20RAM*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Commander sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
             </div>
 
-            <!-- RAYON 3 : FORMATIONS, SUPPORTS & SUR MESURE -->
-            <h2 class="shop-category-title"><i class="fas fa-graduation-cap" style="color: var(--primary-color);"></i> Formations, Cours &amp; Sur Mesure</h2>
+            <!-- RAYON 3 : LOGICIELS SUR MESURE EGT -->
+            <h2 class="shop-category-title"><i class="fas fa-code" style="color: var(--primary-color);"></i> Logiciels Professionnels EGT</h2>
             <div class="grid-3" style="gap: 30px;">
                 
-                <!-- PRODUIT 7 -->
-                <div class="shop-card">
+                <!-- EGT SHOP MANAGER -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(6, 182, 212, 0.15); color: #22d3ee;">Pédagogie</span>
-                        <div class="shop-icon" style="color: #06b6d4;"><i class="fas fa-book"></i></div>
-                        <h3 class="shop-title">Packs de Cours &amp; Guides PDF</h3>
-                        <p class="shop-desc">Recueil de supports pédagogiques et PDF techniques : Bureautique PCTAP, Maintenance, Réseaux, Programmation et Convertisseurs DC-DC.</p>
-                        <div class="shop-price">Accès Espace Étudiants</div>
+                        <div class="product-header">
+                            <span class="product-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Logiciel Windows</span>
+                            <span class="stock-badge"><i class="fas fa-star"></i> Nouveauté</span>
+                        </div>
+                        <div class="product-icon" style="color: #f59e0b;"><i class="fas fa-shopping-cart"></i></div>
+                        <h3 class="product-title">EGT Shop Manager V2</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-check"></i> <strong>Fonctionnalités :</strong> Ventes, stock, marges &amp; facturation</li>
+                            <li><i class="fas fa-database"></i> <strong>Base de données :</strong> SQLite locale sécurisée</li>
+                            <li><i class="fas fa-desktop"></i> <strong>Interface :</strong> PySide6 moderne &amp; intuitive</li>
+                        </ul>
                     </div>
-                    <a href="espace-etudiants.html" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
-                        <i class="fas fa-arrow-right"></i> Accéder à l'Espace Étudiants
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">Licence unique</span>
+                            <span class="product-price">Sur Devis</span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20la%20licence%20du%20logiciel%20*EGT%20Shop%20Manager*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Demander la licence sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
-                <!-- PRODUIT 8 -->
-                <div class="shop-card">
+                <!-- RESTAURANT MANAGER -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(6, 182, 212, 0.15); color: #22d3ee;">Sur Mesure</span>
-                        <div class="shop-icon" style="color: #06b6d4;"><i class="fas fa-cogs"></i></div>
-                        <h3 class="shop-title">Développement Logiciel Spécifique</h3>
-                        <p class="shop-desc">Besoin d'un logiciel particulier pour votre entreprise, école, clinique ou administration ? Nous concevons l'application adaptée à vos besoins.</p>
-                        <div class="shop-price">Sur Devis Personnalisé</div>
+                        <div class="product-header">
+                            <span class="product-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24;">Logiciel Windows</span>
+                            <span class="stock-badge"><i class="fas fa-star"></i> Nouveauté</span>
+                        </div>
+                        <div class="product-icon" style="color: #f59e0b;"><i class="fas fa-utensils"></i></div>
+                        <h3 class="product-title">Restaurant &amp; Bar Manager EGT</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-check"></i> <strong>Gestion :</strong> Tables, menus, tickets de caisse</li>
+                            <li><i class="fas fa-lock"></i> <strong>Sécurité :</strong> Auth utilisateurs avec hachage SHA-256</li>
+                            <li><i class="fas fa-chart-line"></i> <strong>Rapports :</strong> Bilan quotidien et statistique des ventes</li>
+                        </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20un%20*Développement%20logiciel%20sur%20mesure*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
-                        <i class="fab fa-whatsapp"></i> Demander un devis sur WhatsApp
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">Licence unique</span>
+                            <span class="product-price">Sur Devis</span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20le%20logiciel%20*Restaurant%20&%20Bar%20Manager%20EGT*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Demander la licence sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
-                <!-- PRODUIT 9 -->
-                <div class="shop-card">
+                <!-- ANDROID DOCTOR -->
+                <div class="product-card">
                     <div>
-                        <span class="shop-badge" style="background: rgba(6, 182, 212, 0.15); color: #22d3ee;">Formations</span>
-                        <div class="shop-icon" style="color: #06b6d4;"><i class="fas fa-certificate"></i></div>
-                        <h3 class="shop-title">Inscriptions Formations Pro</h3>
-                        <p class="shop-desc">Rejoignez nos sessions pratiques en Bureautique, Maintenance, Réseaux, Réparation PC/Android, Programmation et Développement Mobile Flutter/Kotlin.</p>
-                        <div class="shop-price">Sessions Ouvertes</div>
+                        <div class="product-header">
+                            <span class="product-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6;">Suite Technicien</span>
+                            <span class="stock-badge"><i class="fas fa-wrench"></i> Outil Pro</span>
+                        </div>
+                        <div class="product-icon" style="color: #ec4899;"><i class="fas fa-tools"></i></div>
+                        <h3 class="product-title">Android Software Doctor EGT</h3>
+                        <ul class="product-specs">
+                            <li><i class="fas fa-terminal"></i> <strong>Outils :</strong> ADB Shell, Fastboot, Patch NVRAM</li>
+                            <li><i class="fas fa-eye"></i> <strong>OCR IMEI :</strong> Extraction automatique depuis image/photo</li>
+                            <li><i class="fas fa-unlock-alt"></i> <strong>Déblocage :</strong> Calcul de codes NCK</li>
+                        </ul>
                     </div>
-                    <a href="formations.html" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
-                        <i class="fas fa-arrow-right"></i> Voir les Formations
-                    </a>
+                    <div>
+                        <div class="product-price-container">
+                            <span style="color: #9ca3af; font-size: 0.9rem;">Accès Pro</span>
+                            <span class="product-price">Sur Commande</span>
+                        </div>
+                        <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20la%20suite%20*Android%20Software%20Doctor%20EGT*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px; display: block;">
+                            <i class="fab fa-whatsapp"></i> Commander la suite sur WhatsApp
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -302,10 +454,10 @@
                     <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez notre Boutique
                 </h3>
                 <p style="color: #9ca3af; font-size: 0.95rem;">
-                    Partagez la boutique et les produits d'EGT TECHNOLOGIE avec vos proches et collègues :
+                    Partagez nos ordinateurs, téléphones et logiciels avec vos proches :
                 </p>
                 <div class="share-buttons-grid">
-                    <a href="https://api.whatsapp.com/send?text=Découvrez%20la%20boutique%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20(ordinateurs,%20téléphones,%20logiciels)%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
+                    <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20ordinateurs,%20téléphones%20et%20logiciels%20disponibles%20chez%20EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
@@ -314,7 +466,7 @@
                     <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
                         <i class="fab fa-tiktok"></i> TikTok
                     </a>
-                    <a href="mailto:?subject=Boutique%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20la%20boutique%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
+                    <a href="mailto:?subject=Boutique%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20produits%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
                         <i class="fas fa-envelope"></i> E-mail
                     </a>
                     <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
