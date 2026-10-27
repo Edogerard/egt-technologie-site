@@ -4,11 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formations Professionnelles — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Formations certifiantes en informatique, bureautique, caméras de surveillance, électricité, paraboles et maintenance PC/Android à EGT TECHNOLOGIE, Lomé - Togo.">
+    <meta name="description" content="Formations certifiantes et pratiques chez EGT TECHNOLOGIE à Lomé : Informatique bureautique, Maintenance & Réseaux, Réparation PC & Android, Programmation et Développement d'Applications.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .formation-card {
+            background: #1f2937;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .formation-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-lg);
+        }
+        .formation-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .formation-title {
+            color: #fff;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .formation-desc {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .formation-badge {
+            background: rgba(37, 99, 235, 0.15);
+            color: #60a5fa;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        .formation-highlights {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        .formation-highlights li {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .formation-highlights li i {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+        }
         .share-widget-container {
             background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -62,191 +122,138 @@
                     <span class="brand-tagline">La technologie au service de votre réussite</span>
                 </div>
             </a>
+            
             <div class="mobile-toggle" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </div>
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services &amp; Devis</a></li>
                 <li><a href="formations.html" class="active">Formations</a></li>
                 <li><a href="boutique.html">Boutique</a></li>
+                <li><a href="espace-etudiants.html">Espace Étudiants</a></li>
+                <li><a href="portfolio.html">Réalisations</a></li>
                 <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HEADER PAGE -->
+    <!-- HEADER SECTION -->
     <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
         <div class="container">
-            <h1 style="font-size: 2.3rem; margin-bottom: 15px; color: #fff;"><i class="fas fa-graduation-cap"></i> Nos Formations Professionnelles</h1>
-            <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1.05rem;">
-                Acquérez des compétences pratiques et recherchées sur le marché. Formations dispensées en ligne et en présentiel à Lomé par <strong>Edo Gerard TOUDJI</strong>.
+            <h1 style="font-size: 2.3rem; margin-bottom: 15px; color: #fff;"><i class="fas fa-graduation-cap"></i> Nos Modules de Formation Pratique</h1>
+            <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
+                Développez vos compétences professionnelles avec des cours axés sur la pratique, dispensés par <strong>Edo Gerard TOUDJI</strong> à Lomé (Togo) ou à distance.
             </p>
         </div>
     </header>
 
-    <!-- CATALOGUE DES FORMATIONS (8 PILIERS) -->
+    <!-- SECTION DES FORMATIONS -->
     <section class="section">
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 40px; color: #fff;">Catalogue des 8 Modules de Formation</h2>
             
-            <div class="grid-3" style="gap: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="grid-3" style="gap: 30px;">
                 
-                <!-- MODULE 1 : BUREAUTIQUE & PCTAP -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                <!-- MODULE 1 : INFORMATIQUE BUREAUTIQUE -->
+                <div class="formation-card">
                     <div>
-                        <div style="font-size: 2.2rem; color: var(--primary-color); margin-bottom: 15px;"><i class="fas fa-keyboard"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">1. Bureautique &amp; Saisie PCTAP</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Frappe rapide à dix doigts sans regarder le clavier (Méthode PCTAP), maîtrise complète du Pack Office (Word, Excel, PowerPoint, Access) pour secrétariat et gestion.
-                        </p>
+                        <span class="formation-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border-color: rgba(139, 92, 246, 0.3);">Bureautique &amp; Secrétariat</span>
+                        <div class="formation-icon" style="color: #8b5cf6;"><i class="fas fa-keyboard"></i></div>
+                        <h3 class="formation-title">Informatique Bureautique</h3>
+                        <p class="formation-desc">Maîtrisez les outils essentiels du secrétariat et de l'administration d'entreprise pour produire des documents et rapports irréprochables.</p>
+                        <ul class="formation-highlights">
+                            <li><i class="fas fa-check"></i> Microsoft Word (Saisie, mise en page avancée, PCTAP)</li>
+                            <li><i class="fas fa-check"></i> Microsoft Excel (Formules, tableaux croisés TCD)</li>
+                            <li><i class="fas fa-check"></i> Microsoft PowerPoint (Présentations animées)</li>
+                        </ul>
                     </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Informatique%20Bureautique*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                    </a>
                 </div>
 
-                <!-- MODULE 2 : ÉLECTRICITÉ BÂTIMENT -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                <!-- MODULE 2 : MAINTENANCE INFORMATIQUE ET RÉSEAUX -->
+                <div class="formation-card">
                     <div>
-                        <div style="font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 15px;"><i class="fas fa-bolt"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">2. Électricité Bâtiment</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Normes de sécurité, lecture de schémas électriques, câblage résidentiel et industriel, pose de tableaux de distribution et luminaires.
-                        </p>
+                        <span class="formation-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border-color: rgba(59, 130, 246, 0.3);">Systèmes &amp; Réseaux</span>
+                        <div class="formation-icon" style="color: #3b82f6;"><i class="fas fa-network-wired"></i></div>
+                        <h3 class="formation-title">Maintenance Informatique &amp; Réseaux</h3>
+                        <p class="formation-desc">Devenez un technicien autonome capable d'installer, configurer et sécuriser des parcs informatiques et des architectures réseaux.</p>
+                        <ul class="formation-highlights">
+                            <li><i class="fas fa-check"></i> Diagnostic et optimisation de systèmes Windows</li>
+                            <li><i class="fas fa-check"></i> Câblage structuré LAN et prises RJ45</li>
+                            <li><i class="fas fa-check"></i> Configuration de routeurs, switchs &amp; Wi-Fi</li>
+                        </ul>
                     </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Maintenance%20Informatique%20&%20Réseaux*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                    </a>
                 </div>
 
-                <!-- MODULE 3 : ÉLECTRONIQUE & CARTES / HACHEURS -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                <!-- MODULE 3 : RÉPARATION DE PC ET TÉLÉPHONES ANDROID -->
+                <div class="formation-card">
                     <div>
-                        <div style="font-size: 2.2rem; color: #f59e0b; margin-bottom: 15px;"><i class="fas fa-microchip"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">3. Électronique &amp; Réparation de Cartes</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Électronique analogique/numérique, utilisation des instruments de mesure, diagnostic au composant et étude des convertisseurs DC-DC (hacheurs).
-                        </p>
+                        <span class="formation-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Hardware &amp; Mobile</span>
+                        <div class="formation-icon" style="color: #10b981;"><i class="fas fa-tools"></i></div>
+                        <h3 class="formation-title">Réparation de PC &amp; Téléphones Android</h3>
+                        <p class="formation-desc">Apprenez le dépannage matériel sur PC fixes/portables et la maintenance logicielle avancée sur smartphones Android.</p>
+                        <ul class="formation-highlights">
+                            <li><i class="fas fa-check"></i> Changement de composants PC (RAM, SSD, écrans)</li>
+                            <li><i class="fas fa-check"></i> Éradication de malwares et ransomwares</li>
+                            <li><i class="fas fa-check"></i> Déblocage &amp; outils ADB sur Android</li>
+                        </ul>
                     </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Réparation%20de%20PC%20&%20Téléphones%20Android*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                    </a>
                 </div>
 
-                <!-- MODULE 4 : MAINTENANCE PC, ANDROID & IOS -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                <!-- MODULE 4 : PROGRAMMATION INFORMATIQUE -->
+                <div class="formation-card">
                     <div>
-                        <div style="font-size: 2.2rem; color: #10b981; margin-bottom: 15px;"><i class="fas fa-tools"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">4. Réparation PC, Android &amp; iOS</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Maintenance matérielle/logicielle PC, micro-soudure sur cartes mères de smartphones Android et iOS, utilisation des outils ADB et déblocage.
-                        </p>
+                        <span class="formation-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">Algorithmes &amp; Code</span>
+                        <div class="formation-icon" style="color: #f59e0b;"><i class="fas fa-code"></i></div>
+                        <h3 class="formation-title">Programmation Informatique</h3>
+                        <p class="formation-desc">Acquérez les bases fondamentales de l'algorithmique, de la logique de programmation et de la manipulation des bases de données SQL.</p>
+                        <ul class="formation-highlights">
+                            <li><i class="fas fa-check"></i> Fondements de l'algorithmique &amp; structure de données</li>
+                            <li><i class="fas fa-check"></i> Apprentissage du langage Python</li>
+                            <li><i class="fas fa-check"></i> Modélisation de bases de données (SQLite, MySQL)</li>
+                        </ul>
                     </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Programmation%20Informatique*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                    </a>
                 </div>
 
-                <!-- MODULE 5 : CAMÉRAS DE SURVEILLANCE CCTV -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                <!-- MODULE 5 : DÉVELOPPEMENT D'APPLICATIONS (DESKTOP, MOBILE & WEB) -->
+                <div class="formation-card">
                     <div>
-                        <div style="font-size: 2.2rem; color: var(--accent-color); margin-bottom: 15px;"><i class="fas fa-video"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">5. Vidéosurveillance CCTV</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Installation, câblage, configuration des enregistreurs DVR/NVR, caméras IP/AHD et paramétrage de l'accès distant sur mobile.
-                        </p>
+                        <span class="formation-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border-color: rgba(236, 72, 153, 0.3);">Solutions Métiers</span>
+                        <div class="formation-icon" style="color: #ec4899;"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="formation-title">Développement d'Applications</h3>
+                        <p class="formation-desc">Concevez des logiciels complets de A à Z : applications de bureau Windows avec PySide6, apps mobiles Flutter et sites Web.</p>
+                        <ul class="formation-highlights">
+                            <li><i class="fas fa-check"></i> Logiciels de gestion Windows (PySide6 / Qt)</li>
+                            <li><i class="fas fa-check"></i> Applications mobiles Flutter / Dart (Android &amp; iOS)</li>
+                            <li><i class="fas fa-check"></i> Développement web moderne &amp; intégration d'IA</li>
+                        </ul>
                     </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Développement%20d'Applications*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
+                    </a>
                 </div>
 
-                <!-- MODULE 6 : ANTENNES PARABOLIQUES & TV -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 15px;"><i class="fas fa-satellite-dish"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">6. Antennes Paraboliques &amp; TV</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Techniques de pointage satellite, calcul d'azimut et élévation, pose d'antennes terrestres/paraboles et réglage de décodeurs numériques.
-                        </p>
-                    </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
-                </div>
-
-                <!-- MODULE 7 : RÉSEAUX & TÉLÉCOMS -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="font-size: 2.2rem; color: #8b5cf6; margin-bottom: 15px;"><i class="fas fa-network-wired"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">7. Réseaux Informatiques &amp; Télécoms</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Modèle OSI, adressage IP, sertissage, câblage structuré, configuration de routeurs, switchs et déploiement de réseaux Wi-Fi d'entreprise.
-                        </p>
-                    </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
-                </div>
-
-                <!-- MODULE 8 : DÉVELOPPEMENT LOGICIEL -->
-                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <div style="font-size: 2.2rem; color: #f43f5e; margin-bottom: 15px;"><i class="fas fa-laptop-code"></i></div>
-                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">8. Développement Logiciel & Programmation</h3>
-                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">
-                            Algorithmique, Python (PySide6 pour applications Desktop), Flutter pour applications mobiles et bases de données SQL.
-                        </p>
-                    </div>
-                    <a href="#preinscription" class="btn btn-primary" style="text-align: center; font-size: 0.9rem; padding: 10px;">S'inscrire à ce module</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULAIRE DE PRÉ-INSCRIPTION -->
-    <section id="preinscription" class="section" style="background: rgba(31, 41, 55, 0.4); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="container" style="max-width: 700px;">
-            <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 35px;">
-                <h2 style="color: #fff; text-align: center; margin-bottom: 10px; font-size: 1.6rem;"><i class="fab fa-whatsapp" style="color: #25D366;"></i> Pré-inscription en Ligne</h2>
-                <p style="color: #9ca3af; text-align: center; margin-bottom: 30px; font-size: 0.95rem;">
-                    Remplissez ce formulaire pour valider votre choix de formation. Vous serez redirigé vers WhatsApp pour finaliser votre inscription et obtenir vos accès.
-                </p>
-
-                <form id="trainingForm" style="display: flex; flex-direction: column; gap: 20px;">
-                    <div>
-                        <label style="color: #9ca3af; display: block; margin-bottom: 5px; font-size: 0.9rem;">Nom &amp; Prénom</label>
-                        <input type="text" id="studentName" required placeholder="Ex: Koffi Mensah" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: #111827; color: #fff; outline: none;">
-                    </div>
-
-                    <div>
-                        <label style="color: #9ca3af; display: block; margin-bottom: 5px; font-size: 0.9rem;">Numéro de Téléphone / WhatsApp</label>
-                        <input type="tel" id="studentPhone" required placeholder="Ex: +228 90 00 00 00" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: #111827; color: #fff; outline: none;">
-                    </div>
-
-                    <div>
-                        <label style="color: #9ca3af; display: block; margin-bottom: 5px; font-size: 0.9rem;">Module de Formation Souhaité</label>
-                        <select id="selectedModule" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: #111827; color: #fff; outline: none;">
-                            <option value="Bureautique & Saisie PCTAP">1. Bureautique & Saisie PCTAP</option>
-                            <option value="Électricité Bâtiment">2. Électricité Bâtiment</option>
-                            <option value="Électronique & Réparation de Cartes (Hacheurs)">3. Électronique & Réparation de Cartes (Hacheurs)</option>
-                            <option value="Maintenance PC, Android & iOS">4. Réparation PC, Android & iOS</option>
-                            <option value="Vidéosurveillance CCTV">5. Vidéosurveillance CCTV</option>
-                            <option value="Antennes Paraboliques & TV">6. Antennes Paraboliques & TV</option>
-                            <option value="Réseaux Informatiques & Télécoms">7. Réseaux Informatiques & Télécoms</option>
-                            <option value="Développement Logiciel & Programmation">8. Développement Logiciel & Programmation</option>
-                        </select>
-                    </div>
-
-                    <div>
-                        <label style="color: #9ca3af; display: block; margin-bottom: 5px; font-size: 0.9rem;">Format d'apprentissage préféré</label>
-                        <select id="learningFormat" style="width: 100%; padding: 12px; border-radius: 6px; border: 1px solid var(--border-color); background: #111827; color: #fff; outline: none;">
-                            <option value="En ligne (À distance)">En ligne (À distance - Visioconférence + PDF)</option>
-                            <option value="En présentiel (Lomé)">En présentiel (À Lomé)</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-whatsapp" style="width: 100%; padding: 12px; cursor: pointer; font-size: 1rem;">
-                        <i class="fab fa-whatsapp"></i> Envoyer ma demande sur WhatsApp
-                    </button>
-                </form>
             </div>
 
             <!-- WIDGET DE PARTAGE SOCIAL INTERACTIF -->
             <div class="share-widget-container">
                 <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;">
-                    <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez EGT TECHNOLOGIE
+                    <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez nos Formations
                 </h3>
                 <p style="color: #9ca3af; font-size: 0.95rem;">
-                    Partagez nos formations professionnelles avec vos proches sur les réseaux sociaux :
+                    Partagez nos modules de formation avec vos proches et collègues :
                 </p>
                 <div class="share-buttons-grid">
                     <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20formations%20professionnelles%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
@@ -258,7 +265,7 @@
                     <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
                         <i class="fab fa-tiktok"></i> TikTok
                     </a>
-                    <a href="mailto:?subject=Formations%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20formations%20professionnelles%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
+                    <a href="mailto:?subject=Formations%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20formations%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
                         <i class="fas fa-envelope"></i> E-mail
                     </a>
                     <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
@@ -266,6 +273,7 @@
                     </button>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -280,18 +288,6 @@
 
     <script src="js/main.js"></script>
     <script>
-        document.getElementById('trainingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('studentName').value;
-            const phone = document.getElementById('studentPhone').value;
-            const module = document.getElementById('selectedModule').value;
-            const format = document.getElementById('learningFormat').value;
-
-            const text = `Bonjour *EGT TECHNOLOGIE*,\n\nJe souhaite m'inscrire à une formation :\nNom : ${name}\nTéléphone : ${phone}\nModule : ${module}\nFormat : ${format}\n\nMerci de m'indiquer les modalités de règlement.`;
-            const encoded = encodeURIComponent(text);
-            window.open(`https://wa.me/22890322533?text=${encoded}`, '_blank');
-        });
-
         function copySiteLink() {
             const url = 'https://edogerard.github.io/egt-technologie-site/';
             navigator.clipboard.writeText(url).then(() => {
