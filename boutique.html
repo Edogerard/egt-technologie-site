@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique en Ligne — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Boutique e-commerce d'EGT TECHNOLOGIE à Lomé : Logiciels sous licence, matériel informatique, smartphones, caméras CCTV et équipements réseau.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .share-widget-container {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        .share-buttons-grid {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .btn-share {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            text-decoration: none;
+        }
+        .btn-share:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        .btn-share-wa { background-color: #25D366; }
+        .btn-share-fb { background-color: #1877F2; }
+        .btn-share-tt { background-color: #000000; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-share-email { background-color: #EA4335; }
+        .btn-share-copy { background-color: #4B5563; }
+        .product-category-title {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 40px 0 20px 0;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand-logo">
+                <span class="logo-icon">EGT</span>
+                <div class="brand-text">
+                    <span class="brand-name">EGT TECHNOLOGIE</span>
+                    <span class="brand-tagline">La technologie au service de votre réussite</span>
+                </div>
+            </a>
+            <div class="mobile-toggle" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services &amp; Devis</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="boutique.html" class="active">Boutique</a></li>
+                <li><a href="espace-etudiants.html">Espace Étudiants</a></li>
+                <li><a href="portfolio.html">Réalisations</a></li>
+                <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HEADER PAGE -->
+    <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <h1 style="font-size: 2.3rem; margin-bottom: 15px; color: #fff;"><i class="fas fa-store"></i> Boutique en Ligne EGT</h1>
+            <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1.05rem;">
+                Commandez nos logiciels sous licence, notre matériel informatique et nos équipements de sécurité testés et garantis par <strong>EGT TECHNOLOGIE</strong> à Lomé.
+            </p>
+        </div>
+    </header>
+
+    <!-- CATALOGUE E-COMMERCE (4 CATÉGORIES) -->
+    <section class="section">
+        <div class="container">
+            
+            <!-- CATÉGORIE 1 : LOGICIELS & LICENCES MÉTIER EGT -->
+            <h2 class="product-category-title"><i class="fas fa-laptop-code" style="color: var(--primary-color);"></i> 1. Logiciels &amp; Licences Métier (Édités par EGT)</h2>
+            <div class="grid-3" style="gap: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">EGT Shop Manager</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Logiciel Windows de gestion de magasin : suivi des ventes, stock, coûts d'approvisionnement et calcul automatique des marges bénéficiaires.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20une%20licence%20pour%20le%20logiciel%20*EGT%20Shop%20Manager*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Bar-Restaurant Management EGT</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Système complet de gestion pour bars, maquis et restaurants sous Windows (authentification sécurisée SHA-256, gestion des tables et commandes).</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20le%20logiciel%20*Bar-Restaurant%20Management%20EGT*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Android Software Doctor / QuickUnlocker</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Suite logicielle professionnelle pour techniciens de réparation mobile (outils ADB, calcul NCK, patchs NVRAM et extraction OCR d'IMEI).</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20la%20licence%20*Android%20Software%20Doctor%20(QuickUnlocker)*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- CATÉGORIE 2 : MATÉRIEL INFORMATIQUE, SMARTPHONES & ACCESSOIRES -->
+            <h2 class="product-category-title"><i class="fas fa-laptop" style="color: #10b981;"></i> 2. Matériel Informatique, Smartphones &amp; Accessoires</h2>
+            <div class="grid-3" style="gap: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">PC Portables &amp; Fixes Professionnels</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Ordinateurs portables et unités centrales testés, préparés et garantis pour la bureautique, le développement ou l'usage intensif.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20avoir%20les%20disponibilités%20et%20prix%20pour%20les%20*PC%20Portables/Fixes*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Demander la disponibilité
+                    </a>
+                </div>
+
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Smartphones Android &amp; iOS (Garantis)</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Téléphones neufs et reconditionnés de qualité supérieure, vérifiés sur le plan technique et logiciel par nos soins.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20connaître%20les%20modèles%20de%20*Smartphones*%20actuellement%20disponibles." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Demander la disponibilité
+                    </a>
+                </div>
+
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Disques SSD, Stockage &amp; Accessoires</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Disques SSD ultra-rapides, chargeurs d'origine, câbles renforcés et accessoires divers pour ordinateurs et téléphones.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20des%20*accessoires%20et%20disques%20SSD*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- CATÉGORIE 3 : ÉQUIPEMENTS DE VIDÉOSURVEILLANCE (CCTV) -->
+            <h2 class="product-category-title"><i class="fas fa-video" style="color: #f59e0b;"></i> 3. Équipements de Vidéosurveillance &amp; Sécurité</h2>
+            <div class="grid-3" style="gap: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Kits Caméras CCTV (IP &amp; HD)</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Caméras de surveillance haute définition, enregistreurs DVR/NVR et kits complets pour sécuriser domiciles et entreprises.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20un%20*kit%20de%20caméras%20de%20surveillance*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Disques Durs Dédiés Vidéosurveillance</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Disques de stockage robustes et endurants conçus pour fonctionner 24h/24 et 7j/7 dans les enregistreurs de sécurité.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20un%20*disque%20dur%20pour%20vidéosurveillance*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- CATÉGORIE 4 : MATÉRIEL RÉSEAU, TÉLÉCOMS & ACCESSOIRES -->
+            <h2 class="product-category-title"><i class="fas fa-network-wired" style="color: #8b5cf6;"></i> 4. Matériel Réseau, Télécoms &amp; Accessoires</h2>
+            <div class="grid-3" style="gap: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Routeurs Wi-Fi &amp; Switchs Ethernet</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Routeurs haute portée, switchs réseau et points d'accès professionnels pour une connexion stable et performante.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20un%20*routeur%20Wi-Fi%20ou%20switch*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+                <div style="background: #1f2937; border: 1px solid var(--border-color); border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="color: #fff; font-size: 1.2rem; margin-bottom: 10px;">Paraboles, Têtes LNB &amp; Câblage Réseau</h3>
+                        <p style="color: #9ca3af; font-size: 0.9rem; margin-bottom: 15px;">Antennes paraboliques, têtes LNB, bobines de câble réseau RJ45 et accessoires de pointage satellite.</p>
+                    </div>
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20du%20*matériel%20parabole%20ou%20câblage%20réseau*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                        <i class="fab fa-whatsapp"></i> Commander via WhatsApp
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- WIDGET DE PARTAGE SOCIAL INTERACTIF -->
+            <div class="share-widget-container">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;">
+                    <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez EGT TECHNOLOGIE
+                </h3>
+                <p style="color: #9ca3af; font-size: 0.95rem;">
+                    Partagez notre boutique en ligne avec votre réseau :
+                </p>
+                <div class="share-buttons-grid">
+                    <a href="https://api.whatsapp.com/send?text=Découvrez%20la%20boutique%20en%20ligne%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                    <a href="mailto:?subject=Boutique%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20la%20boutique%20en%20ligne%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
+                        <i class="fas fa-link"></i> <span id="copyLinkBtnText">Copier le lien</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function copySiteLink() {
+            const url = 'https://edogerard.github.io/egt-technologie-site/';
+            navigator.clipboard.writeText(url).then(() => {
+                const btnText = document.getElementById('copyLinkBtnText');
+                btnText.textContent = 'Lien copié !';
+                setTimeout(() => {
+                    btnText.textContent = 'Copier le lien';
+                }, 3000);
+            });
+        }
+    </script>
+</body>
+</html>

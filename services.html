@@ -3,118 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services &amp; Devis — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Catalogue complet des services informatiques d'EGT TECHNOLOGIE : Développement d'applications, réseaux, maintenance et IA au Togo.">
+    <title>Prestations de Services — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Catalogue officiel des prestations de services d'EGT TECHNOLOGIE à Lomé. Demandez votre devis personnalisé.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- FontAwesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .filter-bar {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-bottom: 35px;
-        }
-        .filter-btn {
-            padding: 9px 20px;
-            border-radius: 25px;
+        .share-widget-container {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #1f2937;
-            color: #9ca3af;
-            cursor: pointer;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary-color);
-            color: #fff;
-            border-color: var(--primary-color);
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-        }
-        .search-box {
-            max-width: 550px;
-            margin: 0 auto 30px;
-            position: relative;
-        }
-        .search-box input {
-            width: 100%;
-            padding: 14px 20px 14px 48px;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #1f2937;
-            color: #fff;
-            font-size: 1rem;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-        .search-box input:focus {
-            border-color: var(--primary-color);
-        }
-        .search-box i {
-            position: absolute;
-            left: 18px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #6b7280;
-            font-size: 1.1rem;
-        }
-        .service-card {
-            background: #1f2937;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
-        .service-card-header {
+        .share-buttons-grid {
             display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        .service-card-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(37, 99, 235, 0.15);
-            color: var(--primary-color);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
+            gap: 12px;
             justify-content: center;
-            font-size: 1.4rem;
-            flex-shrink: 0;
-            border: 1px solid rgba(37, 99, 235, 0.2);
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
-        .quote-panel {
-            position: sticky;
-            bottom: 25px;
-            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-            border: 1px solid var(--primary-color);
-            color: #fff;
-            padding: 20px 30px;
-            border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: space-between;
+        .btn-share {
+            display: inline-flex;
             align-items: center;
-            margin-top: 40px;
-            z-index: 99;
-            backdrop-filter: blur(8px);
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+            text-decoration: none;
         }
+        .btn-share:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        .btn-share-wa { background-color: #25D366; }
+        .btn-share-fb { background-color: #1877F2; }
+        .btn-share-tt { background-color: #000000; border: 1px solid rgba(255,255,255,0.2); }
+        .btn-share-email { background-color: #EA4335; }
+        .btn-share-copy { background-color: #4B5563; }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAV BAR -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="brand-logo">
@@ -124,64 +63,187 @@
                     <span class="brand-tagline">La technologie au service de votre réussite</span>
                 </div>
             </a>
+            
             <div class="mobile-toggle" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </div>
+
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html" class="active">Services &amp; Devis</a></li>
+                <li><a href="services.html" class="active">Services & Devis</a></li>
                 <li><a href="formations.html">Formations</a></li>
-                <li><a href="espace-etudiants.html">Espace Étudiants</a></li>
-                <li><a href="portfolio.html">Réalisations</a></li>
+                <li><a href="boutique.html">Boutique</a></li>
                 <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HEADER PAGE -->
-    <section class="section" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: #fff; padding: 60px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-        <div class="container" style="text-align: center;">
-            <h1 style="font-size: 2.3rem; margin-bottom: 15px;"><i class="fas fa-cogs" style="color: var(--primary-color);"></i> Catalogue de Services &amp; Demande de Devis</h1>
-            <p style="color: #9ca3af; max-width: 720px; margin: 0 auto; font-size: 1.05rem;">
-                Explorez nos 17 domaines de compétences technologiques. Cochez les prestations souhaitées pour obtenir un devis personnalisé et échanger directement avec nos experts.
+    <!-- HEADER SECTION -->
+    <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <h1 style="font-size: 2.2rem; margin-bottom: 15px; color: #fff;">Prestations de Services Professionnels</h1>
+            <p style="color: #9ca3af; max-width: 700px; margin: 0 auto; font-size: 1.05rem;">
+                Découvrez nos 8 grands domaines d'intervention technique à Lomé. Cochez les prestations souhaitées pour composer votre devis personnalisé.
             </p>
         </div>
-    </section>
+    </header>
 
-    <!-- SECTION CATALOGUE INTERACTIF -->
+    <!-- SERVICES CONTENT & PANIER DEVIS -->
     <section class="section">
         <div class="container">
-            <!-- Barre de Recherche & Filtres -->
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Rechercher un service (ex: logiciel, réseau, IA, maintenance)...">
+            
+            <!-- Barre de recherche et filtres -->
+            <div style="margin-bottom: 30px;">
+                <input type="text" id="serviceSearch" placeholder="Rechercher une prestation (ex: électricité, caméras, logiciels...)" style="width: 100%; padding: 14px 20px; border-radius: 8px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; font-size: 1rem; outline: none;">
             </div>
 
-            <div class="filter-bar">
-                <button class="filter-btn active" data-filter="all">Tous les services</button>
-                <button class="filter-btn" data-filter="dev">Développement Logiciel</button>
-                <button class="filter-btn" data-filter="pme">Gestion d'Entreprises</button>
-                <button class="filter-btn" data-filter="reseau">Réseaux &amp; Telecoms</button>
-                <button class="filter-btn" data-filter="ia">IA &amp; Automatisation</button>
-                <button class="filter-btn" data-filter="maintenance">Maintenance PC/Android</button>
-                <button class="filter-btn" data-filter="special">Écoles, Hôpitaux &amp; Mairies</button>
+            <div class="filter-buttons" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
+                <button class="filter-btn active" data-filter="all" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--primary-color); color: #fff; cursor: pointer;">Tous les services</button>
+                <button class="filter-btn" data-filter="bureau" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Bureautique & Secrétariat</button>
+                <button class="filter-btn" data-filter="electrique" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Électricité & Électronique</button>
+                <button class="filter-btn" data-filter="maintenance" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Maintenance & Mobile</button>
+                <button class="filter-btn" data-filter="securite" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">CCTV & Antennes TV</button>
+                <button class="filter-btn" data-filter="reseau" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Réseaux & Télécoms</button>
+                <button class="filter-btn" data-filter="dev" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Développement Logiciel</button>
             </div>
 
-            <!-- Grille dynamique des services -->
+            <!-- Grille des 8 Piliers de Services -->
             <div class="grid-3" id="servicesGrid">
-                <!-- Généré dynamiquement par js/services.js -->
+                
+                <!-- 1. Bureautique & Secrétariat -->
+                <div class="card service-card" data-category="bureau">
+                    <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="card-title">1. Bureautique, Secrétariat & Saisie</h3>
+                    <p class="card-text">Saisie rapide PCTAP, traitement de documents professionnels, mise en page de rapports/mémoires et conception de bases de données Access & Excel.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Bureautique, Secrétariat & Saisie" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 2. Électricité Bâtiment -->
+                <div class="card service-card" data-category="electrique">
+                    <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                    <h3 class="card-title">2. Électricité Bâtiment & Installations</h3>
+                    <p class="card-text">Câblage électrique résidentiel et professionnel, pose de tableaux de distribution, disjoncteurs, luminaires, prises et sécurisation des installations.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Électricité Bâtiment & Installations" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 3. Électronique & Cartes -->
+                <div class="card service-card" data-category="electrique">
+                    <div class="card-icon"><i class="fas fa-microchip"></i></div>
+                    <h3 class="card-title">3. Électronique & Réparation de Cartes</h3>
+                    <p class="card-text">Diagnostic au composant de cartes électroniques, alimentations stabilisées, cartes mères industrielles et étude / dépannage de convertisseurs DC-DC (hacheurs).</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Électronique & Réparation de Cartes" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 4. Maintenance PC & Mobile -->
+                <div class="card service-card" data-category="maintenance">
+                    <div class="card-icon"><i class="fas fa-tools"></i></div>
+                    <h3 class="card-title">4. Maintenance PC, Smartphones Android & iOS</h3>
+                    <p class="card-text">Réparation matérielle et logicielle de PC portables/fixes, micro-soudure sur cartes mères de smartphones, déssoxydation, décodage et maintenance via protocoles ADB.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Maintenance PC, Smartphones Android & iOS" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 5. Vidéosurveillance CCTV -->
+                <div class="card service-card" data-category="securite">
+                    <div class="card-icon"><i class="fas fa-video"></i></div>
+                    <h3 class="card-title">5. Vidéosurveillance CCTV & Sécurité</h3>
+                    <p class="card-text">Étude de site, installation de caméras IP ou analogiques HD, configuration d'enregistreurs DVR/NVR et paramétrage du visionnage à distance sur smartphone.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Vidéosurveillance CCTV & Sécurité" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 6. Antennes Paraboliques & TV -->
+                <div class="card service-card" data-category="securite">
+                    <div class="card-icon"><i class="fas fa-satellite-dish"></i></div>
+                    <h3 class="card-title">6. Antennes Paraboliques & Systèmes TV</h3>
+                    <p class="card-text">Pose, orientation et pointage précis de paraboles satellites (Canal+, TNT), installation de têtes LNB et optimisation de la distribution du signal TV.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Antennes Paraboliques & Systèmes TV" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 7. Réseaux & Télécoms -->
+                <div class="card service-card" data-category="reseau">
+                    <div class="card-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3 class="card-title">7. Réseaux Informatiques & Télécoms</h3>
+                    <p class="card-text">Conception et câblage structuré (Ethernet/Fibre), installation de routeurs, switchs, points d'accès Wi-Fi, baies de brassage et sécurisation des réseaux d'entreprise.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Réseaux Informatiques & Télécoms" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 8. Développement Logiciel -->
+                <div class="card service-card" data-category="dev">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="card-title">8. Développement Logiciel & Programmation</h3>
+                    <p class="card-text">Création de logiciels de gestion sur mesure (Windows/PySide6, gestion de commerces, pharmacies, hôtels), applications mobiles Flutter et sites web dynamiques.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Développement Logiciel & Programmation" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
             </div>
 
-            <!-- Panneau de Sélection & Envoi de Devis -->
-            <div class="quote-panel" id="quotePanel" style="display: none;">
-                <div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: #fff;"><i class="fas fa-shopping-cart" style="color: var(--accent-color);"></i> <span id="selectedCount">0</span> service(s) sélectionné(s)</h3>
-                    <p style="font-size: 0.88rem; color: #9ca3af; margin: 0;">Cliquez sur le bouton ci-contre pour transmettre votre demande de devis directement sur WhatsApp.</p>
-                </div>
-                <button class="btn btn-whatsapp" id="sendQuoteBtn" style="padding: 12px 25px; font-size: 0.95rem;">
-                    <i class="fab fa-whatsapp"></i> Demander un Devis WhatsApp
+            <!-- Panier de devis -->
+            <div id="quoteBox" style="margin-top: 50px; background: #1f2937; border: 1px solid var(--accent-color); border-radius: 12px; padding: 30px; text-align: center;">
+                <h3 style="margin-bottom: 10px; color: #fff;"><i class="fas fa-shopping-cart"></i> Votre Devis Personnalisé</h3>
+                <p id="selectedCount" style="color: #9ca3af; margin-bottom: 20px;">Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.</p>
+                <button id="sendQuoteBtn" class="btn btn-whatsapp" style="display: none; margin: 0 auto; font-size: 1.1rem; padding: 12px 30px;">
+                    <i class="fab fa-whatsapp"></i> Envoyer ma demande de devis sur WhatsApp
                 </button>
             </div>
+
+            <!-- WIDGET DE PARTAGE SOCIAL INTERACTIF -->
+            <div class="share-widget-container">
+                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;">
+                    <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez EGT TECHNOLOGIE
+                </h3>
+                <p style="color: #9ca3af; font-size: 0.95rem;">
+                    Partagez nos services et nos formations avec votre réseau sur vos réseaux sociaux préférés :
+                </p>
+                <div class="share-buttons-grid">
+                    <a href="https://api.whatsapp.com/send?text=Découvrez%20EGT%20TECHNOLOGIE%20à%20Lomé%20-%20Prestations%20de%20services%20techniques%20et%20formations%20professionnelles%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
+                        <i class="fab fa-tiktok"></i> TikTok
+                    </a>
+                    <a href="mailto:?subject=Découvrez%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20services%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
+                        <i class="fas fa-envelope"></i> E-mail
+                    </a>
+                    <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
+                        <i class="fas fa-link"></i> <span id="copyLinkBtnText">Copier le lien</span>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -194,7 +256,19 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script src="js/services.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        function copySiteLink() {
+            const url = 'https://edogerard.github.io/egt-technologie-site/';
+            navigator.clipboard.writeText(url).then(() => {
+                const btnText = document.getElementById('copyLinkBtnText');
+                btnText.textContent = 'Lien copié !';
+                setTimeout(() => {
+                    btnText.textContent = 'Copier le lien';
+                }, 3000);
+            });
+        }
+    </script>
 </body>
 </html>
