@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services & Devis — EGT TECHNOLOGIE</title>
+    <title>Services &amp; Devis — EGT TECHNOLOGIE</title>
     <meta name="description" content="Catalogue complet des services informatiques d'EGT TECHNOLOGIE : Développement d'applications, réseaux, maintenance et IA au Togo.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -11,53 +11,69 @@
     <style>
         .filter-bar {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         .filter-btn {
-            padding: 8px 18px;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            background: #fff;
-            color: var(--text-dark);
+            padding: 9px 20px;
+            border-radius: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #1f2937;
+            color: #9ca3af;
             cursor: pointer;
             font-weight: 500;
-            transition: var(--transition);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
         .filter-btn.active, .filter-btn:hover {
             background: var(--primary-color);
             color: #fff;
             border-color: var(--primary-color);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
         .search-box {
-            max-width: 500px;
+            max-width: 550px;
             margin: 0 auto 30px;
             position: relative;
         }
         .search-box input {
             width: 100%;
-            padding: 12px 20px 12px 45px;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border-color);
+            padding: 14px 20px 14px 48px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #1f2937;
+            color: #fff;
             font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .search-box input:focus {
+            border-color: var(--primary-color);
         }
         .search-box i {
             position: absolute;
-            left: 15px;
+            left: 18px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-muted);
+            color: #6b7280;
+            font-size: 1.1rem;
         }
         .service-card {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
+            background: #1f2937;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
             padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         .service-card-header {
             display: flex;
@@ -68,27 +84,31 @@
         .service-card-icon {
             width: 50px;
             height: 50px;
-            background: rgba(13, 110, 253, 0.1);
+            background: rgba(37, 99, 235, 0.15);
             color: var(--primary-color);
-            border-radius: var(--radius-sm);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(37, 99, 235, 0.2);
         }
         .quote-panel {
             position: sticky;
-            bottom: 20px;
-            background: var(--secondary-color);
+            bottom: 25px;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            border: 1px solid var(--primary-color);
             color: #fff;
             padding: 20px 30px;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-lg);
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-top: 40px;
             z-index: 99;
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
@@ -111,6 +131,7 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html" class="active">Services &amp; Devis</a></li>
                 <li><a href="formations.html">Formations</a></li>
+                <li><a href="espace-etudiants.html">Espace Étudiants</a></li>
                 <li><a href="portfolio.html">Réalisations</a></li>
                 <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
             </ul>
@@ -118,11 +139,11 @@
     </nav>
 
     <!-- HEADER PAGE -->
-    <section class="section" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: #fff; padding: 60px 0;">
+    <section class="section" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: #fff; padding: 60px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
         <div class="container" style="text-align: center;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Catalogue de Services &amp; Demande de Devis</h1>
-            <p style="color: #9ca3af; max-width: 700px; margin: 0 auto;">
-                Explorez nos 17 domaines de compétences technologiques. Cochez les prestations souhaitées pour obtenir un devis personnalisé ou une prise de contact directe.
+            <h1 style="font-size: 2.3rem; margin-bottom: 15px;"><i class="fas fa-cogs" style="color: var(--primary-color);"></i> Catalogue de Services &amp; Demande de Devis</h1>
+            <p style="color: #9ca3af; max-width: 720px; margin: 0 auto; font-size: 1.05rem;">
+                Explorez nos 17 domaines de compétences technologiques. Cochez les prestations souhaitées pour obtenir un devis personnalisé et échanger directement avec nos experts.
             </p>
         </div>
     </section>
@@ -148,16 +169,16 @@
 
             <!-- Grille dynamique des services -->
             <div class="grid-3" id="servicesGrid">
-                <!-- Généré dynamiquement par JS -->
+                <!-- Généré dynamiquement par js/services.js -->
             </div>
 
             <!-- Panneau de Sélection & Envoi de Devis -->
             <div class="quote-panel" id="quotePanel" style="display: none;">
                 <div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 5px;"><span id="selectedCount">0</span> service(s) sélectionné(s)</h3>
-                    <p style="font-size: 0.85rem; color: #9ca3af;">Cliquez sur le bouton pour envoyer votre sélection directement sur WhatsApp.</p>
+                    <h3 style="font-size: 1.2rem; margin-bottom: 5px; color: #fff;"><i class="fas fa-shopping-cart" style="color: var(--accent-color);"></i> <span id="selectedCount">0</span> service(s) sélectionné(s)</h3>
+                    <p style="font-size: 0.88rem; color: #9ca3af; margin: 0;">Cliquez sur le bouton ci-contre pour transmettre votre demande de devis directement sur WhatsApp.</p>
                 </div>
-                <button class="btn btn-whatsapp" id="sendQuoteBtn">
+                <button class="btn btn-whatsapp" id="sendQuoteBtn" style="padding: 12px 25px; font-size: 0.95rem;">
                     <i class="fab fa-whatsapp"></i> Demander un Devis WhatsApp
                 </button>
             </div>
@@ -167,8 +188,8 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : TOUDJI Edo Gérard.</p>
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI.</p>
             </div>
         </div>
     </footer>
