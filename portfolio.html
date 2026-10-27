@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réalisations & Portfolio — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Découvrez les logiciels de gestion, applications Android, suites de réparation et outils IA développés par EGT TECHNOLOGIE.">
+    <title>Réalisations &amp; Portfolio — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Découvrez les logiciels de gestion, applications Android, solutions métiers et projets de cybersécurité développés par EGT TECHNOLOGIE.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,6 +28,7 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services &amp; Devis</a></li>
                 <li><a href="formations.html">Formations</a></li>
+                <li><a href="espace-etudiants.html">Espace Étudiants</a></li>
                 <li><a href="portfolio.html" class="active">Réalisations</a></li>
                 <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
             </ul>
@@ -35,11 +36,14 @@
     </nav>
 
     <!-- HEADER PAGE -->
-    <section class="section" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: #fff; padding: 60px 0;">
+    <section class="section" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: #fff; padding: 70px 0; border-bottom: 1px solid var(--border-color);">
         <div class="container" style="text-align: center;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 15px;">Nos Réalisations &amp; Logiciels Phares</h1>
-            <p style="color: #9ca3af; max-width: 700px; margin: 0 auto;">
-                Un aperçu de nos solutions logicielles professionnelles développées avec des technologies de pointe (Python, PySide6, SQLite, Flutter, IA).
+            <span style="background: rgba(37, 99, 235, 0.15); color: #60a5fa; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37, 99, 235, 0.3); display: inline-block; margin-bottom: 15px;">
+                <i class="fas fa-laptop-code"></i> Nos Projets &amp; Innovations
+            </span>
+            <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 15px;">Nos Réalisations &amp; Logiciels Phares</h1>
+            <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
+                Un aperçu de nos solutions logicielles professionnelles, applications mobiles, plateformes de gestion et formations techniques déployées par <strong>Edo Gerard TOUDJI</strong>.
             </p>
         </div>
     </section>
@@ -47,48 +51,80 @@
     <!-- SECTION PORTFOLIO -->
     <section class="section">
         <div class="container">
-            <div class="grid-3">
+            <div class="grid-3" style="gap: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                
+                <!-- 1. BAR RESTAURANT MANAGER -->
                 <div class="card" style="border-top: 4px solid var(--primary-color);">
-                    <div style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px;"><i class="fas fa-store"></i></div>
-                    <h3 class="card-title">EGT Shop Manager</h3>
-                    <p style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-bottom: 10px;">Desktop Windows • Python / PySide6 / SQLite</p>
-                    <p class="card-text">Application de gestion de commerce pour le suivi multi-articles des ventes, des coûts d'approvisionnement, du stock et des marges bénéficiaires en temps réel.</p>
+                    <div style="font-size: 2.3rem; color: var(--primary-color); margin-bottom: 15px;"><i class="fas fa-cocktail"></i></div>
+                    <h3 class="card-title">Bar-Restaurant Management EGT</h3>
+                    <p style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-bottom: 10px;">Desktop Windows • Gestion &amp; Ventes</p>
+                    <p class="card-text">Application complète de gestion de bar et restaurant : suivi des tables, prise de commandes rapide, encaissement, gestion des stocks de boissons et éditions de reçus.</p>
                 </div>
 
-                <div class="card" style="border-top: 4px solid var(--accent-color);">
-                    <div style="font-size: 2.5rem; color: var(--accent-color); margin-bottom: 15px;"><i class="fas fa-utensils"></i></div>
-                    <h3 class="card-title">Restaurant App Manager</h3>
-                    <p style="font-size: 0.85rem; color: var(--accent-color); font-weight: 600; margin-bottom: 10px;">Desktop Windows • SQLite + SHA-256 Auth</p>
-                    <p class="card-text">Système de gestion de restaurant complet : authentification sécurisée par hachage, gestion des catégories, catalogue de produits, tables et traitement des commandes.</p>
-                </div>
-
+                <!-- 2. CHURCH MANAGER APP -->
                 <div class="card" style="border-top: 4px solid var(--accent-gold);">
-                    <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 15px;"><i class="fas fa-mobile-alt"></i></div>
+                    <div style="font-size: 2.3rem; color: var(--accent-gold); margin-bottom: 15px;"><i class="fas fa-church"></i></div>
+                    <h3 class="card-title">Church Manager App EGT</h3>
+                    <p style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 10px;">Solution Administrative &amp; Communautaire</p>
+                    <p class="card-text">Plateforme dédiée à la gestion des communautés religieuses : suivi des membres, gestion financière, contributions, départements et organisation des activités.</p>
+                </div>
+
+                <!-- 3. PHARMACY MANAGER -->
+                <div class="card" style="border-top: 4px solid #10b981;">
+                    <div style="font-size: 2.3rem; color: #10b981; margin-bottom: 15px;"><i class="fas fa-pills"></i></div>
+                    <h3 class="card-title">Pharmacy Management EGT</h3>
+                    <p style="font-size: 0.85rem; color: #10b981; font-weight: 600; margin-bottom: 10px;">Desktop Windows • Stock &amp; Ordonnances</p>
+                    <p class="card-text">Logiciel spécialisé pour officines et pharmacies : gestion rigoureuse des stocks de médicaments, alertes de péremption, ventes au comptoir et suivi des prescriptions.</p>
+                </div>
+
+                <!-- 4. SECURITY GUARD ANDROID -->
+                <div class="card" style="border-top: 4px solid #38bdf8;">
+                    <div style="font-size: 2.3rem; color: #38bdf8; margin-bottom: 15px;"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="card-title">Security Guard Android App</h3>
+                    <p style="font-size: 0.85rem; color: #38bdf8; font-weight: 600; margin-bottom: 10px;">Application Mobile Android • Sécurité</p>
+                    <p class="card-text">Application mobile de sécurité et d'assistance intégrant des protocoles de contrôle, la gestion des rondes et des outils de communication rapide pour la surveillance.</p>
+                </div>
+
+                <!-- 5. PROJET EN COURS : CYBERSECURITE PC -->
+                <div class="card" style="border-top: 4px solid #f43f5e;">
+                    <div style="font-size: 2.3rem; color: #f43f5e; margin-bottom: 15px;"><i class="fas fa-user-secret"></i></div>
+                    <h3 class="card-title">PC Cyber Defense Suite <span style="font-size: 0.75rem; background: rgba(244,63,94,0.15); color: #f43f5e; padding: 3px 8px; border-radius: 10px; vertical-align: middle;">En Développement</span></h3>
+                    <p style="font-size: 0.85rem; color: #f43f5e; font-weight: 600; margin-bottom: 10px;">Logiciel de Cybersécurité • Protection PC</p>
+                    <p class="card-text">Solution avancée en cours de développement pour contrer les cyberattaques, les ransommages (type STOP/Djvu) et sécuriser les postes informatiques professionnels.</p>
+                </div>
+
+                <!-- 6. EGT SHOP MANAGER -->
+                <div class="card" style="border-top: 4px solid #6366f1;">
+                    <div style="font-size: 2.3rem; color: #6366f1; margin-bottom: 15px;"><i class="fas fa-store"></i></div>
+                    <h3 class="card-title">EGT Shop Manager</h3>
+                    <p style="font-size: 0.85rem; color: #6366f1; font-weight: 600; margin-bottom: 10px;">Desktop Windows • Python / PySide6 / SQLite</p>
+                    <p class="card-text">Application de gestion de commerce pour le suivi multi-articles des ventes, des coûts d'approvisionnement, du stock et des marges bénéficiaires.</p>
+                </div>
+
+                <!-- 7. ANDROID SOFTWARE DOCTOR -->
+                <div class="card" style="border-top: 4px solid #a855f7;">
+                    <div style="font-size: 2.3rem; color: #a855f7; margin-bottom: 15px;"><i class="fas fa-mobile-alt"></i></div>
                     <h3 class="card-title">Android Software Doctor</h3>
-                    <p style="font-size: 0.85rem; color: var(--accent-gold); font-weight: 600; margin-bottom: 10px;">Outil de Réparation Mobile • ADB &amp; OCR</p>
-                    <p class="card-text">Suite de bureau pour la maintenance mobile incluant l'utilisation de commandes ADB shell, calcul de codes NCK, patchs NVRAM et extraction OCR d'IMEI par pytesseract.</p>
+                    <p style="font-size: 0.85rem; color: #a855f7; font-weight: 600; margin-bottom: 10px;">Outil de Réparation Mobile • ADB &amp; OCR</p>
+                    <p class="card-text">Suite de bureau pour la maintenance mobile incluant l'utilisation de commandes ADB shell, calcul de codes NCK, patchs NVRAM et extraction OCR d'IMEI.</p>
                 </div>
 
-                <div class="card" style="border-top: 4px solid #8b5cf6;">
-                    <div style="font-size: 2.5rem; color: #8b5cf6; margin-bottom: 15px;"><i class="fas fa-video"></i></div>
-                    <h3 class="card-title">Text to Video AI App</h3>
-                    <p style="font-size: 0.85rem; color: #8b5cf6; font-weight: 600; margin-bottom: 10px;">Intelligence Artificielle • Google GenAI SDK</p>
-                    <p class="card-text">Application Python intelligente exploitant les kits de développement Google GenAI, Pydantic, httpx et les websockets pour générer du contenu vidéo à partir de texte.</p>
-                </div>
-
+                <!-- 8. SUPERVISION RESEAUX & ELECTIONS -->
                 <div class="card" style="border-top: 4px solid #ec4899;">
-                    <div style="font-size: 2.5rem; color: #ec4899; margin-bottom: 15px;"><i class="fas fa-network-wired"></i></div>
-                    <h3 class="card-title">Infrastructures Réseaux &amp; Supervision</h3>
+                    <div style="font-size: 2.3rem; color: #ec4899; margin-bottom: 15px;"><i class="fas fa-network-wired"></i></div>
+                    <h3 class="card-title">Supervision &amp; Infrastructures Réseaux</h3>
                     <p style="font-size: 0.85rem; color: #ec4899; font-weight: 600; margin-bottom: 10px;">Grandes Opérations • Élections &amp; Entreprises</p>
-                    <p class="card-text">Supervision technique d'opérations d'envergure (CENI Togo, SNEDAI Togo) : gestion de systèmes d'enrôlement biométrique, déploiement d'infrastructures informatiques et réseaux LAN.</p>
+                    <p class="card-text">Supervision technique d'opérations d'envergure (CENI Togo, SNEDAI Togo) : gestion de systèmes biométriques et déploiement d'infrastructures informatiques.</p>
                 </div>
 
+                <!-- 9. FORMATION DE TECHNICIENS -->
                 <div class="card" style="border-top: 4px solid #3b82f6;">
-                    <div style="font-size: 2.5rem; color: #3b82f6; margin-bottom: 15px;"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 class="card-title">Modules Pédagogiques &amp; Formations</h3>
-                    <p style="font-size: 0.85rem; color: #3b82f6; font-weight: 600; margin-bottom: 10px;">Éducation &amp; Technique</p>
-                    <p class="card-text">Conception de cours techniques spécialisés en électronique analogique/numérique, convertisseurs DC-DC et maintenance informatique pour étudiants et professionnels.</p>
+                    <div style="font-size: 2.3rem; color: #3b82f6; margin-bottom: 15px;"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="card-title">Formation &amp; Certification de Techniciens</h3>
+                    <p style="font-size: 0.85rem; color: #3b82f6; font-weight: 600; margin-bottom: 10px;">Transmission de Savoir-Faire Pratique</p>
+                    <p class="card-text">Formation réussie de dizaines de techniciens qualifiés en maintenance informatique, réseaux LAN, réparation de PC et de téléphones Android au Togo.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -96,8 +132,8 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : TOUDJI Edo Gérard.</p>
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI.</p>
             </div>
         </div>
     </footer>
