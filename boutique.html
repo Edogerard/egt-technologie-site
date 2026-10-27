@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boutique &amp; Gestion des Stocks — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Catalogue complet d'ordinateurs, téléphones, composants et logiciels chez EGT TECHNOLOGIE à Lomé.">
+    <title>Boutique &amp; Gestion Dynamique — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Catalogue complet et dynamique d'EGT TECHNOLOGIE à Lomé : ordinateurs, téléphones, logiciels et nouvelles catégories.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .shop-category-section {
+            margin-bottom: 50px;
+        }
         .shop-category-title {
             color: #fff;
             font-size: 1.6rem;
@@ -17,7 +20,8 @@
             border-bottom: 2px solid var(--primary-color);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            gap: 12px;
+            text-transform: capitalize;
         }
         .grid-products {
             display: grid;
@@ -81,6 +85,7 @@
             font-size: 0.75rem;
             font-weight: 600;
             border: 1px solid rgba(37, 99, 235, 0.3);
+            text-transform: uppercase;
         }
         .stock-badge {
             padding: 4px 10px;
@@ -131,7 +136,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(239, 68, 68, 0.85);
+            background: rgba(239, 68, 68, 0.9);
             color: #fff;
             border: none;
             width: 30px;
@@ -152,7 +157,7 @@
             border: 2px dashed var(--primary-color);
             border-radius: 16px;
             padding: 25px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             display: none;
         }
         .admin-form {
@@ -168,6 +173,12 @@
             padding: 10px;
             border-radius: 8px;
             font-size: 0.9rem;
+        }
+        .admin-form label {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-bottom: -10px;
+            display: block;
         }
     </style>
 </head>
@@ -203,12 +214,12 @@
     <!-- HEADER SECTION -->
     <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 50px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
         <div class="container">
-            <h1 style="font-size: 2.2rem; margin-bottom: 12px; color: #fff;"><i class="fas fa-store"></i> Boutique &amp; Catalogue Visuel</h1>
+            <h1 style="font-size: 2.2rem; margin-bottom: 12px; color: #fff;"><i class="fas fa-store"></i> Boutique Officielle &amp; Multicatégories</h1>
             <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1rem;">
-                Découvrez nos ordinateurs, téléphones, pièces et logiciels avec visuels et stocks en direct chez <strong>EGT TECHNOLOGIE</strong> à Lomé.
+                Explorez notre catalogue interactif par catégorie chez <strong>EGT TECHNOLOGIE</strong> à Lomé.
             </p>
             <button onclick="toggleAdmin()" class="btn" style="margin-top: 20px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 0.85rem;">
-                <i class="fas fa-lock"></i> Mode Admin (Ajouter un Article)
+                <i class="fas fa-lock"></i> Mode Admin (Ajouter Article ou Catégorie)
             </button>
         </div>
     </header>
@@ -219,41 +230,56 @@
             
             <!-- PANNEAU D'ADMINISTRATION -->
             <div class="admin-panel" id="adminPanel">
-                <h3 style="color: #fff; font-size: 1.2rem;"><i class="fas fa-plus-circle"></i> Ajouter un Article (Nom, Image, Prix, Stock)</h3>
+                <h3 style="color: #fff; font-size: 1.2rem;"><i class="fas fa-plus-circle"></i> Ajouter un Article (Image JPG/PNG locale ou URL)</h3>
                 <form class="admin-form" id="addProductForm" onsubmit="addNewProduct(event)">
-                    <input type="text" id="pTitle" placeholder="Nom du Produit (ex: HP ProBook)" required>
-                    <select id="pCategory">
-                        <option value="matériel">Ordinateurs &amp; PC</option>
-                        <option value="mobile">Téléphones &amp; Android</option>
-                        <option value="logiciel">Logiciels &amp; Outils EGT</option>
-                    </select>
-                    <input type="text" id="pPrice" placeholder="Prix (ex: 185.000 CFA)" required>
-                    <input type="number" id="pStock" placeholder="Quantité en Stock" required>
-                    <input type="url" id="pImage" placeholder="Lien de l'image (URL photo)" required>
-                    <input type="text" id="pAttr1" placeholder="Caractéristique 1 (ex: Intel i5)">
-                    <input type="text" id="pAttr2" placeholder="Caractéristique 2 (ex: 8 GB RAM)">
-                    <input type="text" id="pAttr3" placeholder="Caractéristique 3 (ex: 256 GB SSD)">
-                    <button type="submit" class="btn btn-primary" style="grid-column: 1 / -1;"><i class="fas fa-save"></i> Enregistrer le Produit au Catalogue</button>
+                    <div>
+                        <label>Nom du produit</label>
+                        <input type="text" id="pTitle" placeholder="ex: HP ProBook" required>
+                    </div>
+                    <div>
+                        <label>Nom de la catégorie (Existant ou Nouveau)</label>
+                        <input type="text" id="pCategory" placeholder="ex: Ordinateurs, Accessoires" required list="categoryList">
+                        <datalist id="categoryList">
+                            <option value="Ordinateurs">
+                            <option value="Smartphones">
+                            <option value="Logiciels">
+                            <option value="Accessoires">
+                        </datalist>
+                    </div>
+                    <div>
+                        <label>Prix (ex: 185.000 CFA)</label>
+                        <input type="text" id="pPrice" placeholder="ex: 185.000 CFA" required>
+                    </div>
+                    <div>
+                        <label>Quantité en stock</label>
+                        <input type="number" id="pStock" placeholder="ex: 5" required>
+                    </div>
+                    <div>
+                        <label>Sélectionner une image locale (JPG / PNG)</label>
+                        <input type="file" id="pImageFile" accept="image/png, image/jpeg, image/jpg" style="padding: 7px;">
+                    </div>
+                    <div>
+                        <label>OU Lien URL de l'image en ligne</label>
+                        <input type="url" id="pImageURL" placeholder="https://...">
+                    </div>
+                    <div>
+                        <label>Caractéristique 1</label>
+                        <input type="text" id="pAttr1" placeholder="ex: Intel i5">
+                    </div>
+                    <div>
+                        <label>Caractéristique 2</label>
+                        <input type="text" id="pAttr2" placeholder="ex: 8 GB RAM">
+                    </div>
+                    <div>
+                        <label>Caractéristique 3</label>
+                        <input type="text" id="pAttr3" placeholder="ex: 256 GB SSD">
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="grid-column: 1 / -1; margin-top: 10px;"><i class="fas fa-save"></i> Enregistrer dans la Boutique</button>
                 </form>
             </div>
 
-            <!-- RAYON 1 : ORDINATEURS & MATÉRIEL -->
-            <div class="shop-category-title">
-                <span><i class="fas fa-laptop" style="color: var(--primary-color);"></i> Ordinateurs &amp; Matériel Informatique</span>
-            </div>
-            <div class="grid-products" id="grid-materiel"></div>
-
-            <!-- RAYON 2 : TÉLÉPHONES & ANDROID -->
-            <div class="shop-category-title">
-                <span><i class="fas fa-mobile-alt" style="color: var(--primary-color);"></i> Téléphones &amp; Smartphones</span>
-            </div>
-            <div class="grid-products" id="grid-mobile"></div>
-
-            <!-- RAYON 3 : LOGICIELS PROFESSIONNELS -->
-            <div class="shop-category-title">
-                <span><i class="fas fa-code" style="color: var(--primary-color);"></i> Logiciels &amp; Suites Professionnelles</span>
-            </div>
-            <div class="grid-products" id="grid-logiciel"></div>
+            <!-- CONTENEUR DYNAMIQUE DES CATÉGORIES -->
+            <div id="dynamicCategoriesContainer"></div>
 
         </div>
     </section>
@@ -269,12 +295,12 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Produits initiaux par défaut avec images
+        // Produits initiaux par défaut
         const defaultProducts = [
             {
                 id: 1,
                 title: "PC Portable HP ProBook Core i5",
-                category: "matériel",
+                category: "Ordinateurs",
                 price: "185.000 CFA",
                 stock: 3,
                 image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80",
@@ -284,19 +310,8 @@
             },
             {
                 id: 2,
-                title: "PC Portable Dell Latitude Core i7",
-                category: "matériel",
-                price: "245.000 CFA",
-                stock: 2,
-                image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80",
-                attr1: "Intel Core i7 High-Perf",
-                attr2: "16 GB RAM DDR4",
-                attr3: "512 GB SSD NVMe"
-            },
-            {
-                id: 3,
                 title: "Smartphone Samsung Galaxy Série A",
-                category: "mobile",
+                category: "Smartphones",
                 price: "95.000 CFA",
                 stock: 5,
                 image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80",
@@ -305,116 +320,137 @@
                 attr3: "Batterie 5000 mAh"
             },
             {
-                id: 4,
+                id: 3,
                 title: "EGT Shop Manager V2",
-                category: "logiciel",
+                category: "Logiciels",
                 price: "Sur Devis",
                 stock: 99,
                 image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
                 attr1: "Gestion Stock & Ventes",
                 attr2: "Base SQLite Chiffrée",
                 attr3: "Licence à vie Windows"
-            },
-            {
-                id: 5,
-                title: "Android Software Doctor EGT",
-                category: "logiciel",
-                price: "Sur Devis",
-                stock: 99,
-                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
-                attr1: "Outils ADB & NVRAM",
-                attr2: "OCR IMEI par photo",
-                attr3: "Calculateur NCK Code"
             }
         ];
 
         // Charger les produits
         function loadProducts() {
-            let products = JSON.parse(localStorage.getItem('egt_products_v2'));
+            let products = JSON.parse(localStorage.getItem('egt_products_v4'));
             if (!products || products.length === 0) {
                 products = defaultProducts;
-                localStorage.setItem('egt_products_v2', JSON.stringify(products));
+                localStorage.setItem('egt_products_v4', JSON.stringify(products));
             }
             return products;
         }
 
-        // Affichage des produits
+        // Affichage dynamique des catégories et des produits
         function renderProducts() {
             const products = loadProducts();
-            const gridMateriel = document.getElementById('grid-materiel');
-            const gridMobile = document.getElementById('grid-mobile');
-            const gridLogiciel = document.getElementById('grid-logiciel');
+            const container = document.getElementById('dynamicCategoriesContainer');
+            container.innerHTML = '';
 
-            gridMateriel.innerHTML = '';
-            gridMobile.innerHTML = '';
-            gridLogiciel.innerHTML = '';
-
+            const categoriesMap = {};
             products.forEach(p => {
-                const stockBadge = p.stock > 0 
-                    ? `<span class="stock-badge in-stock"><i class="fas fa-check"></i> Stock: ${p.stock}</span>`
-                    : `<span class="stock-badge out-stock"><i class="fas fa-times"></i> Rrupture</span>`;
+                const cat = p.category.trim().toLowerCase();
+                const displayName = p.category.trim();
+                if (!categoriesMap[cat]) {
+                    categoriesMap[cat] = { name: displayName, items: [] };
+                }
+                categoriesMap[cat].items.push(p);
+            });
 
-                const btnWa = p.stock > 0
-                    ? `<a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20:*${encodeURIComponent(p.title)}*%20au%20prix%20de%20${encodeURIComponent(p.price)}." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.85rem; padding: 10px; display: block;"><i class="fab fa-whatsapp"></i> Commander sur WhatsApp</a>`
-                    : `<button class="btn" style="width: 100%; background: #374151; color: #9ca3af; cursor: not-allowed;" disabled>Rupture de Stock</button>`;
+            for (const key in categoriesMap) {
+                const categoryObj = categoriesMap[key];
+                
+                let cardsHTML = '';
+                categoryObj.items.forEach(p => {
+                    const stockBadge = p.stock > 0 
+                        ? `<span class="stock-badge in-stock"><i class="fas fa-check"></i> Stock: ${p.stock}</span>`
+                        : `<span class="stock-badge out-stock"><i class="fas fa-times"></i> Rupture</span>`;
 
-                const cardHTML = `
-                    <div class="product-card">
-                        <button class="btn-delete" onclick="deleteProduct(${p.id})" title="Supprimer"><i class="fas fa-trash"></i></button>
-                        <div class="product-img-container">
-                            <img src="${p.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80'}" alt="${p.title}">
+                    const btnWa = p.stock > 0
+                        ? `<a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20:*${encodeURIComponent(p.title)}*%20au%20prix%20de%20${encodeURIComponent(p.price)}." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.85rem; padding: 10px; display: block;"><i class="fab fa-whatsapp"></i> Commander sur WhatsApp</a>`
+                        : `<button class="btn" style="width: 100%; background: #374151; color: #9ca3af; cursor: not-allowed;" disabled>Rupture de Stock</button>`;
+
+                    cardsHTML += `
+                        <div class="product-card">
+                            <button class="btn-delete" onclick="deleteProduct(${p.id})" title="Supprimer"><i class="fas fa-trash"></i></button>
+                            <div class="product-img-container">
+                                <img src="${p.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80'}" alt="${p.title}">
+                            </div>
+                            <div class="product-content">
+                                <div>
+                                    <div class="product-header">
+                                        <span class="product-badge">${categoryObj.name}</span>
+                                        ${stockBadge}
+                                    </div>
+                                    <h3 class="product-title">${p.title}</h3>
+                                    
+                                    <table class="product-attributes">
+                                        ${p.attr1 ? `<tr><td class="attr-name">Caract 1:</td><td class="attr-val">${p.attr1}</td></tr>` : ''}
+                                        ${p.attr2 ? `<tr><td class="attr-name">Caract 2:</td><td class="attr-val">${p.attr2}</td></tr>` : ''}
+                                        ${p.attr3 ? `<tr><td class="attr-name">Caract 3:</td><td class="attr-val">${p.attr3}</td></tr>` : ''}
+                                    </table>
+                                </div>
+                                <div>
+                                    <div class="product-price-box">
+                                        <span style="color: #9ca3af; font-size: 0.85rem;">Prix:</span>
+                                        <span class="price-tag">${p.price}</span>
+                                    </div>
+                                    ${btnWa}
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-content">
-                            <div>
-                                <div class="product-header">
-                                    <span class="product-badge">${p.category.toUpperCase()}</span>
-                                    ${stockBadge}
-                                </div>
-                                <h3 class="product-title">${p.title}</h3>
-                                
-                                <table class="product-attributes">
-                                    ${p.attr1 ? `<tr><td class="attr-name">Caract 1:</td><td class="attr-val">${p.attr1}</td></tr>` : ''}
-                                    ${p.attr2 ? `<tr><td class="attr-name">Caract 2:</td><td class="attr-val">${p.attr2}</td></tr>` : ''}
-                                    ${p.attr3 ? `<tr><td class="attr-name">Caract 3:</td><td class="attr-val">${p.attr3}</td></tr>` : ''}
-                                </table>
-                            </div>
-                            <div>
-                                <div class="product-price-box">
-                                    <span style="color: #9ca3af; font-size: 0.85rem;">Prix:</span>
-                                    <span class="price-tag">${p.price}</span>
-                                </div>
-                                ${btnWa}
-                            </div>
+                    `;
+                });
+
+                container.innerHTML += `
+                    <div class="shop-category-section">
+                        <div class="shop-category-title">
+                            <span><i class="fas fa-folder-open" style="color: var(--primary-color);"></i> ${categoryObj.name}</span>
+                        </div>
+                        <div class="grid-products">
+                            ${cardsHTML}
                         </div>
                     </div>
                 `;
-
-                if (p.category === 'matériel') gridMateriel.innerHTML += cardHTML;
-                else if (p.category === 'mobile') gridMobile.innerHTML += cardHTML;
-                else if (p.category === 'logiciel') gridLogiciel.innerHTML += cardHTML;
-            });
+            }
         }
 
-        // Ajouter un produit
+        // Ajouter un produit avec gestion d'image locale ou URL
         function addNewProduct(e) {
             e.preventDefault();
+            const fileInput = document.getElementById('pImageFile');
+            const urlInput = document.getElementById('pImageURL').value.trim();
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    saveProductWithImage(event.target.result);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                saveProductWithImage(urlInput || 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80');
+            }
+        }
+
+        function saveProductWithImage(imageSource) {
             const products = loadProducts();
             const newP = {
                 id: Date.now(),
                 title: document.getElementById('pTitle').value,
-                category: document.getElementById('pCategory').value,
+                category: document.getElementById('pCategory').value.trim(),
                 price: document.getElementById('pPrice').value,
                 stock: parseInt(document.getElementById('pStock').value),
-                image: document.getElementById('pImage').value,
+                image: imageSource,
                 attr1: document.getElementById('pAttr1').value,
                 attr2: document.getElementById('pAttr2').value,
                 attr3: document.getElementById('pAttr3').value
             };
             products.push(newP);
-            localStorage.setItem('egt_products_v2', JSON.stringify(products));
+            localStorage.setItem('egt_products_v4', JSON.stringify(products));
             document.getElementById('addProductForm').reset();
             renderProducts();
-            alert("Article avec image et stock enregistré avec succès !");
+            alert("Article et image enregistrés avec succès !");
         }
 
         // Supprimer un produit
@@ -422,7 +458,7 @@
             if (confirm("Voulez-vous vraiment supprimer cet article ?")) {
                 let products = loadProducts();
                 products = products.filter(p => p.id !== id);
-                localStorage.setItem('egt_products_v2', JSON.stringify(products));
+                localStorage.setItem('egt_products_v4', JSON.stringify(products));
                 renderProducts();
             }
         }
@@ -433,13 +469,13 @@
             if (pwd === "egt2026" || pwd === "admin") {
                 document.getElementById('adminPanel').style.display = "block";
                 document.getElementById('shopContainer').classList.add('admin-mode');
-                alert("Mode administration activé ! Vous pouvez ajouter ou supprimer des articles.");
+                alert("Mode administration activé !");
             } else if (pwd !== null) {
                 alert("Mot de passe incorrect.");
             }
         }
 
-        // Initialisation au chargement
+        // Initialisation
         document.addEventListener('DOMContentLoaded', renderProducts);
     </script>
 </body>
