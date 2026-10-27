@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formations Professionnelles — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Formations certifiantes et pratiques chez EGT TECHNOLOGIE à Lomé : Informatique bureautique, Maintenance & Réseaux, Réparation PC & Android, Programmation et Développement d'Applications.">
+    <title>Formations Professionnelles &amp; Tech — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Formations certifiantes et ultra-pratiques chez EGT TECHNOLOGIE à Lomé : Bureautique, Maintenance, Réseaux, Réparation PC/Android, Programmation et Développement Web, Mobile & Desktop.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,7 +25,7 @@
             box-shadow: var(--shadow-lg);
         }
         .formation-icon {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
@@ -51,6 +51,22 @@
             display: inline-block;
             margin-bottom: 15px;
             border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 20px;
+        }
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #60a5fa;
+            font-size: 0.75rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: 600;
         }
         .formation-highlights {
             list-style: none;
@@ -142,9 +158,9 @@
     <!-- HEADER SECTION -->
     <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
         <div class="container">
-            <h1 style="font-size: 2.3rem; margin-bottom: 15px; color: #fff;"><i class="fas fa-graduation-cap"></i> Nos Modules de Formation Pratique</h1>
+            <h1 style="font-size: 2.3rem; margin-bottom: 15px; color: #fff;"><i class="fas fa-graduation-cap"></i> Programmes de Formation Technique &amp; Métiers</h1>
             <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
-                Développez vos compétences professionnelles avec des cours axés sur la pratique, dispensés par <strong>Edo Gerard TOUDJI</strong> à Lomé (Togo) ou à distance.
+                Du secrétariat bureautique au développement logiciel avancé (Web, Mobile, Desktop, Réseaux &amp; IA). Formations dispensées par <strong>Edo Gerard TOUDJI</strong> à Lomé et à distance.
             </p>
         </div>
     </header>
@@ -158,14 +174,22 @@
                 <!-- MODULE 1 : INFORMATIQUE BUREAUTIQUE -->
                 <div class="formation-card">
                     <div>
-                        <span class="formation-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border-color: rgba(139, 92, 246, 0.3);">Bureautique &amp; Secrétariat</span>
+                        <span class="formation-badge" style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border-color: rgba(139, 92, 246, 0.3);">Secrétariat &amp; Bureautique</span>
                         <div class="formation-icon" style="color: #8b5cf6;"><i class="fas fa-keyboard"></i></div>
                         <h3 class="formation-title">Informatique Bureautique</h3>
-                        <p class="formation-desc">Maîtrisez les outils essentiels du secrétariat et de l'administration d'entreprise pour produire des documents et rapports irréprochables.</p>
+                        <p class="formation-desc">Maitrise complète des outils administratifs et de saisie professionnelle pour la rédaction de mémoires, rapports et gestion de données d'entreprise.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">Word</span>
+                            <span class="tech-tag">Excel</span>
+                            <span class="tech-tag">PowerPoint</span>
+                            <span class="tech-tag">PCTAP</span>
+                        </div>
+
                         <ul class="formation-highlights">
-                            <li><i class="fas fa-check"></i> Microsoft Word (Saisie, mise en page avancée, PCTAP)</li>
-                            <li><i class="fas fa-check"></i> Microsoft Excel (Formules, tableaux croisés TCD)</li>
-                            <li><i class="fas fa-check"></i> Microsoft PowerPoint (Présentations animées)</li>
+                            <li><i class="fas fa-check"></i> Word : Mise en page, dactylographie PCTAP, rapports</li>
+                            <li><i class="fas fa-check"></i> Excel : Formules, graphiques et tableaux croisés (TCD)</li>
+                            <li><i class="fas fa-check"></i> PowerPoint : Diaporamas interactifs et présentations</li>
                         </ul>
                     </div>
                     <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Informatique%20Bureautique*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
@@ -176,14 +200,22 @@
                 <!-- MODULE 2 : MAINTENANCE INFORMATIQUE ET RÉSEAUX -->
                 <div class="formation-card">
                     <div>
-                        <span class="formation-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border-color: rgba(59, 130, 246, 0.3);">Systèmes &amp; Réseaux</span>
+                        <span class="formation-badge" style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; border-color: rgba(59, 130, 246, 0.3);">Infrastructures &amp; Systèmes</span>
                         <div class="formation-icon" style="color: #3b82f6;"><i class="fas fa-network-wired"></i></div>
                         <h3 class="formation-title">Maintenance Informatique &amp; Réseaux</h3>
-                        <p class="formation-desc">Devenez un technicien autonome capable d'installer, configurer et sécuriser des parcs informatiques et des architectures réseaux.</p>
+                        <p class="formation-desc">Installation, administration et sécurisation d'infrastructures réseau filaires/sans fil, interconnexions d'entreprise et gestion de parcs informatiques.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">LAN / Wi-Fi</span>
+                            <span class="tech-tag">Sockets TCP/UDP</span>
+                            <span class="tech-tag">Routeurs &amp; Switchs</span>
+                            <span class="tech-tag">Windows</span>
+                        </div>
+
                         <ul class="formation-highlights">
-                            <li><i class="fas fa-check"></i> Diagnostic et optimisation de systèmes Windows</li>
-                            <li><i class="fas fa-check"></i> Câblage structuré LAN et prises RJ45</li>
-                            <li><i class="fas fa-check"></i> Configuration de routeurs, switchs &amp; Wi-Fi</li>
+                            <li><i class="fas fa-check"></i> Câblage Ethernet structuré &amp; baies de brassage</li>
+                            <li><i class="fas fa-check"></i> Routage, adressage IP, VPN &amp; Sockets TCP/UDP</li>
+                            <li><i class="fas fa-check"></i> Administration système &amp; partage de ressources</li>
                         </ul>
                     </div>
                     <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Maintenance%20Informatique%20&%20Réseaux*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
@@ -196,51 +228,80 @@
                     <div>
                         <span class="formation-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Hardware &amp; Mobile</span>
                         <div class="formation-icon" style="color: #10b981;"><i class="fas fa-tools"></i></div>
-                        <h3 class="formation-title">Réparation de PC &amp; Téléphones Android</h3>
-                        <p class="formation-desc">Apprenez le dépannage matériel sur PC fixes/portables et la maintenance logicielle avancée sur smartphones Android.</p>
+                        <h3 class="formation-title">Réparation PC &amp; Téléphones Android</h3>
+                        <p class="formation-desc">Dépannage matériel avancé des ordinateurs portables/fixes, éradication de ransomwares et maintenance logicielle Android via protocoles ADB.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">ADB Shell</span>
+                            <span class="tech-tag">Android</span>
+                            <span class="tech-tag">Hardware PC</span>
+                            <span class="tech-tag">Malwarebytes</span>
+                        </div>
+
                         <ul class="formation-highlights">
-                            <li><i class="fas fa-check"></i> Changement de composants PC (RAM, SSD, écrans)</li>
-                            <li><i class="fas fa-check"></i> Éradication de malwares et ransomwares</li>
-                            <li><i class="fas fa-check"></i> Déblocage &amp; outils ADB sur Android</li>
+                            <li><i class="fas fa-check"></i> Diagnostic matériel (RAM, SSD, écrans, composants)</li>
+                            <li><i class="fas fa-check"></i> Désinfection de virus &amp; malwares (STOP/Djvu)</li>
+                            <li><i class="fas fa-check"></i> Outils ADB, flashage &amp; sauvegardes Android</li>
                         </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Réparation%20de%20PC%20&%20Téléphones%20Android*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Réparation%20PC%20&%20Téléphones%20Android*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
                         <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
                     </a>
                 </div>
 
-                <!-- MODULE 4 : PROGRAMMATION INFORMATIQUE -->
+                <!-- MODULE 4 : PROGRAMMATION INFORMATIQUE & BASES DE DONNÉES -->
                 <div class="formation-card">
                     <div>
-                        <span class="formation-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">Algorithmes &amp; Code</span>
+                        <span class="formation-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">Algorithmes &amp; Data</span>
                         <div class="formation-icon" style="color: #f59e0b;"><i class="fas fa-code"></i></div>
-                        <h3 class="formation-title">Programmation Informatique</h3>
-                        <p class="formation-desc">Acquérez les bases fondamentales de l'algorithmique, de la logique de programmation et de la manipulation des bases de données SQL.</p>
+                        <h3 class="formation-title">Programmation &amp; Bases de Données</h3>
+                        <p class="formation-desc">Acquérez les fondamentaux de la logique algorithmique, de la programmation orientée objet et de la conception de schémas relationnels SQL.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+
                         <ul class="formation-highlights">
-                            <li><i class="fas fa-check"></i> Fondements de l'algorithmique &amp; structure de données</li>
-                            <li><i class="fas fa-check"></i> Apprentissage du langage Python</li>
-                            <li><i class="fas fa-check"></i> Modélisation de bases de données (SQLite, MySQL)</li>
+                            <li><i class="fas fa-check"></i> Algorithmique, variables &amp; structures de données</li>
+                            <li><i class="fas fa-check"></i> Programmation Python structurée</li>
+                            <li><i class="fas fa-check"></i> Requêtes SQL, jointures, transactions &amp; sécurité</li>
                         </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Programmation%20Informatique*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Programmation%20&%20Bases%20de%20données*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
                         <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
                     </a>
                 </div>
 
-                <!-- MODULE 5 : DÉVELOPPEMENT D'APPLICATIONS (DESKTOP, MOBILE & WEB) -->
+                <!-- MODULE 5 : DÉVELOPPEMENT D'APPLICATIONS (DESKTOP, MOBILE, WEB & IA) -->
                 <div class="formation-card">
                     <div>
-                        <span class="formation-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border-color: rgba(236, 72, 153, 0.3);">Solutions Métiers</span>
+                        <span class="formation-badge" style="background: rgba(236, 72, 153, 0.15); color: #f472b6; border-color: rgba(236, 72, 153, 0.3);">Full-Stack &amp; IA</span>
                         <div class="formation-icon" style="color: #ec4899;"><i class="fas fa-laptop-code"></i></div>
-                        <h3 class="formation-title">Développement d'Applications</h3>
-                        <p class="formation-desc">Concevez des logiciels complets de A à Z : applications de bureau Windows avec PySide6, apps mobiles Flutter et sites Web.</p>
+                        <h3 class="formation-title">Développement d'Applications &amp; IA</h3>
+                        <p class="formation-desc">Concevez des logiciels complets multiplateformes : applications de bureau Windows, apps mobiles Android/iOS, web dynamique et intégration d'API d'IA.</p>
+                        
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">React JS</span>
+                            <span class="tech-tag">PySide6</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Flutter / Dart</span>
+                            <span class="tech-tag">Kotlin</span>
+                            <span class="tech-tag">IA GenAI</span>
+                        </div>
+
                         <ul class="formation-highlights">
-                            <li><i class="fas fa-check"></i> Logiciels de gestion Windows (PySide6 / Qt)</li>
-                            <li><i class="fas fa-check"></i> Applications mobiles Flutter / Dart (Android &amp; iOS)</li>
-                            <li><i class="fas fa-check"></i> Développement web moderne &amp; intégration d'IA</li>
+                            <li><i class="fas fa-check"></i> Web Full-Stack : HTML, CSS, JS, React JS &amp; FastAPI</li>
+                            <li><i class="fas fa-check"></i> Apps Desktop Windows (PySide6 / Qt &amp; SQLite)</li>
+                            <li><i class="fas fa-check"></i> Apps Mobiles avec Flutter / Dart &amp; Kotlin</li>
+                            <li><i class="fas fa-check"></i> Intégration d'API d'Intelligence Artificielle</li>
                         </ul>
                     </div>
-                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Développement%20d'Applications*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
+                    <a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20*Développement%20d'Applications%20&%20IA*." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.9rem; padding: 10px;">
                         <i class="fab fa-whatsapp"></i> S'inscrire via WhatsApp
                     </a>
                 </div>
@@ -253,7 +314,7 @@
                     <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez nos Formations
                 </h3>
                 <p style="color: #9ca3af; font-size: 0.95rem;">
-                    Partagez nos modules de formation avec vos proches et collègues :
+                    Partagez nos programmes de formation avec vos proches et collègues :
                 </p>
                 <div class="share-buttons-grid">
                     <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20formations%20professionnelles%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
