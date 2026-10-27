@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EGT TECHNOLOGIE — Solutions Informatiques & Numériques</title>
-    <meta name="description" content="Développement d'applications Windows, Android, iOS et Web. Logiciels de gestion, IA, maintenance informatique et réseaux au Togo et à l'international.">
+    <title>Services & Devis — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Catalogue des 17 domaines de services informatiques et numériques d'EGT TECHNOLOGIE. Demandez votre devis personnalisé.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <!-- FontAwesome pour les icônes -->
@@ -28,8 +28,8 @@
             </div>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="services.html">Services & Devis</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html" class="active">Services & Devis</a></li>
                 <li><a href="formations.html">Formations</a></li>
                 <li><a href="portfolio.html">Réalisations</a></li>
                 <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
@@ -37,147 +37,227 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="hero">
+    <!-- HEADER SECTION -->
+    <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
         <div class="container">
-            <div class="hero-text">
-                <p class="hero-subtitle"><i class="fas fa-check-circle"></i> Expertise &amp; Innovation Informatique</p>
-                <h1 class="hero-title">Transformez vos opérations avec des solutions numériques sur mesure.</h1>
-                <p class="hero-description">
-                    Développement d'applications Web, Mobile &amp; Desktop, intégration d'Intelligence Artificielle, 
-                    mise en place de réseaux informatiques et formations professionnelles.
-                </p>
-                <div class="hero-buttons">
-                    <a href="services.html" class="btn btn-primary"><i class="fas fa-cogs"></i> Découvrir nos services</a>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20un%20renseignement" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> Discuter sur WhatsApp
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image" style="text-align: center;">
-                <div style="background: rgba(255,255,255,0.05); padding: 40px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);">
-                    <i class="fas fa-laptop-code" style="font-size: 5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 10px;">EGT TECHNOLOGIE</h3>
-                    <p style="color: #9ca3af;">Applications Sur-Mesure • Réseaux &amp; Maintenance • Formations</p>
-                    <p style="color: var(--accent-color); font-weight: 600; margin-top: 15px;">Fondateur : Edo Gerard TOUDJI</p>
-                </div>
-            </div>
+            <h1 style="font-size: 2.2rem; margin-bottom: 15px; color: #fff;">Catalogue de Services & Demande de Devis</h1>
+            <p style="color: #9ca3af; max-width: 700px; margin: 0 auto; font-size: 1.05rem;">
+                Explorez nos domaines de compétences technologiques. Cochez les prestations souhaitées pour obtenir un devis personnalisé ou une prise de contact directe.
+            </p>
         </div>
     </header>
 
-    <!-- PILIERS D'EXPERTISE -->
+    <!-- SERVICES CONTENT & PANIER DEVIS -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
-                <h2>Nos 4 Piliers d'Expertise</h2>
-                <p>Des prestations complètes pour particuliers, PME, écoles, administrations et hôpitaux.</p>
+            
+            <!-- Barre de recherche et filtres -->
+            <div style="margin-bottom: 30px;">
+                <input type="text" id="serviceSearch" placeholder="Rechercher un service (ex: logiciels, réseaux, IA...)" style="width: 100%; padding: 14px 20px; border-radius: 8px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; font-size: 1rem; outline: none;">
             </div>
 
-            <div class="grid-4">
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <h3 class="card-title">Développement Logiciel</h3>
-                    <p class="card-text">Applications Windows, Android, iOS et Web sur mesure. Logiciels de gestion de stock, caisse, facturation et scolarité.</p>
+            <div class="filter-buttons" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
+                <button class="filter-btn active" data-filter="all" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--primary-color); color: #fff; cursor: pointer;">Tous les services</button>
+                <button class="filter-btn" data-filter="dev" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Développement Logiciel</button>
+                <button class="filter-btn" data-filter="entreprise" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Gestion d'Entreprises</button>
+                <button class="filter-btn" data-filter="reseau" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Réseaux & Telecoms</button>
+                <button class="filter-btn" data-filter="ia" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">IA & Automatisation</button>
+                <button class="filter-btn" data-filter="maintenance" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Maintenance PC/Android</button>
+                <button class="filter-btn" data-filter="institutions" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Écoles, Hôpitaux & Mairies</button>
+            </div>
+
+            <!-- Grille des Services -->
+            <div class="grid-3" id="servicesGrid">
+                
+                <div class="card service-card" data-category="dev">
+                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3 class="card-title">Développement d'Applications & Logiciels</h3>
+                    <p class="card-text">Logiciels Windows, applications Android/iOS avec Flutter, sites Web dynamiques, automatisation et modernisation de systèmes.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Développement d'Applications & Logiciels" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" data-category="entreprise">
+                    <div class="card-icon"><i class="fas fa-store"></i></div>
+                    <h3 class="card-title">Logiciels de Gestion pour Entreprises & Commerces</h3>
+                    <p class="card-text">Gestion des ventes, caisse, facturation, stock, approvisionnements, salaires et tableaux de bord décisionnels.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Logiciels de Gestion pour Entreprises & Commerces" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="dev">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <h3 class="card-title">Création de Sites Web & Plateformes en Ligne</h3>
+                    <p class="card-text">Sites vitrines institutionnels, e-commerce, espaces membres, portails de réservation et hébergement sécurisé.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Création de Sites Web & Plateformes" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="ia">
                     <div class="card-icon"><i class="fas fa-robot"></i></div>
-                    <h3 class="card-title">IA &amp; Automatisation</h3>
-                    <p class="card-text">Intégration d'API d'Intelligence Artificielle, chatbots, génération de rapports et automatisation des tâches répétitives.</p>
+                    <h3 class="card-title">Intelligence Artificielle & Automatisation</h3>
+                    <p class="card-text">Chatbots conversationnels, génération automatique de rapports, traitement de données et intégration d'API d'IA.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Intelligence Artificielle & Automatisation" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" data-category="maintenance">
+                    <div class="card-icon"><i class="fas fa-tools"></i></div>
+                    <h3 class="card-title">Maintenance & Dépannage Informatique</h3>
+                    <p class="card-text">Diagnostic de pannes PC/Android, réinstallation système, suppression de virus/malwares, sauvegarde et restauration.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Maintenance & Dépannage Informatique" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="reseau">
                     <div class="card-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3 class="card-title">Réseaux &amp; Maintenance</h3>
-                    <p class="card-text">Câblage structuré, Wi-Fi d'entreprise, maintenance préventive/corrective PC &amp; Android, sécurisation des données.</p>
+                    <h3 class="card-title">Télécommunications & Réseaux Informatiques</h3>
+                    <p class="card-text">Installation LAN/Wi-Fi d'entreprise, configuration de routeurs/switchs, câblage Ethernet et sécurisation des accès.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Télécommunications & Réseaux Informatiques" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
                 </div>
 
-                <div class="card">
+                <div class="card service-card" data-category="maintenance">
+                    <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="card-title">Diagnostic & Assistance Logicielle Android</h3>
+                    <p class="card-text">Outils ADB, dépannage logiciel USB, sauvegardes, débogage et développement de suites de diagnostic sur PC.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Diagnostic & Assistance Logicielle Android" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="dev">
+                    <div class="card-icon"><i class="fas fa-database"></i></div>
+                    <h3 class="card-title">Bases de Données & Systèmes d'Information</h3>
+                    <p class="card-text">Conception de schémas relationnels SQL (SQLite, MySQL, PostgreSQL), migration, nettoyage et sécurisation des données.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Bases de Données & Systèmes d'Information" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="reseau">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="card-title">Sécurité Informatique & Protection</h3>
+                    <p class="card-text">Diagnostic de sécurité, sécurisation des réseaux Wi-Fi, gestion des droits d'accès et politiques de sauvegarde.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Sécurité Informatique & Protection" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="institutions">
                     <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 class="card-title">Formations en Ligne &amp; Présentiel</h3>
-                    <p class="card-text">Programmation (Python, Web, Flutter), réseaux, maintenance informatique et utilisation pratique des outils d'IA.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BANNIÈRE APPLICATIVE (EXEMPLES DE LOGICIELS) -->
-    <section class="section" style="background-color: #fff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Solutions &amp; Logiciels Phares</h2>
-                <p>Des outils informatiques prêts à l'emploi ou personnalisables pour votre activité.</p>
-            </div>
-
-            <div class="grid-3">
-                <div class="card" style="border-top: 4px solid var(--primary-color);">
-                    <h3 class="card-title"><i class="fas fa-store"></i> EGT Shop Manager</h3>
-                    <p class="card-text">Gestion multi-articles, achats, coûts d'approvisionnement, recettes et marges bénéficiaires pour commerces et boutiques.</p>
+                    <h3 class="card-title">Solutions Informatiques pour Écoles & Centres</h3>
+                    <p class="card-text">Gestion de scolarité, fiches élèves, bulletins de notes, frais de scolarité, emplois du temps et bibliothèques.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Solutions Informatiques pour Écoles & Centres" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
                 </div>
 
-                <div class="card" style="border-top: 4px solid var(--accent-color);">
-                    <h3 class="card-title"><i class="fas fa-utensils"></i> Restaurant App Manager</h3>
-                    <p class="card-text">Gestion des commandes, menus, catégories, facturation et authentification sécurisée pour restaurants et bars.</p>
+                <div class="card service-card" data-category="institutions">
+                    <div class="card-icon"><i class="fas fa-hospital"></i></div>
+                    <h3 class="card-title">Solutions pour Hôpitaux, Cliniques & Pharmacies</h3>
+                    <p class="card-text">Gestion administrative des patients, rendez-vous, stocks de médicaments, ventes en pharmacie et facturation.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Solutions pour Hôpitaux & Pharmacies" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
                 </div>
 
-                <div class="card" style="border-top: 4px solid var(--accent-gold);">
-                    <h3 class="card-title"><i class="fas fa-mobile-alt"></i> Mobile Software Doctor</h3>
-                    <p class="card-text">Suite de bureau pour diagnostic Android, sauvegarde NVRAM, ADB shell et outils d'assistance technique.</p>
+                <div class="card service-card" data-category="institutions">
+                    <div class="card-icon"><i class="fas fa-landmark"></i></div>
+                    <h3 class="card-title">Solutions pour Mairies & Administrations</h3>
+                    <p class="card-text">Numérisation des procédures, suivi des recettes communales, taxes, quittances et gestion administrative des courriers.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Solutions pour Mairies & Administrations" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
                 </div>
+
+                <div class="card service-card" data-category="entreprise">
+                    <div class="card-icon"><i class="fas fa-utensils"></i></div>
+                    <h3 class="card-title">Solutions Restauration, Hôtellerie & Transport</h3>
+                    <p class="card-text">Prise de commande sur table, réservations de chambres, suivi de parcs automobiles et livraisons.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Solutions Restauration, Hôtellerie & Transport" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="entreprise">
+                    <div class="card-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3 class="card-title">Solutions Biométriques & Contrôle d'Accès</h3>
+                    <p class="card-text">Fiches employés, impression de cartes professionnelles, gestion du temps de présence et pointeuses biométriques.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Solutions Biométriques & Contrôle d'Accès" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card service-card" data-category="maintenance">
+                    <div class="card-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="card-title">Contrats de Maintenance & Suivi Mensuel</h3>
+                    <p class="card-text">Assistance technique à distance, sauvegardes périodiques, mises à jour logicielles et support régulier aux PME.</p>
+                    <div style="margin-top: 20px;">
+                        <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                            <input type="checkbox" class="service-checkbox" value="Contrats de Maintenance & Suivi Mensuel" style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
+                        </label>
+                    </div>
+                </div>
+
             </div>
 
-            <div style="text-align: center; margin-top: 35px;">
-                <a href="portfolio.html" class="btn btn-primary">Voir toutes nos réalisations</a>
+            <!-- Panier de devis flottant / fixe -->
+            <div id="quoteBox" style="margin-top: 50px; background: #1f2937; border: 1px solid var(--accent-color); border-radius: 12px; padding: 30px; text-align: center;">
+                <h3 style="margin-bottom: 10px; color: #fff;"><i class="fas fa-shopping-cart"></i> Votre Devis Personnalisé</h3>
+                <p id="selectedCount" style="color: #9ca3af; margin-bottom: 20px;">Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.</p>
+                <button id="sendQuoteBtn" class="btn btn-whatsapp" style="display: none; margin: 0 auto; font-size: 1.1rem; padding: 12px 30px;">
+                    <i class="fab fa-whatsapp"></i> Envoyer ma demande de devis sur WhatsApp
+                </button>
             </div>
+
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>EGT TECHNOLOGIE</h4>
-                    <p style="margin-bottom: 15px;">Solutions informatiques et numériques sur mesure pour entreprises, administrations et particuliers.</p>
-                    <p><i class="fas fa-user-tie"></i> <strong>Fondateur :</strong> Edo Gerard TOUDJI</p>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Liens Rapides</h4>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="services.html">Services &amp; Devis</a></li>
-                        <li><a href="formations.html">Formations</a></li>
-                        <li><a href="portfolio.html">Réalisations</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Contact Direct</h4>
-                    <ul>
-                        <li><i class="fab fa-whatsapp"></i> +228 90 32 25 33</li>
-                        <li><i class="fas fa-phone-alt"></i> +228 90 32 25 33</li>
-                        <li><i class="fas fa-envelope"></i> gerardingenieur@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Lomé, Togo</li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Devis Rapide</h4>
-                    <p style="font-size: 0.9rem; margin-bottom: 15px;">Discutez immédiatement de votre projet sur WhatsApp.</p>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20un%20devis" target="_blank" class="btn btn-whatsapp" style="width: 100%;">
-                        <i class="fab fa-whatsapp"></i> WhatsApp Direct
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
+            <div class="footer-bottom" style="text-align: center;">
                 <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI.</p>
             </div>
         </div>
     </footer>
 
+    <script src="js/services.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
