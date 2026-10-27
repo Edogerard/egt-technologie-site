@@ -1,5 +1,5 @@
 /* ==========================================================================
-   EGT TECHNOLOGIE - Services & Generator JS
+   EGT TECHNOLOGIE - Services & Generator JS (Version Épurée & Moderne)
    ========================================================================== */
 
 const servicesData = [
@@ -8,105 +8,91 @@ const servicesData = [
         category: "dev",
         title: "Développement d'Applications & Logiciels",
         icon: "fa-laptop-code",
-        desc: "Logiciels Windows, applications Android/iOS avec Flutter, sites Web dynamiques, automatisation et modernisation de systèmes."
+        desc: "Conception de logiciels Windows (PySide6), applications mobiles Flutter (Android/iOS) et solutions sur mesure pour la digitalisation des entreprises."
     },
     {
         id: "s2",
         category: "pme",
-        title: "Logiciels de Gestion pour Entreprises & Commerces",
+        title: "Logiciels de Gestion pour Commerces & PME",
         icon: "fa-calculator",
-        desc: "Gestion des ventes, caisse, facturation, stock, approvisionnements, salaires et tableaux de bord décisionnels."
+        desc: "Gestion des ventes, caisses enregistreuses, facturation, suivi rigoureux des stocks, approvisionnements et tableaux de bord décisionnels."
     },
     {
         id: "s3",
         category: "dev",
         title: "Création de Sites Web & Plateformes en Ligne",
         icon: "fa-globe",
-        desc: "Sites vitrines institutionnels, e-commerce, espaces membres, portails de réservation et hébergement sécurisé."
+        desc: "Sites vitrines institutionnels, plateformes e-commerce, portails métiers et hébergement sécurisé pour accroître votre visibilité."
     },
     {
         id: "s4",
         category: "ia",
         title: "Intelligence Artificielle & Automatisation",
         icon: "fa-robot",
-        desc: "Chatbots conversationnels, génération automatique de rapports, traitement de données et intégration d'API d'IA."
+        desc: "Intégration d'API d'IA, chatbots conversationnels, automatisation de tâches répétitives et traitement intelligent de données."
     },
     {
         id: "s5",
         category: "maintenance",
-        title: "Maintenance & Dépannage Informatique",
+        title: "Maintenance & Dépannage Informatique Avancé",
         icon: "fa-tools",
-        desc: "Diagnostic de pannes PC/Android, réinstallation système, suppression de virus/malwares, sauvegarde et restauration."
+        desc: "Diagnostic de pannes PC (fixes/portables), réinstallation système, suppression de ransomwares/malwares et récupération de données."
     },
     {
         id: "s6",
-        category: "reseau",
-        title: "Télécommunications & Réseaux Informatiques",
-        icon: "fa-network-wired",
-        desc: "Installation LAN/Wi-Fi d'entreprise, configuration de routeurs/switchs, câblage Ethernet et sécurisation des accès."
+        category: "maintenance",
+        title: "Diagnostic & Assistance Logicielle Mobile",
+        icon: "fa-mobile-alt",
+        desc: "Outils de réparation ADB, débogage USB, flashage, contournement de sécurités logicielles et maintenance de smartphones Android/iOS."
     },
     {
         id: "s7",
-        category: "maintenance",
-        title: "Diagnostic & Assistance Logicielle Android",
-        icon: "fa-mobile-alt",
-        desc: "Outils ADB, dépannage logiciel USB, sauvegardes, débogage et développement de suites de diagnostic sur PC."
+        category: "reseau",
+        title: "Réseaux Informatiques & Télécoms",
+        icon: "fa-network-wired",
+        desc: "Installation de réseaux LAN/Wi-Fi d'entreprise, configuration de routeurs et switchs, câblage structuré et sécurisation des accès."
     },
     {
         id: "s8",
-        category: "dev",
-        title: "Bases de Données & Systèmes d'Information",
-        icon: "fa-database",
-        desc: "Conception de schémas relationnels SQL (SQLite, MySQL, PostgreSQL), migration, nettoyage et sécurisation des données."
+        category: "special",
+        title: "Solutions Informatiques pour Écoles & Centres",
+        icon: "fa-user-graduate",
+        desc: "Logiciels de gestion de scolarité, fiches élèves, bulletins de notes, emplois du temps et gestion informatisée des bibliothèques."
     },
     {
         id: "s9",
-        category: "reseau",
-        title: "Sécurité Informatique & Protection",
-        icon: "fa-shield-alt",
-        desc: "Diagnostic de sécurité, sécurisation des réseaux Wi-Fi, gestion des droits d'accès et politiques de sauvegarde."
+        category: "special",
+        title: "Solutions pour Hôpitaux, Cliniques & Pharmacies",
+        icon: "fa-clinic-medical",
+        desc: "Gestion administrative des patients, prises de rendez-vous, suivi des stocks de médicaments en pharmacie et facturation médicalisée."
     },
     {
         id: "s10",
         category: "special",
-        title: "Solutions Informatiques pour Écoles & Centres",
-        icon: "fa-user-graduate",
-        desc: "Gestion de scolarité, fiches élèves, bulletins de notes, frais de scolarité, emplois du temps et bibliothèques."
+        title: "Solutions pour Mairies & Administrations",
+        icon: "fa-building",
+        desc: "Numérisation des procédures administratives, suivi des recettes communales, taxes, quittances et gestion informatisée du courrier."
     },
     {
         id: "s11",
-        category: "special",
-        title: "Solutions pour Hôpitaux, Cliniques & Pharmacies",
-        icon: "fa-clinic-medical",
-        desc: "Gestion administrative des patients, rendez-vous, stocks de médicaments, ventes en pharmacie et facturation."
-    },
-    {
-        id: "s12",
-        category: "special",
-        title: "Solutions pour Mairies & Administrations",
-        icon: "fa-building",
-        desc: "Numérisation des procédures, suivi des recettes communales, taxes, quittances et gestion administrative des courriers."
-    },
-    {
-        id: "s13",
         category: "pme",
         title: "Solutions Restauration, Hôtellerie & Transport",
         icon: "fa-utensils",
-        desc: "Prise de commande sur table, réservations de chambres, suivi de parcs automobiles et livraisons."
+        desc: "Prise de commande tactile sur table, réservations hôtelières, gestion de parcs automobiles et suivi logistique des livraisons."
     },
     {
-        id: "s14",
+        id: "s12",
         category: "pme",
         title: "Solutions Biométriques & Contrôle d'Accès",
         icon: "fa-fingerprint",
-        desc: "Fiches employés, impression de cartes professionnelles, gestion du temps de présence et pointeuses biométriques."
+        desc: "Pointage biométrique des employés, gestion des temps de présence, impression de cartes professionnelles et sécurisation des accès."
     },
     {
-        id: "s15",
+        id: "s13",
         category: "maintenance",
-        title: "Contrats de Maintenance & Suivi Mensuel",
+        title: "Contrats de Maintenance & Support PME",
         icon: "fa-sync",
-        desc: "Assistance technique à distance, sauvegardes périodiques, mises à jour logicielles et support régulier aux PME."
+        desc: "Assistance technique à distance et sur site, sauvegardes périodiques automatisées et maintenance préventive mensuelle."
     }
 ];
 
@@ -114,13 +100,14 @@ let selectedServices = new Set();
 
 document.addEventListener('DOMContentLoaded', () => {
     const servicesGrid = document.getElementById('servicesGrid');
-    const searchInput = document.getElementById('searchInput');
+    const searchInput = document.getElementById('serviceSearch');
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const quotePanel = document.getElementById('quotePanel');
+    const quotePanel = document.getElementById('quoteBox');
     const selectedCount = document.getElementById('selectedCount');
     const sendQuoteBtn = document.getElementById('sendQuoteBtn');
 
     function renderServices(filter = 'all', search = '') {
+        if (!servicesGrid) return;
         servicesGrid.innerHTML = '';
         const filtered = servicesData.filter(item => {
             const matchesFilter = (filter === 'all' || item.category === filter);
@@ -137,18 +124,14 @@ document.addEventListener('DOMContentLoaded', () => {
         filtered.forEach(service => {
             const isChecked = selectedServices.has(service.title);
             const card = document.createElement('div');
-            card.className = 'service-card';
+            card.className = 'card service-card';
             card.innerHTML = `
-                <div>
-                    <div class="service-card-header">
-                        <div class="service-card-icon"><i class="fas ${service.icon}"></i></div>
-                        <h3 style="font-size: 1.15rem; color: var(--secondary-color);">${service.title}</h3>
-                    </div>
-                    <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px;">${service.desc}</p>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); padding-top: 15px;">
-                    <label style="cursor: pointer; font-size: 0.9rem; font-weight: 600; color: var(--primary-color);">
-                        <input type="checkbox" class="service-checkbox" data-title="${service.title}" ${isChecked ? 'checked' : ''}> Sélectionner pour devis
+                <div class="card-icon"><i class="fas ${service.icon}"></i></div>
+                <h3 class="card-title">${service.title}</h3>
+                <p class="card-text">${service.desc}</p>
+                <div style="margin-top: 20px;">
+                    <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; color: var(--accent-color); font-weight: 600;">
+                        <input type="checkbox" class="service-checkbox" data-title="${service.title}" ${isChecked ? 'checked' : ''} style="width: 18px; height: 18px; cursor: pointer;"> Sélectionner pour devis
                     </label>
                 </div>
             `;
@@ -170,41 +153,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateQuotePanel() {
+        if (!quotePanel) return;
         if (selectedServices.size > 0) {
-            quotePanel.style.display = 'flex';
-            selectedCount.textContent = selectedServices.size;
+            selectedCount.textContent = `${selectedServices.size} service(s) sélectionné(s) : ` + Array.from(selectedServices).join(', ');
+            sendQuoteBtn.style.display = 'inline-flex';
         } else {
-            quotePanel.style.display = 'none';
+            selectedCount.textContent = "Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.";
+            sendQuoteBtn.style.display = 'none';
         }
     }
 
     // Gestion du filtre
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
+            filterBtns.forEach(b => {
+                b.classList.remove('active');
+                b.style.background = '#1f2937';
+            });
             btn.classList.add('active');
-            renderServices(btn.getAttribute('data-filter'), searchInput.value);
+            btn.style.background = 'var(--primary-color)';
+            renderServices(btn.getAttribute('data-filter'), searchInput ? searchInput.value : '');
         });
     });
 
     // Gestion de la recherche
-    searchInput.addEventListener('input', (e) => {
-        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-        renderServices(activeFilter, e.target.value);
-    });
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+            renderServices(activeFilter, e.target.value);
+        });
+    }
 
     // Envoi du message WhatsApp
-    sendQuoteBtn.addEventListener('click', () => {
-        if (selectedServices.size === 0) return;
-        let message = `Bonjour *EGT TECHNOLOGIE*,\nJe souhaite obtenir un devis pour les services suivants :\n\n`;
-        selectedServices.forEach(item => {
-            message += `- ${item}\n`;
-        });
-        message += `\nMerci de me recontacter pour discuter du projet.`;
+    if (sendQuoteBtn) {
+        sendQuoteBtn.addEventListener('click', () => {
+            if (selectedServices.size === 0) return;
+            let message = `Bonjour *EGT TECHNOLOGIE*,\nJe souhaite obtenir un devis pour les prestations suivantes :\n\n`;
+            selectedServices.forEach(item => {
+                message += `• ${item}\n`;
+            });
+            message += `\nMerci de me recontacter pour en discuter.`;
 
-        const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/22890322533?text=${encodedMessage}`, '_blank');
-    });
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/22890322533?text=${encodedMessage}`, '_blank');
+        });
+    }
 
     // Premier rendu
     renderServices();
