@@ -21,14 +21,14 @@
         }
         .grid-products {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
         .product-card {
             background: #1f2937;
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 22px;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -40,11 +40,38 @@
             border-color: var(--primary-color);
             box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
+        .product-img-container {
+            width: 100%;
+            height: 180px;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .product-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover .product-img-container img {
+            transform: scale(1.05);
+        }
+        .product-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
         .product-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .product-badge {
             background: rgba(37, 99, 235, 0.15);
@@ -66,18 +93,12 @@
         
         .product-title {
             color: #fff;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             line-height: 1.4;
         }
-        .product-moq {
-            color: #9ca3af;
-            font-size: 0.8rem;
-            margin-bottom: 12px;
-        }
         
-        /* Table d'attributs style e-commerce */
         .product-attributes {
             width: 100%;
             margin-bottom: 15px;
@@ -93,7 +114,7 @@
 
         .product-price-box {
             background: rgba(0, 0, 0, 0.2);
-            padding: 12px;
+            padding: 10px 14px;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -101,7 +122,7 @@
             margin-bottom: 15px;
         }
         .price-tag {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: #10b981;
         }
@@ -110,21 +131,22 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            background: rgba(239, 68, 68, 0.2);
-            color: #ef4444;
+            background: rgba(239, 68, 68, 0.85);
+            color: #fff;
             border: none;
-            width: 26px;
-            height: 26px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             cursor: pointer;
             display: none;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
         .admin-mode .btn-delete { display: flex; }
 
-        /* Panneau d'administration */
         .admin-panel {
             background: #111827;
             border: 2px dashed var(--primary-color);
@@ -135,7 +157,7 @@
         }
         .admin-form {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
             margin-top: 15px;
         }
@@ -181,12 +203,12 @@
     <!-- HEADER SECTION -->
     <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 50px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
         <div class="container">
-            <h1 style="font-size: 2.2rem; margin-bottom: 12px; color: #fff;"><i class="fas fa-store"></i> Boutique &amp; Gestion des Stocks</h1>
+            <h1 style="font-size: 2.2rem; margin-bottom: 12px; color: #fff;"><i class="fas fa-store"></i> Boutique &amp; Catalogue Visuel</h1>
             <p style="color: #9ca3af; max-width: 750px; margin: 0 auto; font-size: 1rem;">
-                Consultez nos ordinateurs, téléphones, pièces et logiciels disponibles chez <strong>EGT TECHNOLOGIE</strong> à Lomé.
+                Découvrez nos ordinateurs, téléphones, pièces et logiciels avec visuels et stocks en direct chez <strong>EGT TECHNOLOGIE</strong> à Lomé.
             </p>
             <button onclick="toggleAdmin()" class="btn" style="margin-top: 20px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 0.85rem;">
-                <i class="fas fa-lock"></i> Mode Admin (Ajout/Stock)
+                <i class="fas fa-lock"></i> Mode Admin (Ajouter un Article)
             </button>
         </div>
     </header>
@@ -195,22 +217,23 @@
     <section class="section">
         <div class="container" id="shopContainer">
             
-            <!-- PANNEAU D'ADMINISTRATION (MASQUÉ PAR DÉFAUT) -->
+            <!-- PANNEAU D'ADMINISTRATION -->
             <div class="admin-panel" id="adminPanel">
-                <h3 style="color: #fff; font-size: 1.2rem;"><i class="fas fa-plus-circle"></i> Ajouter un Nouveau Produit au Stock</h3>
+                <h3 style="color: #fff; font-size: 1.2rem;"><i class="fas fa-plus-circle"></i> Ajouter un Article (Nom, Image, Prix, Stock)</h3>
                 <form class="admin-form" id="addProductForm" onsubmit="addNewProduct(event)">
-                    <input type="text" id="pTitle" placeholder="Nom du Produit (ex: HP ProBook 450)" required>
+                    <input type="text" id="pTitle" placeholder="Nom du Produit (ex: HP ProBook)" required>
                     <select id="pCategory">
                         <option value="matériel">Ordinateurs &amp; PC</option>
                         <option value="mobile">Téléphones &amp; Android</option>
                         <option value="logiciel">Logiciels &amp; Outils EGT</option>
                     </select>
-                    <input type="text" id="pPrice" placeholder="Prix (ex: 185 000 CFA)" required>
+                    <input type="text" id="pPrice" placeholder="Prix (ex: 185.000 CFA)" required>
                     <input type="number" id="pStock" placeholder="Quantité en Stock" required>
-                    <input type="text" id="pAttr1" placeholder="Processeur / Caract. 1 (ex: Intel i5)">
-                    <input type="text" id="pAttr2" placeholder="RAM / Caract. 2 (ex: 8 GB DDR4)">
-                    <input type="text" id="pAttr3" placeholder="Disque / Caract. 3 (ex: 256 GB SSD)">
-                    <button type="submit" class="btn btn-primary" style="grid-column: 1 / -1;"><i class="fas fa-save"></i> Enregistrer le Produit</button>
+                    <input type="url" id="pImage" placeholder="Lien de l'image (URL photo)" required>
+                    <input type="text" id="pAttr1" placeholder="Caractéristique 1 (ex: Intel i5)">
+                    <input type="text" id="pAttr2" placeholder="Caractéristique 2 (ex: 8 GB RAM)">
+                    <input type="text" id="pAttr3" placeholder="Caractéristique 3 (ex: 256 GB SSD)">
+                    <button type="submit" class="btn btn-primary" style="grid-column: 1 / -1;"><i class="fas fa-save"></i> Enregistrer le Produit au Catalogue</button>
                 </form>
             </div>
 
@@ -246,7 +269,7 @@
 
     <script src="js/main.js"></script>
     <script>
-        // Produits initiaux par défaut
+        // Produits initiaux par défaut avec images
         const defaultProducts = [
             {
                 id: 1,
@@ -254,6 +277,7 @@
                 category: "matériel",
                 price: "185.000 CFA",
                 stock: 3,
+                image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80",
                 attr1: "Intel Core i5 (8e Gén)",
                 attr2: "8 GB RAM DDR4",
                 attr3: "256 GB SSD NVMe"
@@ -264,6 +288,7 @@
                 category: "matériel",
                 price: "245.000 CFA",
                 stock: 2,
+                image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80",
                 attr1: "Intel Core i7 High-Perf",
                 attr2: "16 GB RAM DDR4",
                 attr3: "512 GB SSD NVMe"
@@ -274,6 +299,7 @@
                 category: "mobile",
                 price: "95.000 CFA",
                 stock: 5,
+                image: "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=600&q=80",
                 attr1: "Écran 6.5 pouces HD+",
                 attr2: "4 GB RAM + 128 GB ROM",
                 attr3: "Batterie 5000 mAh"
@@ -284,6 +310,7 @@
                 category: "logiciel",
                 price: "Sur Devis",
                 stock: 99,
+                image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
                 attr1: "Gestion Stock & Ventes",
                 attr2: "Base SQLite Chiffrée",
                 attr3: "Licence à vie Windows"
@@ -294,23 +321,24 @@
                 category: "logiciel",
                 price: "Sur Devis",
                 stock: 99,
+                image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
                 attr1: "Outils ADB & NVRAM",
                 attr2: "OCR IMEI par photo",
                 attr3: "Calculateur NCK Code"
             }
         ];
 
-        // Charger les produits depuis LocalStorage ou par défaut
+        // Charger les produits
         function loadProducts() {
-            let products = JSON.parse(localStorage.getItem('egt_products'));
+            let products = JSON.parse(localStorage.getItem('egt_products_v2'));
             if (!products || products.length === 0) {
                 products = defaultProducts;
-                localStorage.setItem('egt_products', JSON.stringify(products));
+                localStorage.setItem('egt_products_v2', JSON.stringify(products));
             }
             return products;
         }
 
-        // Affichage des produits dans les grilles
+        // Affichage des produits
         function renderProducts() {
             const products = loadProducts();
             const gridMateriel = document.getElementById('grid-materiel');
@@ -323,8 +351,8 @@
 
             products.forEach(p => {
                 const stockBadge = p.stock > 0 
-                    ? `<span class="stock-badge in-stock"><i class="fas fa-check"></i> Stock: ${p.stock} disponible(s)</span>`
-                    : `<span class="stock-badge out-stock"><i class="fas fa-times"></i> Rupture de stock</span>`;
+                    ? `<span class="stock-badge in-stock"><i class="fas fa-check"></i> Stock: ${p.stock}</span>`
+                    : `<span class="stock-badge out-stock"><i class="fas fa-times"></i> Rrupture</span>`;
 
                 const btnWa = p.stock > 0
                     ? `<a href="https://api.whatsapp.com/send?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20commander%20:*${encodeURIComponent(p.title)}*%20au%20prix%20de%20${encodeURIComponent(p.price)}." target="_blank" class="btn btn-whatsapp" style="text-align: center; font-size: 0.85rem; padding: 10px; display: block;"><i class="fab fa-whatsapp"></i> Commander sur WhatsApp</a>`
@@ -332,26 +360,31 @@
 
                 const cardHTML = `
                     <div class="product-card">
-                        <button class="btn-delete" onclick="deleteProduct(${p.id})"><i class="fas fa-trash"></i></button>
-                        <div>
-                            <div class="product-header">
-                                <span class="product-badge">${p.category.toUpperCase()}</span>
-                                ${stockBadge}
-                            </div>
-                            <h3 class="product-title">${p.title}</h3>
-                            
-                            <table class="product-attributes">
-                                ${p.attr1 ? `<tr><td class="attr-name">Spécification 1:</td><td class="attr-val">${p.attr1}</td></tr>` : ''}
-                                ${p.attr2 ? `<tr><td class="attr-name">Spécification 2:</td><td class="attr-val">${p.attr2}</td></tr>` : ''}
-                                ${p.attr3 ? `<tr><td class="attr-name">Spécification 3:</td><td class="attr-val">${p.attr3}</td></tr>` : ''}
-                            </table>
+                        <button class="btn-delete" onclick="deleteProduct(${p.id})" title="Supprimer"><i class="fas fa-trash"></i></button>
+                        <div class="product-img-container">
+                            <img src="${p.image || 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80'}" alt="${p.title}">
                         </div>
-                        <div>
-                            <div class="product-price-box">
-                                <span style="color: #9ca3af; font-size: 0.85rem;">Tarif:</span>
-                                <span class="price-tag">${p.price}</span>
+                        <div class="product-content">
+                            <div>
+                                <div class="product-header">
+                                    <span class="product-badge">${p.category.toUpperCase()}</span>
+                                    ${stockBadge}
+                                </div>
+                                <h3 class="product-title">${p.title}</h3>
+                                
+                                <table class="product-attributes">
+                                    ${p.attr1 ? `<tr><td class="attr-name">Caract 1:</td><td class="attr-val">${p.attr1}</td></tr>` : ''}
+                                    ${p.attr2 ? `<tr><td class="attr-name">Caract 2:</td><td class="attr-val">${p.attr2}</td></tr>` : ''}
+                                    ${p.attr3 ? `<tr><td class="attr-name">Caract 3:</td><td class="attr-val">${p.attr3}</td></tr>` : ''}
+                                </table>
                             </div>
-                            ${btnWa}
+                            <div>
+                                <div class="product-price-box">
+                                    <span style="color: #9ca3af; font-size: 0.85rem;">Prix:</span>
+                                    <span class="price-tag">${p.price}</span>
+                                </div>
+                                ${btnWa}
+                            </div>
                         </div>
                     </div>
                 `;
@@ -372,23 +405,24 @@
                 category: document.getElementById('pCategory').value,
                 price: document.getElementById('pPrice').value,
                 stock: parseInt(document.getElementById('pStock').value),
+                image: document.getElementById('pImage').value,
                 attr1: document.getElementById('pAttr1').value,
                 attr2: document.getElementById('pAttr2').value,
                 attr3: document.getElementById('pAttr3').value
             };
             products.push(newP);
-            localStorage.setItem('egt_products', JSON.stringify(products));
+            localStorage.setItem('egt_products_v2', JSON.stringify(products));
             document.getElementById('addProductForm').reset();
             renderProducts();
-            alert("Produit ajouté avec succès au stock !");
+            alert("Article avec image et stock enregistré avec succès !");
         }
 
         // Supprimer un produit
         function deleteProduct(id) {
-            if (confirm("Voulez-vous vraiment supprimer ce produit du catalogue ?")) {
+            if (confirm("Voulez-vous vraiment supprimer cet article ?")) {
                 let products = loadProducts();
                 products = products.filter(p => p.id !== id);
-                localStorage.setItem('egt_products', JSON.stringify(products));
+                localStorage.setItem('egt_products_v2', JSON.stringify(products));
                 renderProducts();
             }
         }
@@ -399,13 +433,13 @@
             if (pwd === "egt2026" || pwd === "admin") {
                 document.getElementById('adminPanel').style.display = "block";
                 document.getElementById('shopContainer').classList.add('admin-mode');
-                alert("Mode administration activé ! Vous pouvez maintenant ajouter ou supprimer des articles.");
+                alert("Mode administration activé ! Vous pouvez ajouter ou supprimer des articles.");
             } else if (pwd !== null) {
                 alert("Mot de passe incorrect.");
             }
         }
 
-        // Initialisation
+        // Initialisation au chargement
         document.addEventListener('DOMContentLoaded', renderProducts);
     </script>
 </body>
