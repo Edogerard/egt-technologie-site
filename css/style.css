@@ -1,29 +1,30 @@
 /* ==========================================================================
-   EGT TECHNOLOGIE - Feuille de style principale
-   Fondateur : TOUDJI Edo Gérard
+   EGT TECHNOLOGIE - Feuille de style principale (Version Moderne)
+   Fondateur : Edo Gerard TOUDJI
    Slogan : La technologie au service de votre réussite
    ========================================================================== */
 
 /* --- 1. Variables CSS & Colors --- */
 :root {
-  --primary-color: #0d6efd;
-  --primary-dark: #0a58ca;
+  --primary-color: #2563eb;
+  --primary-dark: #1d4ed8;
   --secondary-color: #111827;
+  --bg-main: #0b0f19;
+  --bg-card: #111827;
+  --bg-card-hover: #1f2937;
   --accent-color: #10b981;
   --accent-gold: #f59e0b;
-  --bg-light: #f8fafc;
-  --bg-card: #ffffff;
-  --text-dark: #1e293b;
-  --text-muted: #64748b;
+  --text-dark: #f8fafc;
+  --text-muted: #9ca3af;
   --text-light: #f8fafc;
-  --border-color: #e2e8f0;
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
-  --shadow-lg: 0 10px 25px rgba(0,0,0,0.12);
-  --radius-sm: 6px;
-  --radius-md: 10px;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.2);
+  --shadow-md: 0 10px 25px rgba(0,0,0,0.3);
+  --shadow-lg: 0 15px 40px rgba(37, 99, 235, 0.2);
+  --radius-sm: 8px;
+  --radius-md: 12px;
   --radius-lg: 16px;
-  --transition: all 0.3s ease;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* --- 2. Reset & Bases --- */
@@ -40,7 +41,7 @@ html {
 
 body {
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-  background-color: var(--bg-light);
+  background-color: var(--bg-main);
   color: var(--text-dark);
   line-height: 1.6;
   overflow-x: hidden;
@@ -71,7 +72,7 @@ img {
 }
 
 .section {
-  padding: 70px 0;
+  padding: 80px 0;
 }
 
 .section-title {
@@ -80,8 +81,8 @@ img {
 }
 
 .section-title h2 {
-  font-size: 2.2rem;
-  color: var(--secondary-color);
+  font-size: 2.3rem;
+  color: #fff;
   font-weight: 700;
   position: relative;
   display: inline-block;
@@ -93,7 +94,7 @@ img {
   width: 60px;
   height: 4px;
   background: var(--primary-color);
-  margin: 10px auto 0;
+  margin: 12px auto 0;
   border-radius: 2px;
 }
 
@@ -111,6 +112,7 @@ img {
   top: 0;
   z-index: 1000;
   box-shadow: var(--shadow-md);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .navbar .container {
@@ -133,6 +135,7 @@ img {
   font-size: 1.3rem;
   padding: 8px 14px;
   border-radius: var(--radius-sm);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .brand-logo .brand-text {
@@ -159,27 +162,31 @@ img {
 }
 
 .nav-links a {
-  color: #d1d5db;
+  color: #9ca3af;
   font-weight: 500;
   font-size: 0.95rem;
+  transition: var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
   color: #ffffff;
   border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 3px;
 }
 
 .btn-contact-nav {
   background-color: var(--primary-color);
   color: #fff !important;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: var(--radius-sm);
   font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .btn-contact-nav:hover {
   background-color: var(--primary-dark);
+  transform: translateY(-2px);
 }
 
 .mobile-toggle {
@@ -191,9 +198,9 @@ img {
 
 /* --- 5. Hero Section --- */
 .hero {
-  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  background: radial-gradient(circle at center, #1e293b 0%, #0b0f19 100%);
   color: #fff;
-  padding: 90px 0 80px;
+  padding: 100px 0;
   position: relative;
   overflow: hidden;
 }
@@ -215,16 +222,17 @@ img {
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 20px;
   font-weight: 800;
 }
 
 .hero-description {
-  color: #9ca3af;
+  color: var(--text-muted);
   font-size: 1.1rem;
   margin-bottom: 30px;
+  line-height: 1.6;
 }
 
 .hero-buttons {
@@ -238,7 +246,7 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   padding: 12px 24px;
   border-radius: var(--radius-sm);
   font-weight: 600;
@@ -250,45 +258,49 @@ img {
 .btn-primary {
   background-color: var(--primary-color);
   color: #fff;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
 }
 
 .btn-whatsapp {
   background-color: #25d366;
   color: #fff;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .btn-whatsapp:hover {
   background-color: #1eb954;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
 }
 
 .btn-outline {
-  border: 2px solid #4b5563;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .btn-outline:hover {
   border-color: #fff;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 /* --- 7. Cartes & Grilles --- */
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
 .grid-4 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
 .card {
@@ -301,33 +313,36 @@ img {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-lg);
 }
 
 .card-icon {
   font-size: 2.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   color: var(--primary-color);
 }
 
 .card-title {
   font-size: 1.3rem;
   margin-bottom: 12px;
-  color: var(--secondary-color);
+  color: #fff;
+  font-weight: 700;
 }
 
 .card-text {
   color: var(--text-muted);
   font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* --- 8. Footer --- */
 .footer {
   background-color: var(--secondary-color);
-  color: #9ca3af;
-  padding: 60px 0 20px;
-  border-top: 1px solid #1f2937;
+  color: var(--text-muted);
+  padding: 60px 0 25px;
+  border-top: 1px solid var(--border-color);
 }
 
 .footer-grid {
@@ -353,7 +368,7 @@ img {
 
 .footer-bottom {
   text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid #1f2937;
+  padding-top: 25px;
+  border-top: 1px solid var(--border-color);
   font-size: 0.85rem;
 }
