@@ -3,13 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prestations de Services — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Catalogue officiel des prestations logicielles, réseaux et numériques d'EGT TECHNOLOGIE à Lomé. Demandez votre devis personnalisé.">
+    <title>Services &amp; Devis Instantané — EGT TECHNOLOGIE</title>
+    <meta name="description" content="Catalogue complet des prestations expertes d'EGT TECHNOLOGIE à Lomé : développement logiciel, réseaux télécoms, maintenance informatique et électronique par Edo Gerard TOUDJI.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <!-- FontAwesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .services-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        @media (max-width: 992px) {
+            .services-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .services-sidebar {
+            background: #1f2937;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            position: sticky;
+            top: 20px;
+        }
+        .filter-btn {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            color: #9ca3af;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary-color);
+            color: #fff;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .service-card {
+            background: #1f2937;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .service-card.selected {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.05);
+        }
+        .service-icon {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .service-title {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        .service-desc {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .select-service-btn {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+        .service-card.selected .select-service-btn {
+            background: #10b981;
+            border-color: #10b981;
+        }
+        
+        .quote-box {
+            background: #111827;
+            border: 2px dashed var(--primary-color);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+        .quote-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .quote-list li {
+            background: #1f2937;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            color: #e5e7eb;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .share-widget-container {
             background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -53,7 +179,7 @@
 </head>
 <body>
 
-    <!-- NAV BAR -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="brand-logo">
@@ -82,43 +208,224 @@
     <!-- HEADER SECTION -->
     <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
         <div class="container">
-            <h1 style="font-size: 2.2rem; margin-bottom: 15px; color: #fff;">Prestations de Services Numériques &amp; Informatiques</h1>
-            <p style="color: #9ca3af; max-width: 700px; margin: 0 auto; font-size: 1.05rem;">
-                Découvrez nos domaines d'intervention à Lomé. Cochez les prestations souhaitées pour composer votre devis instantané sur WhatsApp.
+            <h1 style="font-size: 2.3rem; margin-bottom: 12px; color: #fff;"><i class="fas id-badge fa-tools"></i> Prestations de Services &amp; Expertise Technique</h1>
+            <p style="color: #9ca3af; max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
+                Interventions expertes à Lomé et supervision IT par <strong>Edo Gerard TOUDJI</strong>. Cochez les prestations souhaitées pour composer instantanément votre devis personnalisé sur WhatsApp.
             </p>
         </div>
     </header>
 
-    <!-- SERVICES CONTENT & PANIER DEVIS -->
+    <!-- CONTENEUR PRINCIPAL AVEC FILTRES ET GRILLE -->
     <section class="section">
         <div class="container">
-            
-            <!-- Barre de recherche -->
-            <div style="margin-bottom: 30px;">
-                <input type="text" id="serviceSearch" placeholder="Rechercher une prestation (ex: logiciels, réseaux, IA, hôpitaux...)" style="width: 100%; padding: 14px 20px; border-radius: 8px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; font-size: 1rem; outline: none;">
-            </div>
+            <div class="services-layout">
+                
+                <!-- BARRE LATÉRALE DE FILTRAGE -->
+                <div class="services-sidebar">
+                    <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color);">
+                        <i class="fas fa-filter"></i> Filtrer par Domaine
+                    </h3>
+                    <div id="filterContainer">
+                        <button class="filter-btn active" onclick="filterServices('all', this)">Tous les services</button>
+                        <button class="filter-btn" onclick="filterServices('dev', this)">Développement &amp; Web</button>
+                        <button class="filter-btn" onclick="filterServices('gestion', this)">Logiciels &amp; PME</button>
+                        <button class="filter-btn" onclick="filterServices('maintenance', this)">Maintenance &amp; Mobile</button>
+                        <button class="filter-btn" onclick="filterServices('reseaux', this)">Réseaux &amp; Sécurité</button>
+                        <button class="filter-btn" onclick="filterServices('elec', this)">Électricité &amp; Électronique</button>
+                        <button class="filter-btn" onclick="filterServices('institutions', this)">Écoles, Hôpitaux &amp; Mairies</button>
+                    </div>
+                </div>
 
-            <!-- Filtres par catégorie -->
-            <div class="filter-buttons" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
-                <button class="filter-btn active" data-filter="all" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--primary-color); color: #fff; cursor: pointer;">Tous les services</button>
-                <button class="filter-btn" data-filter="dev" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Développement &amp; Web</button>
-                <button class="filter-btn" data-filter="pme" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Gestion PME &amp; Commerces</button>
-                <button class="filter-btn" data-filter="maintenance" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Maintenance PC/Mobile</button>
-                <button class="filter-btn" data-filter="reseau" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Réseaux &amp; Sécurité</button>
-                <button class="filter-btn" data-filter="ia" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">IA &amp; Automatisation</button>
-                <button class="filter-btn" data-filter="special" style="padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border-color); background: #1f2937; color: #fff; cursor: pointer;">Écoles, Hôpitaux &amp; Mairies</button>
-            </div>
+                <!-- GRILLE DES SERVICES -->
+                <div>
+                    <div class="services-grid" id="servicesGrid">
+                        
+                        <!-- 1. Développement Bureau & Mobile -->
+                        <div class="service-card" data-category="dev">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                                <h3 class="service-title">Développement Logiciels Desktop &amp; Mobile</h3>
+                                <p class="service-desc">
+                                    Création d'applications Windows sur mesure (Python, PySide6, SQLite chiffré) et applications mobiles multiplateformes (Flutter, Dart, Kotlin) avec intégration de MethodChannels natifs.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Développement Logiciels Desktop & Mobile')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
 
-            <!-- Grille injectée dynamiquement par services.js -->
-            <div class="grid-3" id="servicesGrid"></div>
+                        <!-- 2. Logiciels de Gestion PME -->
+                        <div class="service-card" data-category="gestion">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-cash-register"></i></div>
+                                <h3 class="service-title">Logiciels de Gestion &amp; Facturation (PME)</h3>
+                                <p class="service-desc">
+                                    Solutions de caisse, suivi des ventes, gestion rigoureuse des stocks, approvisionnements et tableaux de bord décisionnels pour commerces et entreprises à Lomé.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Logiciels de Gestion & Facturation (PME)')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
 
-            <!-- Panier de devis -->
-            <div id="quoteBox" style="margin-top: 50px; background: #1f2937; border: 1px solid var(--accent-color); border-radius: 12px; padding: 30px; text-align: center;">
-                <h3 style="margin-bottom: 10px; color: #fff;"><i class="fas fa-shopping-cart"></i> Votre Devis Personnalisé</h3>
-                <p id="selectedCount" style="color: #9ca3af; margin-bottom: 20px;">Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.</p>
-                <button id="sendQuoteBtn" class="btn btn-whatsapp" style="display: none; margin: 0 auto; font-size: 1.1rem; padding: 12px 30px;">
-                    <i class="fab fa-whatsapp"></i> Envoyer ma demande de devis sur WhatsApp
-                </button>
+                        <!-- 3. Intelligence Artificielle & Automatisation -->
+                        <div class="service-card" data-category="dev">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-brain"></i></div>
+                                <h3 class="service-title">IA &amp; Automatisation Intelligente</h3>
+                                <p class="service-desc">
+                                    Intégration d'outils d'IA avancés, traitement d'image par OCR (Pytesseract, Pillow), automatisation de workflows et développement de scripts Python intelligents.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'IA & Automatisation Intelligente')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 4. Maintenance Matériel & PC -->
+                        <div class="service-card" data-category="maintenance">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                                <h3 class="service-title">Maintenance &amp; Réparation Matériel PC</h3>
+                                <p class="service-desc">
+                                    Diagnostic approfondi de pannes matérielles et logicielles, réparation de partitions disque, récupération de données et optimisation de performances PC fixes et portables.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Maintenance & Réparation Matériel PC')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 5. Maintenance Mobile & Android Doctor -->
+                        <div class="service-card" data-category="maintenance">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <h3 class="service-title">Diagnostic &amp; Maintenance Smartphones (Android/iOS)</h3>
+                                <p class="service-desc">
+                                    Opérations ADB &amp; Fastboot, calcul de codes NCK, maintenance NVRAM, lecture IMEI par OCR, contournement de sécurités logicielles et déblocage professionnel.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Diagnostic & Maintenance Smartphones (Android/iOS)')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 6. Électricité & Électronique -->
+                        <div class="service-card" data-category="elec">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                                <h3 class="service-title">Électricité Bâtiment &amp; Électronique</h3>
+                                <p class="service-desc">
+                                    Conception et câblage d'installations électriques, analyse de schémas analogiques et numériques, régulateurs de puissance, convertisseurs DC-DC et maintenance de circuits.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Électricité Bâtiment & Électronique')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 7. Réseaux & Télécoms -->
+                        <div class="service-card" data-category="reseaux">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                                <h3 class="service-title">Réseaux Informatiques &amp; Télécommunications</h3>
+                                <p class="service-desc">
+                                    Déploiement de réseaux LAN/Wi-Fi d'entreprise, câblage structuré, configuration de routeurs et switchs, et supervision technique d'infrastructures télécoms.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Réseaux Informatiques & Télécommunications')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 8. Vidéosurveillance & Paraboles -->
+                        <div class="service-card" data-category="reseaux">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-video"></i></div>
+                                <h3 class="service-title">Vidéosurveillance CCTV &amp; Antennes Paraboliques</h3>
+                                <p class="service-desc">
+                                    Installation de systèmes de caméras de sécurité NVR/DVR, configuration de l'accès distant sur mobile, orientation de paraboles et réglage de fréquences satellites.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Vidéosurveillance CCTV & Antennes Paraboliques')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 9. Solutions Écoles & Centres -->
+                        <div class="service-card" data-category="institutions">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                                <h3 class="service-title">Solutions Numériques pour Écoles &amp; Universités</h3>
+                                <p class="service-desc">
+                                    Logiciels de gestion de scolarité, fiches élèves, bulletins de notes automatisés, emplois du temps et gestion de bibliothèques scolaires.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Solutions Numériques pour Écoles & Universités')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 10. Solutions Hôpitaux & Pharmacies -->
+                        <div class="service-card" data-category="institutions">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-hospital"></i></div>
+                                <h3 class="service-title">Solutions pour Hôpitaux, Cliniques &amp; Pharmacies</h3>
+                                <p class="service-desc">
+                                    Gestion des dossiers patients, prise de rendez-vous en ligne, suivi en temps réel des stocks de médicaments et facturation médicale sécurisée.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Solutions pour Hôpitaux, Cliniques & Pharmacies')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 11. Solutions Mairies & Administrations -->
+                        <div class="service-card" data-category="institutions">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-landmark"></i></div>
+                                <h3 class="service-title">Solutions pour Mairies &amp; Administrations</h3>
+                                <p class="service-desc">
+                                    Numérisation des procédures administratives, suivi des taxes et quittances communales, gestion informatisée du courrier et des registres d'état civil.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Solutions pour Mairies & Administrations')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                        <!-- 12. Supervision & Formation sur Site -->
+                        <div class="service-card" data-category="maintenance">
+                            <div>
+                                <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                                <h3 class="service-title">Supervision Technique &amp; Formation de Techniciens</h3>
+                                <p class="service-desc">
+                                    Prestations de supervision d'opérations techniques (expériences SNEDAI / CENI), formation de techniciens et programmes de formation des formateurs.
+                                </p>
+                            </div>
+                            <button class="select-service-btn" onclick="toggleService(this, 'Supervision Technique & Formation de Techniciens')">
+                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <!-- BOITE DE DEVIS INSTANTANÉ -->
+                    <div class="quote-box">
+                        <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;"><i class="fas fa-file-invoice-dollar" style="color: var(--primary-color);"></i> Votre Devis Personnalisé</h3>
+                        <p id="quoteStatusText" style="color: #9ca3af; font-size: 0.9rem;">Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.</p>
+                        
+                        <ul class="quote-list" id="quoteList" style="display: none;"></ul>
+
+                        <div id="quoteActionContainer" style="display: none; margin-top: 20px;">
+                            <a id="whatsappQuoteBtn" href="#" target="_blank" class="btn btn-whatsapp" style="width: 100%; text-align: center; padding: 12px; font-size: 1rem;">
+                                <i class="fab fa-whatsapp"></i> Envoyer la demande de devis sur WhatsApp (+228 90 32 25 33)
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
             <!-- WIDGET DE PARTAGE SOCIAL INTERACTIF -->
@@ -130,7 +437,7 @@
                     Partagez nos services avec votre réseau sur vos réseaux sociaux préférés :
                 </p>
                 <div class="share-buttons-grid">
-                    <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20services%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
+                    <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20services%20techniques%20et%20logiciels%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
@@ -139,7 +446,7 @@
                     <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
                         <i class="fab fa-tiktok"></i> TikTok
                     </a>
-                    <a href="mailto:?subject=Découvrez%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20services%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
+                    <a href="mailto:?subject=Services%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20services%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
                         <i class="fas fa-envelope"></i> E-mail
                     </a>
                     <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
@@ -155,14 +462,74 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="text-align: center;">
-                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI.</p>
+                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI (Lomé, Togo).</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/services.js"></script>
     <script src="js/main.js"></script>
     <script>
+        // Gestion de la sélection des services pour le devis
+        let selectedServices = [];
+
+        function toggleService(button, serviceName) {
+            const card = button.closest('.service-card');
+            const iconSpan = button.querySelector('i');
+            const textSpan = button.querySelector('span');
+
+            if (selectedServices.includes(serviceName)) {
+                selectedServices = selectedServices.filter(s => s !== serviceName);
+                card.classList.remove('selected');
+                iconSpan.className = "fas fa-plus";
+                textSpan.textContent = "Sélectionner pour devis";
+            } else {
+                selectedServices.push(serviceName);
+                card.classList.add('selected');
+                iconSpan.className = "fas fa-check";
+                textSpan.textContent = "Sélectionné";
+            }
+            updateQuoteBox();
+        }
+
+        function updateQuoteBox() {
+            const statusText = document.getElementById('quoteStatusText');
+            const quoteList = document.getElementById('quoteList');
+            const actionContainer = document.getElementById('quoteActionContainer');
+            const whatsappBtn = document.getElementById('whatsappQuoteBtn');
+
+            if (selectedServices.length === 0) {
+                statusText.textContent = "Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.";
+                quoteList.style.display = "none";
+                actionContainer.style.display = "none";
+            } else {
+                statusText.textContent = `${selectedServices.length} prestation(s) sélectionnée(s) :`;
+                quoteList.innerHTML = '';
+                selectedServices.forEach(service => {
+                    quoteList.innerHTML += `<li><span><i class="fas fa-check-circle" style="color: #10b981;"></i> ${service}</span></li>`;
+                });
+                quoteList.style.display = "block";
+                actionContainer.style.display = "block";
+
+                const text = `Bonjour *EGT TECHNOLOGIE*,\n\nJe souhaite obtenir un devis personnalisé pour les prestations suivantes :\n` + selectedServices.map(s => `- ${s}`).join('\n') + `\n\nMerci de me recontacter.`;
+                whatsappBtn.href = `https://wa.me/22890322533?text=${encodeURIComponent(text)}`;
+            }
+        }
+
+        // Filtrage des services
+        function filterServices(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
         function copySiteLink() {
             const url = 'https://edogerard.github.io/egt-technologie-site/';
             navigator.clipboard.writeText(url).then(() => {
