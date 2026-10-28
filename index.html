@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EGT TECHNOLOGIE — Services, Formations & Boutique en Ligne à Lomé</title>
-    <meta name="description" content="Site officiel d'EGT TECHNOLOGIE à Lomé, fondé par Edo Gerard TOUDJI. Prestations de services informatiques et techniques, formations certifiantes et e-commerce.">
+    <title>EGT TECHNOLOGIE — Services, Formations &amp; Solutions Numériques à Lomé</title>
+    <meta name="description" content="Site officiel d'EGT TECHNOLOGIE à Lomé, fondé par Edo Gerard TOUDJI. Prestations de services informatiques et techniques, formations certifiantes.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <!-- FontAwesome pour les icônes -->
@@ -50,7 +50,7 @@
         
         .piliers-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 40px;
         }
@@ -61,6 +61,9 @@
             padding: 30px;
             text-align: left;
             transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .pilier-card:hover {
             transform: translateY(-5px);
@@ -156,7 +159,6 @@
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="services.html">Services &amp; Devis</a></li>
                 <li><a href="formations.html">Formations</a></li>
-                <li><a href="boutique.html">Boutique</a></li>
                 <li><a href="espace-etudiants.html">Espace Étudiants</a></li>
                 <li><a href="portfolio.html">Réalisations</a></li>
                 <li><a href="contact.html" class="btn-contact-nav">Contact</a></li>
@@ -169,52 +171,45 @@
         <div class="container">
             <h1 class="hero-title">Expertise, Innovation &amp; Solutions Numériques</h1>
             <p class="hero-subtitle">
-                Bienvenue chez <strong>EGT TECHNOLOGIE</strong> à Lomé (Fondateur : <strong>Edo Gerard TOUDJI</strong>). Votre partenaire de confiance pour des prestations techniques de pointe, des formations professionnelles certifiantes et du matériel informatique de qualité.
+                Bienvenue chez <strong>EGT TECHNOLOGIE</strong> à Lomé (Fondateur : <strong>Edo Gerard TOUDJI</strong>). Votre partenaire de confiance pour des prestations techniques de pointe et des formations professionnelles certifiantes.
             </p>
             <div class="hero-buttons">
                 <a href="services.html" class="btn-hero btn-primary-custom"><i class="fas fa-tools"></i> Découvrir nos Services</a>
                 <a href="formations.html" class="btn-hero btn-secondary-custom"><i class="fas fa-graduation-cap"></i> Voir les Formations</a>
-                <a href="boutique.html" class="btn-hero btn-primary-custom" style="background-color: #10b981;"><i class="fas fa-store"></i> Visiter la Boutique</a>
             </div>
         </div>
     </header>
 
-    <!-- PRÉSENTATION DES 3 PÔLES PRINCIPAUX -->
+    <!-- PRÉSENTATION DES PÔLES PRINCIPAUX -->
     <section class="section">
         <div class="container">
             <h2 style="text-align: center; color: #fff; font-size: 2rem; margin-bottom: 10px;">Nos Domaines d'Excellence</h2>
-            <p style="text-align: center; color: #9ca3af; margin-bottom: 40px;">Une synergie parfaite entre services sur mesure, transmission de compétences et vente en ligne.</p>
+            <p style="text-align: center; color: #9ca3af; margin-bottom: 40px;">Une synergie parfaite entre services sur mesure et transmission de compétences techniques.</p>
             
             <div class="piliers-grid">
                 
                 <!-- Pôle Services -->
                 <div class="pilier-card">
-                    <div class="pilier-icon"><i class="fas fa-cogs"></i></div>
-                    <h3 class="pilier-title">Prestations de Services</h3>
-                    <p class="pilier-text">
-                        Interventions expertes sur 8 domaines : électricité bâtiment, électronique, réparation PC/mobiles, vidéosurveillance CCTV, paraboles, réseaux télécoms et développement de logiciels sur mesure.
-                    </p>
+                    <div>
+                        <div class="pilier-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="pilier-title">Prestations de Services &amp; Développement</h3>
+                        <p class="pilier-text">
+                            Interventions expertes : électricité bâtiment, électronique, réparation PC/mobiles, vidéosurveillance CCTV, paraboles, réseaux télécoms et développement de logiciels sur mesure (Python, PySide6, Flutter, Dart, Kotlin).
+                        </p>
+                    </div>
                     <a href="services.html" class="pilier-link">Accéder au catalogue &amp; devis <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <!-- Pôle Formations -->
                 <div class="pilier-card">
-                    <div class="pilier-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3 class="pilier-title">Formations Professionnelles</h3>
-                    <p class="pilier-text">
-                        Apprenez un métier d'avenir en ligne ou en présentiel à Lomé. Formations pratiques en bureautique PCTAP, électricité, maintenance, programmation et réseaux par Edo Gerard TOUDJI.
-                    </p>
+                    <div>
+                        <div class="pilier-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="pilier-title">Formations Professionnelles</h3>
+                        <p class="pilier-text">
+                            Apprenez un métier d'avenir en ligne ou en présentiel à Lomé. Formations pratiques en bureautique PCTAP, électricité, maintenance, programmation et réseaux par <strong>Edo Gerard TOUDJI</strong>.
+                        </p>
+                    </div>
                     <a href="formations.html" class="pilier-link">Voir les modules &amp; s'inscrire <i class="fas fa-arrow-right"></i></a>
-                </div>
-
-                <!-- Pôle Boutique -->
-                <div class="pilier-card">
-                    <div class="pilier-icon"><i class="fas fa-store"></i></div>
-                    <h3 class="pilier-title">Boutique en Ligne</h3>
-                    <p class="pilier-text">
-                        Achetez nos logiciels sous licence (EGT Shop Manager, etc.), du matériel informatique testé, des smartphones garantis, des kits CCTV et du matériel réseau professionnel.
-                    </p>
-                    <a href="boutique.html" class="pilier-link">Explorer la boutique <i class="fas fa-arrow-right"></i></a>
                 </div>
 
             </div>
@@ -228,7 +223,7 @@
                     Partagez notre plateforme avec votre réseau sur vos réseaux sociaux préférés :
                 </p>
                 <div class="share-buttons-grid">
-                    <a href="https://api.whatsapp.com/send?text=Découvrez%20EGT%20TECHNOLOGIE%20à%20Lomé%20-%20Services%20informatiques,%20formations%20et%20boutique%20en%20ligne%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
+                    <a href="https://api.whatsapp.com/send?text=Découvrez%20EGT%20TECHNOLOGIE%20à%20Lomé%20-%20Services%20informatiques%20et%20formations%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
