@@ -8,8 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.getElementById('navLinks');
 
     if (mobileMenuBtn && navLinks) {
-        mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             navLinks.classList.toggle('show');
+        });
+
+        // Fermer le menu si l'on clique en dehors
+        document.addEventListener('click', (e) => {
+            if (!mobileMenuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('show');
+            }
+        });
+
+        // Fermer le menu au clic sur un lien
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('show');
+            });
         });
     }
 
@@ -33,27 +48,23 @@ function showWelcomeModal() {
             </div>
             <div class="egt-modal-body">
                 <p style="color: #d1d5db; margin-bottom: 15px; font-size: 0.95rem;">Que pouvons-nous accomplir pour vous aujourd'hui ?</p>
-                <div class="egt-welcome-grid">
-                    <a href="services.html" class="egt-welcome-btn btn-serv">
-                        <i class="fas fa-cogs"></i>
-                        <span>Nos Services</span>
+                <div class="egt-welcome-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <a href="services.html" class="egt-welcome-btn btn-serv" style="padding: 15px 10px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: 10px; color: #fff; text-decoration: none; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <i class="fas fa-cogs" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                        <span style="font-size: 0.85rem; font-weight: 600;">Nos Services</span>
                     </a>
-                    <a href="formations.html" class="egt-welcome-btn btn-form">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Nos Formations</span>
+                    <a href="formations.html" class="egt-welcome-btn btn-form" style="padding: 15px 10px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: 10px; color: #fff; text-decoration: none; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <i class="fas fa-graduation-cap" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                        <span style="font-size: 0.85rem; font-weight: 600;">Nos Formations</span>
                     </a>
-                    <a href="boutique.html" class="egt-welcome-btn btn-shop">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span>Vente en Ligne</span>
-                    </a>
-                    <a href="portfolio.html" class="egt-welcome-btn btn-port">
-                        <i class="fas fa-laptop-code"></i>
-                        <span>Nos Réalisations</span>
+                    <a href="portfolio.html" class="egt-welcome-btn btn-port" style="padding: 15px 10px; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: 10px; color: #fff; text-decoration: none; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                        <i class="fas fa-laptop-code" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                        <span style="font-size: 0.85rem; font-weight: 600;">Réalisations</span>
                     </a>
                 </div>
             </div>
-            <div class="egt-modal-footer">
-                <button class="btn btn-primary" onclick="closeWelcomeModal()" style="width: 100%; padding: 12px; font-size: 1rem;">Explorer le site <i class="fas fa-arrow-right"></i></button>
+            <div class="egt-modal-footer" style="margin-top: 20px;">
+                <button class="btn btn-primary" onclick="closeWelcomeModal()" style="width: 100%; padding: 12px; font-size: 1rem; background-color: var(--primary-color); color: #fff; border: none; border-radius: 8px; cursor: pointer;">Explorer le site <i class="fas fa-arrow-right"></i></button>
             </div>
         </div>
     </div>

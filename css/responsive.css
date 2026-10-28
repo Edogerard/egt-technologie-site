@@ -2,60 +2,87 @@
    EGT TECHNOLOGIE - Responsive Design (Mobile & Tablettes)
    ========================================================================== */
 
-/* Ajustement global pour éviter tout débordement horizontal sur mobile */
+/* Anti-débordement horizontal */
 html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/* 1. TABLETTES & ÉCRANS MOYENS (<= 992px) */
 @media (max-width: 992px) {
-  .hero .container,
-  .hero-section .container {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
-  .hero-buttons {
-    justify-content: center;
+  .hero-section {
+    padding: 50px 15px !important;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
   }
 
-  /* Grilles de cartes adaptées sur tablette */
-  .grid-2, .grid-3, .piliers-grid, .services-grid, .formations-grid {
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+
+  /* Force toutes les grilles à passer sur 1 seule colonne */
+  .piliers-grid,
+  .grid-2,
+  .grid-3,
+  .services-layout,
+  .services-grid,
+  .formations-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
+
+  .services-sidebar {
+    position: static !important;
+    width: 100% !important;
+  }
 }
 
+/* 2. MOBILES (<= 768px) */
 @media (max-width: 768px) {
-  /* Bouton du menu burger mobile */
+  /* Affichage du bouton burger */
   .mobile-toggle {
     display: block !important;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #ffffff;
+    font-size: 1.6rem !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    z-index: 1001;
   }
 
-  /* Navigation déroulante mobile */
+  /* Navbar relative pour aligner le menu déroulant */
+  .navbar .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Navigation mobile déroulante */
   .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: var(--secondary-color, #111827);
-    flex-direction: column;
-    padding: 20px 0;
-    display: none;
-    box-shadow: var(--shadow-md, 0 10px 25px rgba(0,0,0,0.5));
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background-color: #111827 !important;
+    flex-direction: column !important;
+    padding: 15px 0 !important;
+    display: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    z-index: 1000 !important;
   }
 
   .nav-links.show {
@@ -63,26 +90,32 @@ html, body {
   }
 
   .nav-links li {
+    width: 100%;
     text-align: center;
-    margin: 10px 0;
+    margin: 8px 0 !important;
   }
 
-  /* Adaptation des titres et conteneurs sur écran mobile */
-  .hero-title, h1 {
-    font-size: 1.8rem !important;
-    line-height: 1.3 !important;
+  .nav-links li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 
-  .page-header, .hero-section {
-    padding: 40px 15px !important;
+  .hero-title {
+    font-size: 1.6rem !important;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr;
+  .btn-hero {
+    width: 100% !important;
+    text-align: center !important;
   }
 
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
+  .share-buttons-grid {
+    flex-direction: column !important;
+  }
+
+  .btn-share {
+    width: 100% !important;
+    justify-content: center !important;
   }
 }
