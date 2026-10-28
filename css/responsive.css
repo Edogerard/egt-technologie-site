@@ -2,8 +2,19 @@
    EGT TECHNOLOGIE - Responsive Design (Mobile & Tablettes)
    ========================================================================== */
 
+/* Ajustement global pour éviter tout débordement horizontal sur mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 @media (max-width: 992px) {
-  .hero .container {
+  .hero .container,
+  .hero-section .container {
     grid-template-columns: 1fr;
     text-align: center;
   }
@@ -15,34 +26,63 @@
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* Grilles de cartes adaptées sur tablette */
+  .grid-2, .grid-3, .piliers-grid, .services-grid, .formations-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
 }
 
 @media (max-width: 768px) {
+  /* Bouton du menu burger mobile */
   .mobile-toggle {
-    display: block;
+    display: block !important;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ffffff;
   }
 
+  /* Navigation déroulante mobile */
   .nav-links {
     position: absolute;
-    top: 75px;
+    top: 70px;
     left: 0;
     width: 100%;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color, #111827);
     flex-direction: column;
     padding: 20px 0;
     display: none;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-md, 0 10px 25px rgba(0,0,0,0.5));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
   }
 
   .nav-links.show {
-    display: flex;
+    display: flex !important;
   }
 
-  .hero-title {
-    font-size: 2rem;
+  .nav-links li {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  /* Adaptation des titres et conteneurs sur écran mobile */
+  .hero-title, h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .page-header, .hero-section {
+    padding: 40px 15px !important;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
