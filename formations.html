@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EGT TECHNOLOGIE — Formations Professionnelles &amp; Pratiques</title>
-    <meta name="description" content="Formations pratiques en maintenance PC/Smartphones, flash/décodage, réseaux, dactylographie EGT_RAPIDE_TYPING, bureautique et IA chez EGT TECHNOLOGIE.">
+    <meta name="description" content="Formations professionnelles en développement Fullstack (Web, Windows, Mobile), bases de données, maintenance, flash, dactylographie EGT_RAPIDE_TYPING et IA chez EGT TECHNOLOGIE.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,12 +41,16 @@
             gap: 12px;
             border-bottom: 2px solid var(--primary-color);
             padding-bottom: 10px;
+            margin-top: 50px;
+        }
+        .formation-category-title:first-of-type {
+            margin-top: 0;
         }
         .formations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
         .formation-card {
             background: #1f2937;
@@ -119,6 +123,23 @@
             text-align: center;
             margin-top: 60px;
         }
+        .btn-whatsapp-devis {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #25D366;
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+        .btn-whatsapp-devis:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
     </style>
 </head>
 <body>
@@ -154,7 +175,7 @@
         <div class="container">
             <h1 class="page-title">Nos Formations Professionnelles &amp; Pratiques</h1>
             <p class="page-subtitle">
-                Rendre l'informatique et la technologie accessibles à tous ! Des programmes 100% pratiques pour apprendre un métier, maîtriser l'outil informatique et adopter les compétences de demain.
+                Rendre l'informatique et la technologie accessibles à tous ! Des programmes 100% pratiques pour apprendre un métier, devenir développeur fullstack ou maîtriser les outils d'avenir.
             </p>
         </div>
     </header>
@@ -162,9 +183,69 @@
     <!-- CONTENU DES FORMATIONS -->
     <div class="formations-container">
 
-        <!-- SECTION 1 : BUREAUTIQUE, INITIATION & TAPE RAPIDE -->
-        <h2 class="formation-category-title"><i class="fas fa-desktop"></i> Informatique de Base, Bureautique &amp; Dactylographie</h2>
-        <p style="color: #9ca3af; margin-bottom: 25px; font-size: 1rem;">L'informatique accessible à tout le monde : des premiers pas à la maîtrise professionnelle du clavier et des documents.</p>
+        <!-- SECTION 1 : PROGRAMMATION & DÉVELOPPEMENT FULLSTACK -->
+        <h2 class="formation-category-title"><i class="fas fa-code"></i> Programmation &amp; Développement Fullstack</h2>
+        <p style="color: #9ca3af; margin-bottom: 25px; font-size: 1rem;">Maîtrisez la création de logiciels, de sites web et d'applications mobiles de A à Z avec les bases de données :</p>
+
+        <div class="formations-grid">
+            
+            <!-- Parcours Fullstack & Multiplateforme -->
+            <div class="formation-card" style="border: 1px solid var(--primary-color);">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-layer-group"></i></div>
+                    <h3 class="formation-title">Parcours : Développeur Fullstack, Web, Windows &amp; Mobile</h3>
+                    <p class="formation-desc">Devenez un développeur complet capable de concevoir des applications sur tous les écrans et de maîtriser les bases de données.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> <strong>Bases de données :</strong> SQL, MySQL &amp; SQLite</li>
+                        <li><i class="fas fa-check"></i> <strong>Web Fullstack :</strong> HTML, CSS, JS, React, PHP &amp; FastAPI / Flask</li>
+                        <li><i class="fas fa-check"></i> <strong>Apps Windows :</strong> Python &amp; PySide6</li>
+                        <li><i class="fas fa-check"></i> <strong>Apps Mobiles :</strong> Flutter, Dart &amp; Kotlin (Android / iOS)</li>
+                    </ul>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20au%20Parcours%20Développeur%20Fullstack." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire au Parcours Complet
+                </a>
+            </div>
+
+            <!-- Développement Mobile & Desktop ciblé -->
+            <div class="formation-card">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="formation-title">Applications Mobiles (Flutter, Dart &amp; Kotlin)</h3>
+                    <p class="formation-desc">Apprenez à concevoir des applications mobiles multiplateformes performantes et élégantes pour Android et iOS.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Maîtrise de Dart &amp; Framework Flutter</li>
+                        <li><i class="fas fa-check"></i> Développement natif Android avec Kotlin</li>
+                        <li><i class="fas fa-check"></i> Connexion aux bases de données &amp; API</li>
+                    </ul>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Mobile%20(Flutter/Kotlin)." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
+                </a>
+            </div>
+
+            <!-- Développement Logiciel Python -->
+            <div class="formation-card">
+                <div>
+                    <div class="formation-icon"><i class="fab fa-python"></i></div>
+                    <h3 class="formation-title">Logiciels Windows sur Mesure (Python / PySide6)</h3>
+                    <p class="formation-desc">Créez des logiciels de gestion de bureau professionnels et ergonomiques sous Windows adaptés aux entreprises.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Programmation Python avancée</li>
+                        <li><i class="fas fa-check"></i> Interfaces graphiques modernes avec PySide6</li>
+                        <li><i class="fas fa-check"></i> Gestion des données avec SQLite &amp; MySQL</li>
+                    </ul>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Logiciels%20Windows." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
+                </a>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2 : BUREAUTIQUE, INITIATION, TAPE RAPIDE & IA -->
+        <h2 class="formation-category-title"><i class="fas fa-desktop"></i> Bureautique, Dactylographie &amp; Outils IA</h2>
+        <p style="color: #9ca3af; margin-bottom: 25px; font-size: 1rem;">L'informatique accessible à tout le monde : des bases aux astuces pour décupler sa productivité.</p>
 
         <div class="formations-grid">
             
@@ -177,8 +258,8 @@
                     <ul class="formation-list">
                         <li><i class="fas fa-check"></i> Initiation à l'informatique &amp; Windows</li>
                         <li><i class="fas fa-check"></i> Microsoft Word (Saisie &amp; mise en page)</li>
-                        <li><i class="fas fa-check"></i> Microsoft Excel (Calculs &amp; gestion de données)</li>
-                        <li><i class="fas fa-check"></i> PowerPoint (Présentations) &amp; Access (Bases de données)</li>
+                        <li><i class="fas fa-check"></i> Microsoft Excel (Calculs &amp; tableaux)</li>
+                        <li><i class="fas fa-check"></i> PowerPoint &amp; Access (Bases de données)</li>
                     </ul>
                 </div>
                 <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Bureautique." target="_blank" class="btn-inscription">
@@ -195,7 +276,7 @@
                     <ul class="formation-list">
                         <li><i class="fas fa-check"></i> Positionnement idéal des 10 doigts</li>
                         <li><i class="fas fa-check"></i> Frappe à l'aveugle sans regarder le clavier</li>
-                        <li><i class="fas fa-check"></i> Exercices d'entraînement et gain de vitesse immédiat</li>
+                        <li><i class="fas fa-check"></i> Exercices d'entraînement et gain de vitesse</li>
                     </ul>
                 </div>
                 <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20apprendre%20le%20clavier%20avec%20EGT_RAPIDE_TYPING." target="_blank" class="btn-inscription">
@@ -211,7 +292,7 @@
                     <p class="formation-desc">Apprenez à utiliser l'Intelligence Artificielle pour automatiser vos tâches, rédiger, créer et multiplier votre productivité.</p>
                     <ul class="formation-list">
                         <li><i class="fas fa-check"></i> Comprendre et exploiter les outils d'IA modernes</li>
-                        <li><i class="fas fa-check"></i> Rédaction de prompts efficaces et création de contenu</li>
+                        <li><i class="fas fa-check"></i> Rédaction de prompts efficaces &amp; création</li>
                         <li><i class="fas fa-check"></i> Intégration de l'IA dans votre travail quotidien</li>
                     </ul>
                 </div>
@@ -222,8 +303,8 @@
 
         </div>
 
-        <!-- SECTION 2 : MAINTENANCE, ÉLECTRONIQUE, FLASH & RÉSEAUX -->
-        <h2 class="formation-category-title"><i class="fas fa-tools"></i> Maintenance, Électronique &amp; Réseaux Informatiques</h2>
+        <!-- SECTION 3 : MAINTENANCE, ÉLECTRONIQUE, FLASH & RÉSEAUX -->
+        <h2 class="formation-category-title"><i class="fas fa-tools"></i> Maintenance, Électronique, Flash &amp; Réseaux</h2>
         <p style="color: #9ca3af; margin-bottom: 25px; font-size: 1rem;">Formations techniques certifiantes et de terrain pour devenir un expert dépannage matériel et logiciel.</p>
 
         <div class="formations-grid">
@@ -237,7 +318,7 @@
                     <ul class="formation-list">
                         <li><i class="fas fa-check"></i> Réparation et maintenance des PC portables et bureau</li>
                         <li><i class="fas fa-check"></i> Câblage et architecture des réseaux informatiques</li>
-                        <li><i class="fas fa-check"></i> Configuration de routeurs, switches et sécurité réseau</li>
+                        <li><i class="fas fa-check"></i> Configuration de routeurs, switches et Wi-Fi</li>
                     </ul>
                 </div>
                 <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Maintenance%20PC%20et%20Réseaux." target="_blank" class="btn-inscription">
@@ -245,36 +326,19 @@
                 </a>
             </div>
 
-            <!-- Électronique, Flash & Réparation Téléphones -->
+            <!-- Électronique, Flash & Réparation Smartphones Android -->
             <div class="formation-card">
                 <div>
                     <div class="formation-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3 class="formation-title">Électronique &amp; Réparation Smartphones Android / PC</h3>
                     <p class="formation-desc">Techniques avancées de réparation électronique d'ordinateurs, de téléphones Android, flashage et reprogrammation.</p>
                     <ul class="formation-list">
-                        <li><i class="fas fa-check"></i> Diagnostic et réparation électronique (cartes mères, composants)</li>
+                        <li><i class="fas fa-check"></i> Diagnostic et réparation électronique (cartes mères)</li>
                         <li><i class="fas fa-check"></i> Flash, déblocage, décodage et reprogrammation système</li>
-                        <li><i class="fas fa-check"></i> Résolution des pannes d'affichage, charge et réseau mobile</li>
+                        <li><i class="fas fa-check"></i> Résolution des pannes d'affichage et de charge</li>
                     </ul>
                 </div>
                 <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Électronique,%20Flash%20et%20Smartphones." target="_blank" class="btn-inscription">
-                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
-                </a>
-            </div>
-
-            <!-- Programmation Web/Mobile -->
-            <div class="formation-card">
-                <div>
-                    <div class="formation-icon"><i class="fas fa-code"></i></div>
-                    <h3 class="formation-title">Développement Logiciel, Web &amp; Mobile</h3>
-                    <p class="formation-desc">Apprenez à concevoir vos propres applications et sites web dynamiques pour vous lancer dans le développement.</p>
-                    <ul class="formation-list">
-                        <li><i class="fas fa-check"></i> Python (Applications Desktop &amp; PySide6)</li>
-                        <li><i class="fas fa-check"></i> Flutter, Dart &amp; Kotlin (Applications Mobiles)</li>
-                        <li><i class="fas fa-check"></i> Web moderne (HTML, CSS, JS, PHP, React)</li>
-                    </ul>
-                </div>
-                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Développement." target="_blank" class="btn-inscription">
                     <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
                 </a>
             </div>
@@ -283,11 +347,11 @@
 
         <!-- APPEL À L'ACTION FORMATIONS -->
         <div class="cta-formations">
-            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">Prêt à maîtriser l'informatique ou apprendre un métier d'avenir ?</h3>
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">Prêt à booster votre carrière et acquérir un savoir-faire d'expert ?</h3>
             <p style="color: #9ca3af; max-width: 650px; margin: 0 auto 20px auto; font-size: 0.95rem;">
-                Inscrivez-vous dès maintenant en ligne ou contactez-nous directement pour réserver votre place.
+                Inscrivez-vous dès maintenant en ligne ou contactez-nous directement pour réserver votre place (en présentiel à Lomé ou en ligne).
             </p>
-            <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20prochaines%20sessions%20de%20formation." target="_blank" class="btn-whatsapp-devis" style="display: inline-flex; align-items: center; gap: 10px; background-color: #25D366; color: #fff; padding: 14px 30px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; text-decoration: none;">
+            <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20prochaines%20sessions%20de%20formation." target="_blank" class="btn-whatsapp-devis">
                 <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Réserver ma place sur WhatsApp (90 32 25 33)
             </a>
         </div>
