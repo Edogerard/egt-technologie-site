@@ -3,178 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services &amp; Devis Instantané — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Catalogue complet des prestations expertes d'EGT TECHNOLOGIE à Lomé : développement logiciel, réseaux télécoms, maintenance informatique et électronique par Edo Gerard TOUDJI.">
+    <title>EGT TECHNOLOGIE — Prestations de Services &amp; Développement sur Mesure</title>
+    <meta name="description" content="Développement d'applications Web, Mobiles et Windows, maintenance informatique, réseaux, caméras de surveillance et solutions intelligentes par EGT TECHNOLOGIE.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .services-layout {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            gap: 30px;
-            align-items: start;
+        .page-header {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
         }
-        @media (max-width: 992px) {
-            .services-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-        .services-sidebar {
-            background: #1f2937;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 20px;
-            position: sticky;
-            top: 20px;
-        }
-        .filter-btn {
-            display: block;
-            width: 100%;
-            text-align: left;
-            background: transparent;
-            border: none;
-            color: #9ca3af;
-            padding: 12px 15px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary-color);
+        .page-title {
+            font-size: 2.5rem;
             color: #fff;
+            margin-bottom: 15px;
         }
-        .services-grid {
+        .page-subtitle {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .services-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .service-category-title {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        .software-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
+            margin-bottom: 50px;
         }
-        .service-card {
+        .software-item {
             background: #1f2937;
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .software-item:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+        .software-item i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 3px;
+        }
+        .software-item h4 {
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+        .software-item p {
+            color: #9ca3af;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+        .tech-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .tech-card {
+            background: #1f2937;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-            position: relative;
         }
-        .service-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-        .service-card.selected {
-            border-color: #10b981;
-            background: rgba(16, 185, 129, 0.05);
-        }
-        .service-icon {
-            font-size: 2.2rem;
-            color: var(--primary-color);
+        .tech-card h3 {
+            color: #fff;
+            font-size: 1.3rem;
             margin-bottom: 15px;
-        }
-        .service-title {
-            color: #fff;
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-        .service-desc {
-            color: #9ca3af;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-        .select-service-btn {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
-            width: 100%;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            transition: background 0.2s;
+            gap: 10px;
         }
-        .service-card.selected .select-service-btn {
-            background: #10b981;
-            border-color: #10b981;
+        .tech-card h3 i {
+            color: var(--primary-color);
         }
-        
-        .quote-box {
-            background: #111827;
-            border: 2px dashed var(--primary-color);
-            border-radius: 16px;
-            padding: 25px;
-            margin-top: 40px;
-        }
-        .quote-list {
+        .tech-card ul {
             list-style: none;
             padding: 0;
-            margin: 15px 0;
-            max-height: 200px;
-            overflow-y: auto;
+            margin: 0 0 20px 0;
         }
-        .quote-list li {
-            background: #1f2937;
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin-bottom: 8px;
-            color: #e5e7eb;
-            font-size: 0.9rem;
+        .tech-card ul li {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            padding: 6px 0;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            gap: 10px;
         }
-        .share-widget-container {
+        .tech-card ul li i {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+        }
+        .cta-devis {
             background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
-            margin-top: 50px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            margin-top: 60px;
         }
-        .share-buttons-grid {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .btn-share {
+        .btn-whatsapp-devis {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            gap: 10px;
+            background-color: #25D366;
             color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.2s ease;
+            padding: 14px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
             text-decoration: none;
+            margin-top: 20px;
+            transition: transform 0.2s, opacity 0.2s;
         }
-        .btn-share:hover {
+        .btn-whatsapp-devis:hover {
             transform: translateY(-2px);
             opacity: 0.9;
         }
-        .btn-share-wa { background-color: #25D366; }
-        .btn-share-fb { background-color: #1877F2; }
-        .btn-share-tt { background-color: #000000; border: 1px solid rgba(255,255,255,0.2); }
-        .btn-share-email { background-color: #EA4335; }
-        .btn-share-copy { background-color: #4B5563; }
     </style>
 </head>
 <body>
@@ -205,341 +177,165 @@
         </div>
     </nav>
 
-    <!-- HEADER SECTION -->
-    <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
+    <!-- PAGE HEADER -->
+    <header class="page-header">
         <div class="container">
-            <h1 style="font-size: 2.3rem; margin-bottom: 12px; color: #fff;"><i class="fas id-badge fa-tools"></i> Prestations de Services &amp; Expertise Technique</h1>
-            <p style="color: #9ca3af; max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
-                Interventions expertes à Lomé et supervision IT par <strong>Edo Gerard TOUDJI</strong>. Cochez les prestations souhaitées pour composer instantanément votre devis personnalisé sur WhatsApp.
+            <h1 class="page-title">Prestations de Services &amp; Solutions Numériques</h1>
+            <p class="page-subtitle">
+                Vous souhaitez informatiser votre activité, simplifier votre travail et améliorer votre gestion ? Nous concevons des logiciels sur mesure et réalisons tous vos travaux techniques de pointe.
             </p>
         </div>
     </header>
 
-    <!-- CONTENEUR PRINCIPAL AVEC FILTRES ET GRILLE -->
-    <section class="section">
-        <div class="container">
-            <div class="services-layout">
-                
-                <!-- BARRE LATÉRALE DE FILTRAGE -->
-                <div class="services-sidebar">
-                    <h3 style="color: #fff; font-size: 1.1rem; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 1px solid var(--border-color);">
-                        <i class="fas fa-filter"></i> Filtrer par Domaine
-                    </h3>
-                    <div id="filterContainer">
-                        <button class="filter-btn active" onclick="filterServices('all', this)">Tous les services</button>
-                        <button class="filter-btn" onclick="filterServices('dev', this)">Développement &amp; Web</button>
-                        <button class="filter-btn" onclick="filterServices('gestion', this)">Logiciels &amp; PME</button>
-                        <button class="filter-btn" onclick="filterServices('maintenance', this)">Maintenance &amp; Mobile</button>
-                        <button class="filter-btn" onclick="filterServices('reseaux', this)">Réseaux &amp; Sécurité</button>
-                        <button class="filter-btn" onclick="filterServices('elec', this)">Électricité &amp; Électronique</button>
-                        <button class="filter-btn" onclick="filterServices('institutions', this)">Écoles, Hôpitaux &amp; Mairies</button>
-                    </div>
-                </div>
+    <!-- CONTENU DES SERVICES -->
+    <div class="services-container">
 
-                <!-- GRILLE DES SERVICES -->
+        <!-- SECTION 1 : LOGICIELS DE GESTION SUR MESURE -->
+        <h2 class="service-category-title"><i class="fas fa-laptop-code"></i> Développement de Logiciels &amp; Applications sur Mesure</h2>
+        <p style="color: #9ca3af; margin-bottom: 25px; font-size: 1rem;">Solutions multiplateformes adaptées à tous les secteurs d'activité (Windows, Android, iOS et Web) :</p>
+
+        <div class="software-grid">
+            <div class="software-item">
+                <i class="fas fa-hospital-user"></i>
                 <div>
-                    <div class="services-grid" id="servicesGrid">
-                        
-                        <!-- 1. Développement Bureau & Mobile -->
-                        <div class="service-card" data-category="dev">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
-                                <h3 class="service-title">Développement Logiciels Desktop &amp; Mobile</h3>
-                                <p class="service-desc">
-                                    Création d'applications Windows sur mesure (Python, PySide6, SQLite chiffré) et applications mobiles multiplateformes (Flutter, Dart, Kotlin) avec intégration de MethodChannels natifs.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Développement Logiciels Desktop & Mobile')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 2. Logiciels de Gestion PME -->
-                        <div class="service-card" data-category="gestion">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-cash-register"></i></div>
-                                <h3 class="service-title">Logiciels de Gestion &amp; Facturation (PME)</h3>
-                                <p class="service-desc">
-                                    Solutions de caisse, suivi des ventes, gestion rigoureuse des stocks, approvisionnements et tableaux de bord décisionnels pour commerces et entreprises à Lomé.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Logiciels de Gestion & Facturation (PME)')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 3. Intelligence Artificielle & Automatisation -->
-                        <div class="service-card" data-category="dev">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-brain"></i></div>
-                                <h3 class="service-title">IA &amp; Automatisation Intelligente</h3>
-                                <p class="service-desc">
-                                    Intégration d'outils d'IA avancés, traitement d'image par OCR (Pytesseract, Pillow), automatisation de workflows et développement de scripts Python intelligents.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'IA & Automatisation Intelligente')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 4. Maintenance Matériel & PC -->
-                        <div class="service-card" data-category="maintenance">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-tools"></i></div>
-                                <h3 class="service-title">Maintenance &amp; Réparation Matériel PC</h3>
-                                <p class="service-desc">
-                                    Diagnostic approfondi de pannes matérielles et logicielles, réparation de partitions disque, récupération de données et optimisation de performances PC fixes et portables.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Maintenance & Réparation Matériel PC')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 5. Maintenance Mobile & Android Doctor -->
-                        <div class="service-card" data-category="maintenance">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-                                <h3 class="service-title">Diagnostic &amp; Maintenance Smartphones (Android/iOS)</h3>
-                                <p class="service-desc">
-                                    Opérations ADB &amp; Fastboot, calcul de codes NCK, maintenance NVRAM, lecture IMEI par OCR, contournement de sécurités logicielles et déblocage professionnel.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Diagnostic & Maintenance Smartphones (Android/iOS)')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 6. Électricité & Électronique -->
-                        <div class="service-card" data-category="elec">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-bolt"></i></div>
-                                <h3 class="service-title">Électricité Bâtiment &amp; Électronique</h3>
-                                <p class="service-desc">
-                                    Conception et câblage d'installations électriques, analyse de schémas analogiques et numériques, régulateurs de puissance, convertisseurs DC-DC et maintenance de circuits.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Électricité Bâtiment & Électronique')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 7. Réseaux & Télécoms -->
-                        <div class="service-card" data-category="reseaux">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-network-wired"></i></div>
-                                <h3 class="service-title">Réseaux Informatiques &amp; Télécommunications</h3>
-                                <p class="service-desc">
-                                    Déploiement de réseaux LAN/Wi-Fi d'entreprise, câblage structuré, configuration de routeurs et switchs, et supervision technique d'infrastructures télécoms.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Réseaux Informatiques & Télécommunications')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 8. Vidéosurveillance & Paraboles -->
-                        <div class="service-card" data-category="reseaux">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-video"></i></div>
-                                <h3 class="service-title">Vidéosurveillance CCTV &amp; Antennes Paraboliques</h3>
-                                <p class="service-desc">
-                                    Installation de systèmes de caméras de sécurité NVR/DVR, configuration de l'accès distant sur mobile, orientation de paraboles et réglage de fréquences satellites.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Vidéosurveillance CCTV & Antennes Paraboliques')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 9. Solutions Écoles & Centres -->
-                        <div class="service-card" data-category="institutions">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
-                                <h3 class="service-title">Solutions Numériques pour Écoles &amp; Universités</h3>
-                                <p class="service-desc">
-                                    Logiciels de gestion de scolarité, fiches élèves, bulletins de notes automatisés, emplois du temps et gestion de bibliothèques scolaires.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Solutions Numériques pour Écoles & Universités')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 10. Solutions Hôpitaux & Pharmacies -->
-                        <div class="service-card" data-category="institutions">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-hospital"></i></div>
-                                <h3 class="service-title">Solutions pour Hôpitaux, Cliniques &amp; Pharmacies</h3>
-                                <p class="service-desc">
-                                    Gestion des dossiers patients, prise de rendez-vous en ligne, suivi en temps réel des stocks de médicaments et facturation médicale sécurisée.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Solutions pour Hôpitaux, Cliniques & Pharmacies')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 11. Solutions Mairies & Administrations -->
-                        <div class="service-card" data-category="institutions">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-landmark"></i></div>
-                                <h3 class="service-title">Solutions pour Mairies &amp; Administrations</h3>
-                                <p class="service-desc">
-                                    Numérisation des procédures administratives, suivi des taxes et quittances communales, gestion informatisée du courrier et des registres d'état civil.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Solutions pour Mairies & Administrations')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                        <!-- 12. Supervision & Formation sur Site -->
-                        <div class="service-card" data-category="maintenance">
-                            <div>
-                                <div class="service-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                                <h3 class="service-title">Supervision Technique &amp; Formation de Techniciens</h3>
-                                <p class="service-desc">
-                                    Prestations de supervision d'opérations techniques (expériences SNEDAI / CENI), formation de techniciens et programmes de formation des formateurs.
-                                </p>
-                            </div>
-                            <button class="select-service-btn" onclick="toggleService(this, 'Supervision Technique & Formation de Techniciens')">
-                                <i class="fas fa-plus"></i> <span>Sélectionner pour devis</span>
-                            </button>
-                        </div>
-
-                    </div>
-
-                    <!-- BOITE DE DEVIS INSTANTANÉ -->
-                    <div class="quote-box">
-                        <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;"><i class="fas fa-file-invoice-dollar" style="color: var(--primary-color);"></i> Votre Devis Personnalisé</h3>
-                        <p id="quoteStatusText" style="color: #9ca3af; font-size: 0.9rem;">Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.</p>
-                        
-                        <ul class="quote-list" id="quoteList" style="display: none;"></ul>
-
-                        <div id="quoteActionContainer" style="display: none; margin-top: 20px;">
-                            <a id="whatsappQuoteBtn" href="#" target="_blank" class="btn btn-whatsapp" style="width: 100%; text-align: center; padding: 12px; font-size: 1rem;">
-                                <i class="fab fa-whatsapp"></i> Envoyer la demande de devis sur WhatsApp (+228 90 32 25 33)
-                            </a>
-                        </div>
-                    </div>
-
+                    <h4>Santé &amp; Cliniques</h4>
+                    <p>Gestion des hôpitaux, cliniques et centres de santé.</p>
                 </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <h4>Éducation &amp; Formation</h4>
+                    <p>Gestion des écoles, universités et centres de formation.</p>
+                </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-store"></i>
+                <div>
+                    <h4>Commerce &amp; Distribution</h4>
+                    <p>Gestion des boutiques, magasins, supermarchés et stocks.</p>
+                </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-utensils"></i>
+                <div>
+                    <h4>Restauration &amp; Hôtellerie</h4>
+                    <p>Gestion des restaurants, bars, hôtels et réservations.</p>
+                </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-pills"></i>
+                <div>
+                    <h4>Pharmacies</h4>
+                    <p>Gestion des officines et dépôts de médicaments.</p>
+                </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-church"></i>
+                <div>
+                    <h4>Organisations Religieuses</h4>
+                    <p>Gestion des églises, paroisses et associations.</p>
+                </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-building"></i>
+                <div>
+                    <h4>PME &amp; Administrations</h4>
+                    <p>Gestion des entreprises, mairies et des recettes communales.</p>
+                </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-calculator"></i>
+                <div>
+                    <h4>Comptabilité &amp; Finance</h4>
+                    <p>Gestion de la caisse, des dépenses, de la facturation et paie.</p>
+                </div>
+            </div>
+            <div class="software-item">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <h4>Solutions Intelligentes (IA)</h4>
+                    <p>Applications intégrant l'intelligence artificielle et l'automatisation.</p>
+                </div>
+            </div>
+        </div>
 
+        <!-- SECTION 2 : MAINTENANCE, RÉSEAUX ET TECHNIQUE -->
+        <h2 class="service-category-title"><i class="fas fa-tools"></i> Prestations Techniques &amp; Maintenance Avancée</h2>
+        
+        <div class="tech-services-grid">
+            
+            <div class="tech-card">
+                <div>
+                    <h3><i class="fas fa-desktop"></i> Informatique &amp; Matériel</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Installation, diagnostic et réparation de PC et ordinateurs portables</li>
+                        <li><i class="fas fa-check"></i> Maintenance préventive et curative du parc informatique</li>
+                        <li><i class="fas fa-check"></i> Récupération de données et formatage système</li>
+                    </ul>
+                </div>
             </div>
 
-            <!-- WIDGET DE PARTAGE SOCIAL INTERACTIF -->
-            <div class="share-widget-container">
-                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;">
-                    <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez EGT TECHNOLOGIE
-                </h3>
-                <p style="color: #9ca3af; font-size: 0.95rem;">
-                    Partagez nos services avec votre réseau sur vos réseaux sociaux préférés :
-                </p>
-                <div class="share-buttons-grid">
-                    <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20services%20techniques%20et%20logiciels%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </a>
-                    <a href="mailto:?subject=Services%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20services%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
-                        <i class="fas fa-envelope"></i> E-mail
-                    </a>
-                    <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
-                        <i class="fas fa-link"></i> <span id="copyLinkBtnText">Copier le lien</span>
-                    </button>
+            <div class="tech-card">
+                <div>
+                    <h3><i class="fas fa-mobile-alt"></i> Appareils Mobiles &amp; Android</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Décodage, maintenance et réparation d'appareils Android</li>
+                        <li><i class="fas fa-check"></i> Traitement NVRAM, désactivation FRP et pannes logicielles</li>
+                        <li><i class="fas fa-check"></i> Optimisation des performances mobiles</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div>
+                    <h3><i class="fas fa-network-wired"></i> Télécoms &amp; Réseaux</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Déploiement et administration de réseaux informatiques</li>
+                        <li><i class="fas fa-check"></i> Configuration de routeurs, switches et liaisons Wi-Fi</li>
+                        <li><i class="fas fa-check"></i> Expertise en télécommunications et supervision</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div>
+                    <h3><i class="fas fa-video"></i> Sécurité &amp; Électronique</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Installation professionnelle de caméras de surveillance (CCTV)</li>
+                        <li><i class="fas fa-check"></i> Réparation et maintenance en électronique (cartes, alimentations)</li>
+                        <li><i class="fas fa-check"></i> Solutions de sécurité adaptées aux habitations et entreprises</li>
+                    </ul>
                 </div>
             </div>
 
         </div>
-    </section>
+
+        <!-- SECTION APPEL À L'ACTION DEVIS -->
+        <div class="cta-devis">
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">Votre activité mérite un logiciel et un service adaptés à vos besoins !</h3>
+            <p style="color: #9ca3af; max-width: 600px; margin: 0 auto; font-size: 0.95rem;">
+                Contactez-nous dès maintenant pour discuter de votre projet de développement ou planifier une intervention technique.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20obtenir%20un%20devis%20pour%20vos%20services." target="_blank" class="btn-whatsapp-devis">
+                <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Commander / Demander un devis (WhatsApp)
+            </a>
+            <p style="color: #9ca3af; margin-top: 15px; font-size: 0.9rem;">
+                <i class="fas fa-phone-alt" style="color: var(--primary-color);"></i> Contact direct : <strong>90 32 25 33</strong>
+            </p>
+        </div>
+
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="text-align: center;">
-                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI (Lomé, Togo).</p>
+                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        // Gestion de la sélection des services pour le devis
-        let selectedServices = [];
-
-        function toggleService(button, serviceName) {
-            const card = button.closest('.service-card');
-            const iconSpan = button.querySelector('i');
-            const textSpan = button.querySelector('span');
-
-            if (selectedServices.includes(serviceName)) {
-                selectedServices = selectedServices.filter(s => s !== serviceName);
-                card.classList.remove('selected');
-                iconSpan.className = "fas fa-plus";
-                textSpan.textContent = "Sélectionner pour devis";
-            } else {
-                selectedServices.push(serviceName);
-                card.classList.add('selected');
-                iconSpan.className = "fas fa-check";
-                textSpan.textContent = "Sélectionné";
-            }
-            updateQuoteBox();
-        }
-
-        function updateQuoteBox() {
-            const statusText = document.getElementById('quoteStatusText');
-            const quoteList = document.getElementById('quoteList');
-            const actionContainer = document.getElementById('quoteActionContainer');
-            const whatsappBtn = document.getElementById('whatsappQuoteBtn');
-
-            if (selectedServices.length === 0) {
-                statusText.textContent = "Aucun service sélectionné pour l'instant. Cochez les cases ci-dessus pour composer votre demande.";
-                quoteList.style.display = "none";
-                actionContainer.style.display = "none";
-            } else {
-                statusText.textContent = `${selectedServices.length} prestation(s) sélectionnée(s) :`;
-                quoteList.innerHTML = '';
-                selectedServices.forEach(service => {
-                    quoteList.innerHTML += `<li><span><i class="fas fa-check-circle" style="color: #10b981;"></i> ${service}</span></li>`;
-                });
-                quoteList.style.display = "block";
-                actionContainer.style.display = "block";
-
-                const text = `Bonjour *EGT TECHNOLOGIE*,\n\nJe souhaite obtenir un devis personnalisé pour les prestations suivantes :\n` + selectedServices.map(s => `- ${s}`).join('\n') + `\n\nMerci de me recontacter.`;
-                whatsappBtn.href = `https://wa.me/22890322533?text=${encodeURIComponent(text)}`;
-            }
-        }
-
-        // Filtrage des services
-        function filterServices(category, btn) {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const cards = document.querySelectorAll('.service-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-category') === category) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        }
-
-        function copySiteLink() {
-            const url = 'https://edogerard.github.io/egt-technologie-site/';
-            navigator.clipboard.writeText(url).then(() => {
-                const btnText = document.getElementById('copyLinkBtnText');
-                btnText.textContent = 'Lien copié !';
-                setTimeout(() => {
-                    btnText.textContent = 'Copier le lien';
-                }, 3000);
-            });
-        }
-    </script>
 </body>
 </html>

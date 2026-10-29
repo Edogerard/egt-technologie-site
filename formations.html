@@ -3,105 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formations Professionnelles &amp; Tech — EGT TECHNOLOGIE</title>
-    <meta name="description" content="Formations certifiantes et ultra-pratiques chez EGT TECHNOLOGIE à Lomé : HTML, CSS, JavaScript, Kotlin, Python, Django, React.js, PHP, MySQL, Maintenance, Réseaux et Développement Mobile.">
+    <title>EGT TECHNOLOGIE — Formations Professionnelles &amp; Pratiques</title>
+    <meta name="description" content="Formations pratiques en maintenance PC/Smartphones, flash/décodage, réseaux, dactylographie EGT_RAPIDE_TYPING, bureautique et IA chez EGT TECHNOLOGIE.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .page-header {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .page-title {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .page-subtitle {
+            color: #9ca3af;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .formations-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .formation-category-title {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
         .formations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            gap: 25px;
+            margin-bottom: 50px;
         }
         .formation-card {
             background: #1f2937;
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 14px;
             padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            transition: transform 0.2s, border-color 0.2s;
         }
         .formation-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
         }
         .formation-icon {
-            font-size: 2.3rem;
+            font-size: 2.5rem;
             color: var(--primary-color);
             margin-bottom: 20px;
         }
         .formation-title {
             color: #fff;
-            font-size: 1.35rem;
-            font-weight: 700;
+            font-size: 1.3rem;
             margin-bottom: 12px;
         }
         .formation-desc {
             color: #9ca3af;
             font-size: 0.95rem;
-            line-height: 1.6;
+            line-height: 1.5;
             margin-bottom: 20px;
         }
-        .tech-tags {
+        .formation-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+        .formation-list li {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            padding: 5px 0;
             display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-bottom: 25px;
+            align-items: center;
+            gap: 8px;
         }
-        .tech-tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #60a5fa;
-            font-size: 0.75rem;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-family: monospace;
+        .formation-list li i {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+        }
+        .btn-inscription {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
             font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.2s;
         }
-        .share-widget-container {
+        .btn-inscription:hover {
+            opacity: 0.9;
+        }
+        .cta-formations {
             background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 30px;
+            padding: 40px;
             text-align: center;
             margin-top: 60px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
-        .share-buttons-grid {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-        .btn-share {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 18px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-            text-decoration: none;
-        }
-        .btn-share:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-        .btn-share-wa { background-color: #25D366; }
-        .btn-share-fb { background-color: #1877F2; }
-        .btn-share-tt { background-color: #000000; border: 1px solid rgba(255,255,255,0.2); }
-        .btn-share-email { background-color: #EA4335; }
-        .btn-share-copy { background-color: #4B5563; }
     </style>
 </head>
 <body>
@@ -132,202 +149,160 @@
         </div>
     </nav>
 
-    <!-- HEADER SECTION -->
-    <header class="page-header" style="background: linear-gradient(135deg, #111827 0%, #1f2937 100%); padding: 60px 0; text-align: center; border-bottom: 1px solid var(--border-color);">
+    <!-- PAGE HEADER -->
+    <header class="page-header">
         <div class="container">
-            <h1 style="font-size: 2.3rem; margin-bottom: 12px; color: #fff;"><i class="fas fa-graduation-cap"></i> Formations Professionnelles &amp; Tech</h1>
-            <p style="color: #9ca3af; max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.6;">
-                Apprenez directement auprès de l'expert <strong>Edo Gerard TOUDJI</strong> à Lomé. Formations pratiques et certifiantes en programmation, développement mobile/web, maintenance et réseaux.
+            <h1 class="page-title">Nos Formations Professionnelles &amp; Pratiques</h1>
+            <p class="page-subtitle">
+                Rendre l'informatique et la technologie accessibles à tous ! Des programmes 100% pratiques pour apprendre un métier, maîtriser l'outil informatique et adopter les compétences de demain.
             </p>
         </div>
     </header>
 
-    <!-- FORMATIONS GRID -->
-    <section class="section">
-        <div class="container">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 10px;">Nos Modules de Formation</h2>
-                <p style="color: var(--text-muted);">Maîtrisez les technologies les plus recherchées sur le marché professionnel.</p>
+    <!-- CONTENU DES FORMATIONS -->
+    <div class="formations-container">
+
+        <!-- SECTION 1 : BUREAUTIQUE, INITIATION & TAPE RAPIDE -->
+        <h2 class="formation-category-title"><i class="fas fa-desktop"></i> Informatique de Base, Bureautique &amp; Dactylographie</h2>
+        <p style="color: #9ca3af; margin-bottom: 25px; font-size: 1rem;">L'informatique accessible à tout le monde : des premiers pas à la maîtrise professionnelle du clavier et des documents.</p>
+
+        <div class="formations-grid">
+            
+            <!-- Initiation & Bureautique -->
+            <div class="formation-card">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-book-reader"></i></div>
+                    <h3 class="formation-title">Initiation &amp; Informatique Bureautique Complete</h3>
+                    <p class="formation-desc">Prise en main simplifiée pour débutants et professionnels pour utiliser l'ordinateur en toute autonomie.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Initiation à l'informatique &amp; Windows</li>
+                        <li><i class="fas fa-check"></i> Microsoft Word (Saisie &amp; mise en page)</li>
+                        <li><i class="fas fa-check"></i> Microsoft Excel (Calculs &amp; gestion de données)</li>
+                        <li><i class="fas fa-check"></i> PowerPoint (Présentations) &amp; Access (Bases de données)</li>
+                    </ul>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Bureautique." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
+                </a>
             </div>
 
-            <div class="formations-grid">
-                
-                <!-- 1. Dev Web & Fullstack -->
-                <div class="formation-card">
-                    <div>
-                        <div class="formation-icon"><i class="fas fa-code"></i></div>
-                        <h3 class="formation-title">Développement Web Fullstack</h3>
-                        <p class="formation-desc">
-                            Maîtrisez la création de sites web dynamiques et d'applications web robustes de A à Z avec les standards de l'industrie.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">React.js</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">Python/Django</span>
-                            <span class="tech-tag">MySQL / SQL</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Développement%20Web%20Fullstack" target="_blank" class="btn btn-primary" style="text-align: center;">
-                        <i class="fab fa-whatsapp"></i> S'inscrire à ce module
-                    </a>
+            <!-- EGT RAPIDE TYPING -->
+            <div class="formation-card" style="border: 1px solid var(--primary-color);">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-keyboard"></i></div>
+                    <h3 class="formation-title">Saisie Rapide au Clavier : EGT_RAPIDE_TYPING</h3>
+                    <p class="formation-desc">Vous voulez taper au clavier sans regarder vos doigts ? Venez apprendre à maîtriser le clavier à une vitesse exceptionnelle grâce à notre méthode exclusive !</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Positionnement idéal des 10 doigts</li>
+                        <li><i class="fas fa-check"></i> Frappe à l'aveugle sans regarder le clavier</li>
+                        <li><i class="fas fa-check"></i> Exercices d'entraînement et gain de vitesse immédiat</li>
+                    </ul>
                 </div>
-
-                <!-- 2. Dev Mobile Android / iOS -->
-                <div class="formation-card">
-                    <div>
-                        <div class="formation-icon"><i class="fas fa-mobile-alt"></i></div>
-                        <h3 class="formation-title">Développement Mobile Android &amp; iOS</h3>
-                        <p class="formation-desc">
-                            Concevez des applications mobiles performantes, multiplateformes et natives avec des intégrations système de bas niveau.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">Kotlin</span>
-                            <span class="tech-tag">MethodChannels</span>
-                            <span class="tech-tag">UI/UX</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Développement%20Mobile%20Android/iOS" target="_blank" class="btn btn-primary" style="text-align: center;">
-                        <i class="fab fa-whatsapp"></i> S'inscrire à ce module
-                    </a>
-                </div>
-
-                <!-- 3. Maintenance PC & Mobile / ADB -->
-                <div class="formation-card">
-                    <div>
-                        <div class="formation-icon"><i class="fas fa-tools"></i></div>
-                        <h3 class="formation-title">Maintenance Informatique &amp; Android Doctor</h3>
-                        <p class="formation-desc">
-                            Apprenez le dépannage matériel de PC, la récupération de données, l'utilisation des commandes ADB/Fastboot, le flashage et la réparation de smartphones.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Hardware PC</span>
-                            <span class="tech-tag">ADB / Fastboot</span>
-                            <span class="tech-tag">Partition &amp; Recovery</span>
-                            <span class="tech-tag">Python &amp; PySide6</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Maintenance%20et%20Android%20Doctor" target="_blank" class="btn btn-primary" style="text-align: center;">
-                        <i class="fab fa-whatsapp"></i> S'inscrire à ce module
-                    </a>
-                </div>
-
-                <!-- 4. Réseaux & Télécoms -->
-                <div class="formation-card">
-                    <div>
-                        <div class="formation-icon"><i class="fas fa-network-wired"></i></div>
-                        <h3 class="formation-title">Réseaux Informatiques &amp; Télécoms</h3>
-                        <p class="formation-desc">
-                            Formation pratique au câblage structuré, configuration de routeurs et switchs, déploiement de réseaux LAN/Wi-Fi et sécurisation des infrastructures.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">LAN / Wi-Fi</span>
-                            <span class="tech-tag">Routeurs &amp; Switchs</span>
-                            <span class="tech-tag">Câblage structuré</span>
-                            <span class="tech-tag">Sécurité</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Réseaux%20et%20Télécoms" target="_blank" class="btn btn-primary" style="text-align: center;">
-                        <i class="fab fa-whatsapp"></i> S'inscrire à ce module
-                    </a>
-                </div>
-
-                <!-- 5. Électricité & Électronique -->
-                <div class="formation-card">
-                    <div>
-                        <div class="formation-icon"><i class="fas fa-bolt"></i></div>
-                        <h3 class="formation-title">Électricité Bâtiment &amp; Électronique</h3>
-                        <p class="formation-desc">
-                            Étude des circuits analogiques et numériques, analyse de schémas, convertisseurs DC-DC et installations électriques professionnelles.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Électricité Bâtiment</span>
-                            <span class="tech-tag">Électronique analogique</span>
-                            <span class="tech-tag">Composants &amp; Schémas</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Électricité%20et%20Électronique" target="_blank" class="btn btn-primary" style="text-align: center;">
-                        <i class="fab fa-whatsapp"></i> S'inscrire à ce module
-                    </a>
-                </div>
-
-                <!-- 6. Bureautique & PCTAP -->
-                <div class="formation-card">
-                    <div>
-                        <div class="formation-icon"><i class="fas fa-desktop"></i></div>
-                        <h3 class="formation-title">Bureautique &amp; PCTAP</h3>
-                        <p class="formation-desc">
-                            Maîtrise professionnelle des outils bureautiques essentiels (Word, Excel, PowerPoint) et techniques de dactylographie rapide.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Word</span>
-                            <span class="tech-tag">Excel</span>
-                            <span class="tech-tag">PowerPoint</span>
-                            <span class="tech-tag">Dactylographie</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/22890322533?text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Bureautique/PCTAP" target="_blank" class="btn btn-primary" style="text-align: center;">
-                        <i class="fab fa-whatsapp"></i> S'inscrire à ce module
-                    </a>
-                </div>
-
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20apprendre%20le%20clavier%20avec%20EGT_RAPIDE_TYPING." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> Apprendre le clavier
+                </a>
             </div>
 
-            <!-- WIDGET DE PARTAGE SOCIAL INTERACTIF -->
-            <div class="share-widget-container">
-                <h3 style="color: #fff; font-size: 1.3rem; margin-bottom: 8px;">
-                    <i class="fas fa-share-alt" style="color: var(--primary-color);"></i> Recommandez EGT TECHNOLOGIE
-                </h3>
-                <p style="color: #9ca3af; font-size: 0.95rem;">
-                    Partagez nos formations avec votre réseau sur vos plateformes préférées :
-                </p>
-                <div class="share-buttons-grid">
-                    <a href="https://api.whatsapp.com/send?text=Découvrez%20les%20formations%20professionnelles%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-wa">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://edogerard.github.io/egt-technologie-site/" target="_blank" class="btn-share btn-share-fb">
-                        <i class="fab fa-facebook-f"></i> Facebook
-                    </a>
-                    <a href="https://www.tiktok.com/" target="_blank" class="btn-share btn-share-tt">
-                        <i class="fab fa-tiktok"></i> TikTok
-                    </a>
-                    <a href="mailto:?subject=Formations%20EGT%20TECHNOLOGIE&body=Bonjour,%20je%20te%20recommande%20les%20formations%20techniques%20d'EGT%20TECHNOLOGIE%20à%20Lomé%20:%20https://edogerard.github.io/egt-technologie-site/" class="btn-share btn-share-email">
-                        <i class="fas fa-envelope"></i> E-mail
-                    </a>
-                    <button type="button" onclick="copySiteLink()" class="btn-share btn-share-copy">
-                        <i class="fas fa-link"></i> <span id="copyLinkBtnText">Copier le lien</span>
-                    </button>
+            <!-- Intelligence Artificielle -->
+            <div class="formation-card">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="formation-title">Maîtrise de l'IA &amp; Utilisation des Outils IA</h3>
+                    <p class="formation-desc">Apprenez à utiliser l'Intelligence Artificielle pour automatiser vos tâches, rédiger, créer et multiplier votre productivité.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Comprendre et exploiter les outils d'IA modernes</li>
+                        <li><i class="fas fa-check"></i> Rédaction de prompts efficaces et création de contenu</li>
+                        <li><i class="fas fa-check"></i> Intégration de l'IA dans votre travail quotidien</li>
+                    </ul>
                 </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20IA." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
+                </a>
             </div>
 
         </div>
-    </section>
+
+        <!-- SECTION 2 : MAINTENANCE, ÉLECTRONIQUE, FLASH & RÉSEAUX -->
+        <h2 class="formation-category-title"><i class="fas fa-tools"></i> Maintenance, Électronique &amp; Réseaux Informatiques</h2>
+        <p style="color: #9ca3af; margin-bottom: 25px; font-size: 1rem;">Formations techniques certifiantes et de terrain pour devenir un expert dépannage matériel et logiciel.</p>
+
+        <div class="formations-grid">
+            
+            <!-- Maintenance PC & Réseaux -->
+            <div class="formation-card">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-laptop-medical"></i></div>
+                    <h3 class="formation-title">Maintenance Informatique &amp; Réseaux</h3>
+                    <p class="formation-desc">Diagnostic, réparation matérielle/logicielle des ordinateurs et configuration de réseaux informatiques.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Réparation et maintenance des PC portables et bureau</li>
+                        <li><i class="fas fa-check"></i> Câblage et architecture des réseaux informatiques</li>
+                        <li><i class="fas fa-check"></i> Configuration de routeurs, switches et sécurité réseau</li>
+                    </ul>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Maintenance%20PC%20et%20Réseaux." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
+                </a>
+            </div>
+
+            <!-- Électronique, Flash & Réparation Téléphones -->
+            <div class="formation-card">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3 class="formation-title">Électronique &amp; Réparation Smartphones Android / PC</h3>
+                    <p class="formation-desc">Techniques avancées de réparation électronique d'ordinateurs, de téléphones Android, flashage et reprogrammation.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Diagnostic et réparation électronique (cartes mères, composants)</li>
+                        <li><i class="fas fa-check"></i> Flash, déblocage, décodage et reprogrammation système</li>
+                        <li><i class="fas fa-check"></i> Résolution des pannes d'affichage, charge et réseau mobile</li>
+                    </ul>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Électronique,%20Flash%20et%20Smartphones." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
+                </a>
+            </div>
+
+            <!-- Programmation Web/Mobile -->
+            <div class="formation-card">
+                <div>
+                    <div class="formation-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="formation-title">Développement Logiciel, Web &amp; Mobile</h3>
+                    <p class="formation-desc">Apprenez à concevoir vos propres applications et sites web dynamiques pour vous lancer dans le développement.</p>
+                    <ul class="formation-list">
+                        <li><i class="fas fa-check"></i> Python (Applications Desktop &amp; PySide6)</li>
+                        <li><i class="fas fa-check"></i> Flutter, Dart &amp; Kotlin (Applications Mobiles)</li>
+                        <li><i class="fas fa-check"></i> Web moderne (HTML, CSS, JS, PHP, React)</li>
+                    </ul>
+                </div>
+                <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20m'inscrire%20à%20la%20formation%20Développement." target="_blank" class="btn-inscription">
+                    <i class="fab fa-whatsapp"></i> S'inscrire à cette formation
+                </a>
+            </div>
+
+        </div>
+
+        <!-- APPEL À L'ACTION FORMATIONS -->
+        <div class="cta-formations">
+            <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 10px;">Prêt à maîtriser l'informatique ou apprendre un métier d'avenir ?</h3>
+            <p style="color: #9ca3af; max-width: 650px; margin: 0 auto 20px auto; font-size: 0.95rem;">
+                Inscrivez-vous dès maintenant en ligne ou contactez-nous directement pour réserver votre place.
+            </p>
+            <a href="https://api.whatsapp.com/send?phone=22890322533&text=Bonjour%20EGT%20TECHNOLOGIE,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20prochaines%20sessions%20de%20formation." target="_blank" class="btn-whatsapp-devis" style="display: inline-flex; align-items: center; gap: 10px; background-color: #25D366; color: #fff; padding: 14px 30px; border-radius: 30px; font-size: 1.1rem; font-weight: 600; text-decoration: none;">
+                <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> Réserver ma place sur WhatsApp (90 32 25 33)
+            </a>
+        </div>
+
+    </div>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="text-align: center;">
-                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés. Fondateur : Edo Gerard TOUDJI (Lomé, Togo).</p>
+                <p>&copy; 2026 EGT TECHNOLOGIE — Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-        function copySiteLink() {
-            const url = 'https://edogerard.github.io/egt-technologie-site/';
-            navigator.clipboard.writeText(url).then(() => {
-                const btnText = document.getElementById('copyLinkBtnText');
-                btnText.textContent = 'Lien copié !';
-                setTimeout(() => {
-                    btnText.textContent = 'Copier le lien';
-                }, 3000);
-            });
-        }
-    </script>
 </body>
 </html>
