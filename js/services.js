@@ -11,89 +11,103 @@ const servicesData = [
     {
         id: "s1",
         category: "dev",
+        title: "Création de Sites de E-commerce & Boutiques en Ligne",
+        icon: "fa-shopping-cart",
+        desc: "Conception de plateformes de vente en ligne performantes, sécurisées, avec catalogue produits, panier d'achat et intégration des paiements mobiles et cartes."
+    },
+    {
+        id: "s2",
+        category: "dev",
+        title: "Création d'Applications Web de Gestion de Pannes",
+        icon: "fa-tools",
+        desc: "Développement d'applications web dédiées au suivi, à la signalisation et à la gestion centralisée des pannes matérielles et logistiques."
+    },
+    {
+        id: "s3",
+        category: "dev",
         title: "Développement d'Applications & Logiciels",
         icon: "fa-laptop-code",
         desc: "Conception de logiciels Windows (PySide6), applications mobiles Flutter (Android/iOS) et solutions sur mesure pour la digitalisation des entreprises."
     },
     {
-        id: "s2",
+        id: "s4",
         category: "pme",
         title: "Logiciels de Gestion pour Commerces & PME",
         icon: "fa-calculator",
         desc: "Gestion des ventes, caisses enregistreuses, facturation, suivi rigoureux des stocks, approvisionnements et tableaux de bord décisionnels."
     },
     {
-        id: "s3",
+        id: "s5",
         category: "dev",
         title: "Création de Sites Web & Plateformes en Ligne",
         icon: "fa-globe",
         desc: "Sites vitrines institutionnels, plateformes e-commerce, portails métiers et hébergement sécurisé pour accroître votre visibilité."
     },
     {
-        id: "s4",
+        id: "s6",
         category: "ia",
         title: "Intelligence Artificielle & Automatisation",
         icon: "fa-robot",
         desc: "Intégration d'API d'IA, chatbots conversationnels, automatisation de tâches répétitives et traitement intelligent de données."
     },
     {
-        id: "s5",
+        id: "s7",
         category: "maintenance",
         title: "Maintenance & Dépannage Informatique Avancé",
         icon: "fa-tools",
         desc: "Diagnostic de pannes PC (fixes/portables), réinstallation système, suppression de ransomwares/malwares et récupération de données."
     },
     {
-        id: "s6",
+        id: "s8",
         category: "maintenance",
         title: "Diagnostic & Assistance Logicielle Mobile",
         icon: "fa-mobile-alt",
         desc: "Outils de réparation ADB, débogage USB, flashage, contournement de sécurités logicielles et maintenance de smartphones Android/iOS."
     },
     {
-        id: "s7",
+        id: "s9",
         category: "reseau",
         title: "Réseaux Informatiques & Télécoms",
         icon: "fa-network-wired",
         desc: "Installation de réseaux LAN/Wi-Fi d'entreprise, configuration de routeurs et switchs, câblage structuré et sécurisation des accès."
     },
     {
-        id: "s8",
+        id: "s10",
         category: "special",
         title: "Solutions Informatiques pour Écoles & Centres",
         icon: "fa-user-graduate",
         desc: "Logiciels de gestion de scolarité, fiches élèves, bulletins de notes, emplois du temps et gestion informatisée des bibliothèques."
     },
     {
-        id: "s9",
+        id: "s11",
         category: "special",
         title: "Solutions pour Hôpitaux, Cliniques & Pharmacies",
         icon: "fa-clinic-medical",
         desc: "Gestion administrative des patients, prises de rendez-vous, suivi des stocks de médicaments en pharmacie et facturation médicalisée."
     },
     {
-        id: "s10",
+        id: "s12",
         category: "special",
         title: "Solutions pour Mairies & Administrations",
         icon: "fa-building",
         desc: "Numérisation des procédures administratives, suivi des recettes communales, taxes, quittances et gestion informatisée du courrier."
     },
     {
-        id: "s11",
+        id: "s13",
         category: "pme",
         title: "Solutions Restauration, Hôtellerie & Transport",
         icon: "fa-utensils",
         desc: "Prise de commande tactile sur table, réservations hôtelières, gestion de parcs automobiles et suivi logistique des livraisons."
     },
     {
-        id: "s12",
+        id: "s14",
         category: "pme",
         title: "Solutions Biométriques & Contrôle d'Accès",
         icon: "fa-fingerprint",
         desc: "Pointage biométrique des employés, gestion des temps de présence, impression de cartes professionnelles et sécurisation des accès."
     },
     {
-        id: "s13",
+        id: "s15",
         category: "maintenance",
         title: "Contrats de Maintenance & Support PME",
         icon: "fa-sync",
