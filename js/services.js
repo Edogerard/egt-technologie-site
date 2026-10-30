@@ -2,6 +2,11 @@
    EGT TECHNOLOGIE - Services & Generator JS (Version Épurée & Moderne)
    ========================================================================== */
 
+// Redirection automatique vers HTTPS (Adaptation universelle)
+if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    window.location.href = window.location.href.replace('http:', 'https:');
+}
+
 const servicesData = [
     {
         id: "s1",
@@ -184,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Envoi du message WhatsApp
+    // Envoi du message WhatsApp (HTTPS sécurisé)
     if (sendQuoteBtn) {
         sendQuoteBtn.addEventListener('click', () => {
             if (selectedServices.size === 0) return;

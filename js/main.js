@@ -1,7 +1,13 @@
 /* ==========================================================================
-   EGT TECHNOLOGIE - Main JavaScript (Navigation Mobile)
+   EGT TECHNOLOGIE - Main JavaScript (Navigation Mobile & Redirection HTTPS)
    ========================================================================== */
 
+// 1. Redirection automatique vers HTTPS (Adaptation universelle)
+if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    window.location.href = window.location.href.replace('http:', 'https:');
+}
+
+// 2. Gestion de la navigation mobile
 document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
